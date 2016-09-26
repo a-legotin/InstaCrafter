@@ -16,9 +16,8 @@ script:
   - cd ../InstaCrafter.Worker
   - dotnet --verbose build
   - dotnet publish
-  - cd ../InstaCrafter.Classes
-  - dotnet --verbose build
-  - dotnet publish
   - cd ../InstaCrafter.Core
   - dotnet --verbose build
   - dotnet publish
+  - cd ../InstaCrafter.Classes
+  - dotnet --verbose build
