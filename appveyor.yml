@@ -12,5 +12,11 @@ build_script:
   - ps: cd ../InstaCrafter.Worker
   - ps: dotnet --verbose build
   - ps: dotnet --verbose publish
+  - ps: cd ../InstaCrafter.Classes
+  - ps: dotnet --verbose build
+  - ps dotnet --verbose publish
+  - ps: cd ../InstaCrafter.Core
+  - ps: dotnet --verbose build
+  - ps: dotnet --verbose publish
   
 test: off 
