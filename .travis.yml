@@ -1,9 +1,6 @@
 language: csharp
 solution: InstaCrafter.sln
 dotnet: 1.0.0-preview2-003121
-os: linux # Ubuntu 14.04
-dist: trusty
-sudo: required
 	  
 script:
   # dotnet info
