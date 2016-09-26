@@ -12,11 +12,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "InstaCrafter.DataStore", "src\InstaCrafter\InstaCrafter.DataStore.xproj", "{575B5AE7-5DC6-443F-8717-A44C8934797F}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "InstaCrafter.Core", "src\InstaCrafter.Core\InstaCrafter.Core.xproj", "{F0563898-99C9-4783-A615-BDA1E920D0F5}"
-EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "InstaCrafter.Classes", "src\InstaCrafter.Classes\InstaCrafter.Classes.xproj", "{6DE6252D-DD72-4B41-AA19-88B8C03459DD}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "InstaCrafter.Worker", "src\InstaCrafter.Worker\InstaCrafter.Worker.xproj", "{810AB714-6F60-4BC3-923C-8A458F5B28F3}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "InstaCrafter.Core", "InstaCrafter.Core\InstaCrafter.Core.xproj", "{E7364A94-68F1-4DE5-B307-A33A42638F9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,10 +28,6 @@ Global
 		{575B5AE7-5DC6-443F-8717-A44C8934797F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{575B5AE7-5DC6-443F-8717-A44C8934797F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{575B5AE7-5DC6-443F-8717-A44C8934797F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F0563898-99C9-4783-A615-BDA1E920D0F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F0563898-99C9-4783-A615-BDA1E920D0F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F0563898-99C9-4783-A615-BDA1E920D0F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F0563898-99C9-4783-A615-BDA1E920D0F5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6DE6252D-DD72-4B41-AA19-88B8C03459DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6DE6252D-DD72-4B41-AA19-88B8C03459DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DE6252D-DD72-4B41-AA19-88B8C03459DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -40,14 +36,18 @@ Global
 		{810AB714-6F60-4BC3-923C-8A458F5B28F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{810AB714-6F60-4BC3-923C-8A458F5B28F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{810AB714-6F60-4BC3-923C-8A458F5B28F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7364A94-68F1-4DE5-B307-A33A42638F9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7364A94-68F1-4DE5-B307-A33A42638F9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7364A94-68F1-4DE5-B307-A33A42638F9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7364A94-68F1-4DE5-B307-A33A42638F9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{575B5AE7-5DC6-443F-8717-A44C8934797F} = {B41D2650-1488-47E8-82F9-2375AA2EC433}
-		{F0563898-99C9-4783-A615-BDA1E920D0F5} = {B41D2650-1488-47E8-82F9-2375AA2EC433}
 		{6DE6252D-DD72-4B41-AA19-88B8C03459DD} = {B41D2650-1488-47E8-82F9-2375AA2EC433}
 		{810AB714-6F60-4BC3-923C-8A458F5B28F3} = {B41D2650-1488-47E8-82F9-2375AA2EC433}
+		{E7364A94-68F1-4DE5-B307-A33A42638F9D} = {B41D2650-1488-47E8-82F9-2375AA2EC433}
 	EndGlobalSection
 EndGlobal
