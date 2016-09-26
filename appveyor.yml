@@ -6,6 +6,10 @@ build_script:
   - ps: dotnet --info
   # Run dotnet new 
   - ps: dotnet restore
+  - ps: cd src/InstaCrafter
+  - ps: dotnet --verbose build
+  - ps: dotnet --verbose publish
+  - ps: cd ../InstaCrafter.Worker
   - ps: dotnet --verbose build
   - ps: dotnet --verbose publish
   
