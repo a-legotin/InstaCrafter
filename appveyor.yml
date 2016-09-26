@@ -8,15 +8,15 @@ build_script:
   - ps: dotnet restore
   - ps: cd src/InstaCrafter
   - ps: dotnet --verbose build
-  - ps: dotnet --verbose publish
+  - ps: dotnet publish
   - ps: cd ../InstaCrafter.Worker
   - ps: dotnet --verbose build
-  - ps: dotnet --verbose publish
+  - ps: dotnet publish
   - ps: cd ../InstaCrafter.Classes
   - ps: dotnet --verbose build
-  - ps dotnet --verbose publish
+  - ps: dotnet publish
   - ps: cd ../InstaCrafter.Core
   - ps: dotnet --verbose build
-  - ps: dotnet --verbose publish
+  - ps: dotnet publish
   
 test: off 

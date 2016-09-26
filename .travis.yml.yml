@@ -1,0 +1,27 @@
+language: csharp
+solution: InstaCrafter.sln
+#dotnet: 1.0.0-preview2-003121
+
+before_install:
+	- sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
+	- sudo apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893
+	- sudo apt-get update
+	- sudo apt-get install dotnet-dev-1.0.0-preview2-003131
+	
+script:
+  # dotnet info
+  - dotnet --info
+  # Run dotnet new 
+  - dotnet restore
+  - cd src/InstaCrafter
+  - dotnet --verbose build
+  - dotnet publish
+  - cd ../InstaCrafter.Worker
+  - dotnet --verbose build
+  - dotnet publish
+  - cd ../InstaCrafter.Classes
+  - dotnet --verbose build
+  - dotnet publish
+  - cd ../InstaCrafter.Core
+  - dotnet --verbose build
+  - dotnet publish
