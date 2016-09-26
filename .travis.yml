@@ -1,7 +1,10 @@
 language: csharp
 solution: InstaCrafter.sln
 dotnet: 1.0.0-preview2-003121
-	  
+sudo: required
+os: linux
+dist: trusty
+
 script:
   # dotnet info
   - dotnet --info
