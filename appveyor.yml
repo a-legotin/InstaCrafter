@@ -18,5 +18,7 @@ build_script:
   - ps: dotnet publish
   - ps: cd ../InstaCrafter.Classes
   - ps: dotnet --verbose build
+  - ps: cd ../InstaCrafter.Tests
+  - ps: dotnet --verbose build
   
 test: off 

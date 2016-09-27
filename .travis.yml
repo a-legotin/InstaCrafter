@@ -21,3 +21,5 @@ script:
   - dotnet publish
   - cd ../InstaCrafter.Classes
   - dotnet --verbose build
+  - cd ../InstaCrafter.Tests
+  - dotnet --verbose build
