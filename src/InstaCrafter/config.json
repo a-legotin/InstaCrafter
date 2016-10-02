@@ -1,0 +1,5 @@
+﻿{
+  "ConnectionStrings": {
+    "DataAccessPostgreSqlProvider": "User ID=alex;Password=3591957;Host=localhost;Port=5432;Database=instacrafter;Pooling=true;"
+  }
+}
