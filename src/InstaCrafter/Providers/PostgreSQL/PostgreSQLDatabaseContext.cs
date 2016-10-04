@@ -2,23 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using InstaCrafter.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace InstaCrafter
 {
-    public class InstaPost
+    public class PostgreSQLDatabaseContext : DbContext
     {
-        public long PostId { get; set; }
-        public string Url { get; set; }
-    }
-
-    public class DomainModelPostgreSqlContext : DbContext
-    {
-        public DomainModelPostgreSqlContext()
+        public PostgreSQLDatabaseContext()
         {
 
         }
-        public DomainModelPostgreSqlContext(DbContextOptions<DomainModelPostgreSqlContext> options) : base(options)
+        public PostgreSQLDatabaseContext(DbContextOptions<PostgreSQLDatabaseContext> options) : base(options)
         {
         }
 

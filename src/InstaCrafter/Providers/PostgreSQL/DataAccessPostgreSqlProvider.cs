@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using InstaCrafter.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -8,10 +9,10 @@ namespace InstaCrafter
 {
     public class DataAccessPostgreSqlProvider : IDataAccessProvider
     {
-        private readonly DomainModelPostgreSqlContext _context;
+        private readonly PostgreSQLDatabaseContext _context;
         private readonly ILogger _logger;
 
-        public DataAccessPostgreSqlProvider(DomainModelPostgreSqlContext context, ILoggerFactory loggerFactory)
+        public DataAccessPostgreSqlProvider(PostgreSQLDatabaseContext context, ILoggerFactory loggerFactory)
         {
             _context = context;
             _logger = loggerFactory.CreateLogger("DataAccessPostgreSqlProvider");
@@ -43,7 +44,6 @@ namespace InstaCrafter
 
         public List<InstaPost> GetPosts()
         {
-            // Using the shadow property EF.Property<DateTime>(dataEventRecord)
             return _context.InstaPosts.OrderByDescending(dataEventRecord => EF.Property<DateTime>(dataEventRecord, "UpdatedTimestamp")).ToList();
         }
     }
