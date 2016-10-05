@@ -28,6 +28,8 @@ namespace Tests
                 }
 
                 var instaresponse = JsonConvert.DeserializeObject<InstaCrafter.Classes.Wrapper.InstaResponse>(html);
+                Assert.NotNull(instaresponse);
+                Assert.Equal(20, instaresponse.Items.Count);
             }
             catch (Exception)
             {

@@ -7,7 +7,7 @@ using InstaCrafter;
 
 namespace InstaCrafter.Migrations
 {
-    [DbContext(typeof(PostgreSQLDatabaseContext))]
+    [DbContext(typeof(PostgreSqlDatabaseContext))]
     partial class PostgreSQLDatabaseContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

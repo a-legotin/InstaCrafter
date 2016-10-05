@@ -7,7 +7,7 @@ using InstaCrafter;
 
 namespace InstaCrafter.Migrations
 {
-    [DbContext(typeof(PostgreSQLDatabaseContext))]
+    [DbContext(typeof(PostgreSqlDatabaseContext))]
     [Migration("20161004162448_InitialMigration")]
     partial class InitialMigration
     {

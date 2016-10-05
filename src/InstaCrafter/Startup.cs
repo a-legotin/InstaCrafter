@@ -33,7 +33,7 @@ namespace InstaCrafter
             //Use a PostgreSQL database
             var sqlConnectionString = Configuration.GetConnectionString("DataAccessPostgreSqlProvider");
 
-            services.AddDbContext<PostgreSQLDatabaseContext>(options =>
+            services.AddDbContext<PostgreSqlDatabaseContext>(options =>
                 options.UseNpgsql(
                     sqlConnectionString,
                     b => b.MigrationsAssembly("InstaCrafter")

@@ -9,10 +9,10 @@ namespace InstaCrafter
 {
     public class DataAccessPostgreSqlProvider : IDataAccessProvider
     {
-        private readonly PostgreSQLDatabaseContext _context;
+        private readonly PostgreSqlDatabaseContext _context;
         private readonly ILogger _logger;
 
-        public DataAccessPostgreSqlProvider(PostgreSQLDatabaseContext context, ILoggerFactory loggerFactory)
+        public DataAccessPostgreSqlProvider(PostgreSqlDatabaseContext context, ILoggerFactory loggerFactory)
         {
             _context = context;
             _logger = loggerFactory.CreateLogger("DataAccessPostgreSqlProvider");
@@ -24,22 +24,22 @@ namespace InstaCrafter
             _context.SaveChanges();
         }
 
-        public void UpdatePost(long dataEventRecordId, InstaPost dataEventRecord)
+        public void UpdatePost(int postId, InstaPost dataEventRecord)
         {
             _context.InstaPosts.Update(dataEventRecord);
             _context.SaveChanges();
         }
 
-        public void DeletePost(long dataEventRecordId)
+        public void DeletePost(int postId)
         {
-            var entity = _context.InstaPosts.First(t => t.PostId == dataEventRecordId);
+            var entity = _context.InstaPosts.First(t => t.PostId == postId);
             _context.InstaPosts.Remove(entity);
             _context.SaveChanges();
         }
 
-        public InstaPost GetPost(long dataEventRecordId)
+        public InstaPost GetPost(int postId)
         {
-            return _context.InstaPosts.First(t => t.PostId == dataEventRecordId);
+            return _context.InstaPosts.First(t => t.PostId == postId);
         }
 
         public List<InstaPost> GetPosts()

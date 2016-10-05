@@ -7,13 +7,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace InstaCrafter
 {
-    public class PostgreSQLDatabaseContext : DbContext
+    public class PostgreSqlDatabaseContext : DbContext
     {
-        public PostgreSQLDatabaseContext()
+        public PostgreSqlDatabaseContext()
         {
 
         }
-        public PostgreSQLDatabaseContext(DbContextOptions<PostgreSQLDatabaseContext> options) : base(options)
+        public PostgreSqlDatabaseContext(DbContextOptions<PostgreSqlDatabaseContext> options) : base(options)
         {
         }
 

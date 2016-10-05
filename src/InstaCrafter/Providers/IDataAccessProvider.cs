@@ -9,9 +9,9 @@ namespace InstaCrafter
     public interface IDataAccessProvider
     {
         void AddPost(InstaPost post);
-        void UpdatePost(long postId, InstaPost post);
-        void DeletePost(long postId);
-        InstaPost GetPost(long postId);
+        void UpdatePost(int postId, InstaPost post);
+        void DeletePost(int postId);
+        InstaPost GetPost(int postId);
         List<InstaPost> GetPosts();
     }
 }
