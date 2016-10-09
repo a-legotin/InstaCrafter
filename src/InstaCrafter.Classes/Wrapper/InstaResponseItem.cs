@@ -8,7 +8,6 @@ namespace InstaCrafter.Classes.Wrapper
     public class InstaResponseItem
     {
         public string Code { get; set; }
-
         public InstagramLocation Location { get; set; }
 
         public string Link { get; set; }

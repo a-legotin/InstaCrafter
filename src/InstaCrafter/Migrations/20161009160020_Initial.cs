@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace InstaCrafter.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,14 +12,15 @@ namespace InstaCrafter.Migrations
                 name: "InstaPosts",
                 columns: table => new
                 {
-                    PostId = table.Column<long>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGeneratedOnAdd", true),
                     UpdatedTimestamp = table.Column<DateTime>(nullable: false),
-                    Url = table.Column<string>(nullable: true)
+                    Url = table.Column<string>(nullable: true),
+                    UserId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_InstaPosts", x => x.PostId);
+                    table.PrimaryKey("PK_InstaPosts", x => x.Id);
                 });
         }
 

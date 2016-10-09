@@ -21,7 +21,7 @@ namespace InstaCrafter
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<InstaPost>().HasKey(m => m.PostId);
+            builder.Entity<InstaPost>().HasKey(m => m.Id);
             builder.Entity<InstaPost>().Property<DateTime>("UpdatedTimestamp");
             base.OnModelCreating(builder);
         }

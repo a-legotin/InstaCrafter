@@ -8,10 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace InstaCrafter.Controllers
 {
     [Route("api/[controller]")]
-    public class PostsController : Controller
+    public class PostController : Controller
     {
-        private readonly IDataAccessProvider _dataAccessProvider;
-        public PostsController(IDataAccessProvider dataAccessProvider)
+        private readonly IDataAccessProvider<InstaPost> _dataAccessProvider;
+        public PostController(IDataAccessProvider<InstaPost> dataAccessProvider)
         {
             _dataAccessProvider = dataAccessProvider;
         }
@@ -19,31 +19,31 @@ namespace InstaCrafter.Controllers
         [HttpGet]
         public IEnumerable<InstaPost> Get()
         {
-            return _dataAccessProvider.GetPosts();
+            return _dataAccessProvider.GetItems();
         }
 
         [HttpGet("{id}")]
         public InstaPost Get(int id)
         {
-            return _dataAccessProvider.GetPost(id);
+            return _dataAccessProvider.Get(id);
         }
 
         [HttpPost]
         public void Post([FromBody]InstaPost post)
         {
-            _dataAccessProvider.AddPost(post);
+            _dataAccessProvider.Add(post);
         }
 
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]InstaPost post)
         {
-            _dataAccessProvider.UpdatePost(id, post);
+            _dataAccessProvider.Update(id, post);
         }
 
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _dataAccessProvider.DeletePost(id);
+            _dataAccessProvider.Delete(id);
         }
     }
 }

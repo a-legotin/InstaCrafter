@@ -7,6 +7,7 @@ namespace InstaCrafter.Core.Interfaces
 {
     interface IObjectConverter<T, TT>
     {
-        T Convert(TT source);
+        TT SourceObject { get; set; }
+        T Convert();
     }
 }

@@ -5,6 +5,6 @@ namespace InstaCrafter.Core
 {
     public interface ICrafter<T>
     {
-        List<T> Craft();
+        T Craft();
     }
 }

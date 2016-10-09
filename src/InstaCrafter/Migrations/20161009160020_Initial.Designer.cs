@@ -8,9 +8,10 @@ using InstaCrafter;
 namespace InstaCrafter.Migrations
 {
     [DbContext(typeof(PostgreSqlDatabaseContext))]
-    partial class PostgreSqlDatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20161009160020_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431");
@@ -19,14 +20,6 @@ namespace InstaCrafter.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<bool>("CanViewComment");
-
-                    b.Property<string>("Code");
-
-                    b.Property<DateTime>("CreatedTime");
-
-                    b.Property<string>("Link");
 
                     b.Property<DateTime>("UpdatedTimestamp");
 

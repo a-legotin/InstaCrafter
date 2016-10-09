@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
+using InstaCrafter.Models;
 
 namespace InstaCrafter
 {
@@ -40,7 +41,7 @@ namespace InstaCrafter
                 )
             );
 
-            services.AddScoped<IDataAccessProvider, DataAccessPostgreSqlProvider>();
+            services.AddScoped<IDataAccessProvider<InstaPost>, DataAccessPostgreSqlProvider>();
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 

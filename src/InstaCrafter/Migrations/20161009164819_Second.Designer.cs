@@ -8,8 +8,8 @@ using InstaCrafter;
 namespace InstaCrafter.Migrations
 {
     [DbContext(typeof(PostgreSqlDatabaseContext))]
-    [Migration("20161004162448_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20161009164819_Second")]
+    partial class Second
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -18,14 +18,24 @@ namespace InstaCrafter.Migrations
 
             modelBuilder.Entity("InstaCrafter.Models.InstaPost", b =>
                 {
-                    b.Property<long>("PostId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("CanViewComment");
+
+                    b.Property<string>("Code");
+
+                    b.Property<DateTime>("CreatedTime");
+
+                    b.Property<string>("Link");
 
                     b.Property<DateTime>("UpdatedTimestamp");
 
                     b.Property<string>("Url");
 
-                    b.HasKey("PostId");
+                    b.Property<int>("UserId");
+
+                    b.HasKey("Id");
 
                     b.ToTable("InstaPosts");
                 });

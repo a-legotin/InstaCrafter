@@ -6,12 +6,12 @@ using InstaCrafter.Models;
 
 namespace InstaCrafter
 {
-    public interface IDataAccessProvider
+    public interface IDataAccessProvider<T>
     {
-        void AddPost(InstaPost post);
-        void UpdatePost(int postId, InstaPost post);
-        void DeletePost(int postId);
-        InstaPost GetPost(int postId);
-        List<InstaPost> GetPosts();
+        void Add(T item);
+        void Update(int id, T item);
+        void Delete(int id);
+        T Get(int id);
+        List<T> GetItems();
     }
 }
