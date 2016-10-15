@@ -22,10 +22,10 @@ namespace InstaCrafter.Controllers
             return _dataAccessProvider.GetItems();
         }
 
-        [HttpGet("{id}")]
-        public InstaPost Get(int id)
+        [HttpGet("{code}")]
+        public InstaPost Get(string code)
         {
-            return _dataAccessProvider.Get(id);
+            return _dataAccessProvider.Get(code);
         }
 
         [HttpPost]
@@ -37,6 +37,7 @@ namespace InstaCrafter.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]InstaPost post)
         {
+            if (id < 0) return;
             _dataAccessProvider.Update(id, post);
         }
 

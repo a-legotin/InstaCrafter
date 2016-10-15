@@ -11,7 +11,7 @@ namespace InstaCrafter.Core
     {
         internal static ICrafter<InstaPostList> GetCrafter()
         {
-            return new InstaPostsCrafter(@"https://www.instagram.com/alexandr_le/media/");
+            return new InstaPostsCrafter(@"https://www.instagram.com/alexandr_le/", new System.Threading.CancellationToken());
         }
     }
 }

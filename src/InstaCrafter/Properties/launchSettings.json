@@ -11,7 +11,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/posts",
+      "launchUrl": "api/post",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -19,7 +19,7 @@
     "InstaCrafter": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:5000/api/posts",
+      "launchUrl": "http://localhost:5000/api/post",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

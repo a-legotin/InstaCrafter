@@ -15,5 +15,13 @@ namespace InstaCrafter.Classes.Database
 
         public string FullName { get; set; }
 
+        public long InstaIdentifier { get; set; }
+        public static InstaUser Empty
+        {
+            get
+            {
+                return new InstaUser() { FullName = string.Empty, Id = 0, UserName = string.Empty };
+            }
+        }
     }
 }

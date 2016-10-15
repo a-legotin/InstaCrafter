@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using InstaCrafter.Classes.Database;
 using InstaCrafter.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,11 +19,17 @@ namespace InstaCrafter
         }
 
         public DbSet<InstaPost> InstaPosts { get; set; }
+        public DbSet<InstaUser> InstaUsers { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<InstaPost>().HasKey(m => m.Id);
             builder.Entity<InstaPost>().Property<DateTime>("UpdatedTimestamp");
+
+            builder.Entity<InstaUser>().HasKey(m => m.Id);
+            builder.Entity<InstaUser>().Property<DateTime>("UpdatedTimestamp");
+
             base.OnModelCreating(builder);
         }
 
@@ -30,6 +37,7 @@ namespace InstaCrafter
         {
             ChangeTracker.DetectChanges();
             updateUpdatedProperty<InstaPost>();
+            updateUpdatedProperty<InstaUser>();
             return base.SaveChanges();
         }
 
