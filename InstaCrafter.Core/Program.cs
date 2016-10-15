@@ -14,12 +14,23 @@ namespace InstaCrafter.Core
 
         public static void Main(string[] args)
         {
-            var worker = new Thread(new ThreadStart(() =>
+
+            var userList = new string[] { "alexandr_le" };
+
+            var crafters = new List<Thread>();
+            foreach (var user in userList)
             {
-                var crafter = CrafterBuilder.GetCrafter();
-                crafter.Craft();
-            }));
-            worker.Start();
+                crafters.Add(new Thread(new ThreadStart(() =>
+                {
+                    var crafter = CrafterBuilder.GetPostsCrafter(user);
+                    crafter.Craft();
+                })));
+            }
+
+            foreach (var crafter in crafters)
+            {
+                crafter.Start();
+            }
 
             var host = new WebHostBuilder()
                 .UseKestrel()

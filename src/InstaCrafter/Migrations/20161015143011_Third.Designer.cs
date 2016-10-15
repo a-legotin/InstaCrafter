@@ -8,9 +8,10 @@ using InstaCrafter;
 namespace InstaCrafter.Migrations
 {
     [DbContext(typeof(PostgreSqlDatabaseContext))]
-    partial class PostgreSqlDatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20161015143011_Third")]
+    partial class Third
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431");
