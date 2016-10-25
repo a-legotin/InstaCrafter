@@ -15,7 +15,7 @@ namespace Tests
             try
             {
                 string html;
-                var url = @"https://www.instagram.com/alexandr_le/media/";
+                var url = @"https://www.instagram.com/kogefan/media/";
 
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri(url);

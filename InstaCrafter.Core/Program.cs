@@ -15,7 +15,7 @@ namespace InstaCrafter.Core
         public static void Main(string[] args)
         {
 
-            var userList = new string[] { "alexandr_le" };
+            var userList = new string[] { "kogefan" };
 
             var crafters = new List<Thread>();
             foreach (var user in userList)
