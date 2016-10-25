@@ -10,7 +10,7 @@ script:
   - dotnet --info
   # Run dotnet new 
   - dotnet restore
-  - cd src/InstaCrafter.Datastore
+  - cd src/InstaCrafter.DataStore
   - dotnet --verbose build
   - dotnet publish
   - cd ../InstaCrafter.Core
