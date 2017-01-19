@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using InstaCrafter;
 
-namespace InstaCrafter.Migrations
+namespace InstaCrafter.DataStore.Migrations
 {
     [DbContext(typeof(PostgreSqlDatabaseContext))]
     partial class PostgreSqlDatabaseContextModelSnapshot : ModelSnapshot
@@ -13,7 +13,8 @@ namespace InstaCrafter.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "1.0.0-rtm-21431");
+                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
+                .HasAnnotation("ProductVersion", "1.1.0-rtm-22752");
 
             modelBuilder.Entity("InstaCrafter.Classes.Database.InstaUser", b =>
                 {

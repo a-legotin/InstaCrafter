@@ -5,16 +5,37 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using InstaCrafter;
 
-namespace InstaCrafter.Migrations
+namespace InstaCrafter.DataStore.Migrations
 {
     [DbContext(typeof(PostgreSqlDatabaseContext))]
-    [Migration("20161009164819_Second")]
-    partial class Second
+    [Migration("20170119181332_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "1.0.0-rtm-21431");
+                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
+                .HasAnnotation("ProductVersion", "1.1.0-rtm-22752");
+
+            modelBuilder.Entity("InstaCrafter.Classes.Database.InstaUser", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("FullName");
+
+                    b.Property<long>("InstaIdentifier");
+
+                    b.Property<string>("ProfilePicture");
+
+                    b.Property<DateTime>("UpdatedTimestamp");
+
+                    b.Property<string>("UserName");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("InstaUsers");
+                });
 
             modelBuilder.Entity("InstaCrafter.Models.InstaPost", b =>
                 {

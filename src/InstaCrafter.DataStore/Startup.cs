@@ -37,7 +37,7 @@ namespace InstaCrafter
             services.AddDbContext<PostgreSqlDatabaseContext>(options =>
                 options.UseNpgsql(
                     sqlConnectionString,
-                    b => b.MigrationsAssembly("InstaCrafter")
+                    b => b.MigrationsAssembly("InstaCrafter.DataStore")
                 )
             );
 
