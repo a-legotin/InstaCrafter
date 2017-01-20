@@ -1,5 +1,6 @@
 ﻿using Akka.Actor;
 using InstaCrafter.Core.CrafterJobs;
+using InstagramApi.API;
 
 namespace InstaCrafter.Core.Actors
 {
@@ -9,7 +10,8 @@ namespace InstaCrafter.Core.Actors
         {
             Receive<CraftUserJob>(cratJob =>
             {
-                
+                var instaApi = new InstaApiBuilder().Build();
+                var userMedia = instaApi.GetUserPostsByUsername(cratJob.Username, cratJob.PagesCount);
             });
         }
     }
