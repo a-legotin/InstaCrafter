@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using InstaCrafter.Classes.Database;
-using InstaCrafter.Models;
+using InstaCrafter.Providers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InstaCrafter.Controllers
@@ -12,6 +9,7 @@ namespace InstaCrafter.Controllers
     public class UserController : Controller
     {
         private readonly IDataAccessProvider<InstaUser> _dataAccessProvider;
+
         public UserController(IDataAccessProvider<InstaUser> dataAccessProvider)
         {
             _dataAccessProvider = dataAccessProvider;
@@ -30,13 +28,13 @@ namespace InstaCrafter.Controllers
         }
 
         [HttpPost]
-        public void Post([FromBody]InstaUser post)
+        public void Post([FromBody] InstaUser post)
         {
             _dataAccessProvider.Add(post);
         }
 
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]InstaUser post)
+        public void Put(int id, [FromBody] InstaUser post)
         {
             _dataAccessProvider.Update(id, post);
         }

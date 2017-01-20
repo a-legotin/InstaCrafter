@@ -1,7 +1,6 @@
 ﻿using System;
 using InstaCrafter.Classes.Helpers;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
 namespace InstaCrafter.Classes.Wrapper
 {
@@ -16,8 +15,8 @@ namespace InstaCrafter.Classes.Wrapper
 
         [JsonProperty("created_time")]
         public string CreatedTime { get; set; }
-        [JsonProperty("can_view_comments")]
 
+        [JsonProperty("can_view_comments")]
         public bool CanViewComment { get; set; }
 
         public string Id { get; set; }

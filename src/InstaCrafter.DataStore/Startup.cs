@@ -1,14 +1,13 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using System.IO;
+﻿using InstaCrafter.Classes.Database;
+using InstaCrafter.Providers;
+using InstaCrafter.Providers.PostgreSQL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json.Serialization;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using InstaCrafter.Models;
 
 namespace InstaCrafter
 {
@@ -18,9 +17,9 @@ namespace InstaCrafter
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-                .AddJsonFile("config.json", optional: true, reloadOnChange: true);
+                .AddJsonFile("appsettings.json", true, true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true)
+                .AddJsonFile("config.json", true, true);
 
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
@@ -46,10 +45,9 @@ namespace InstaCrafter
             services.AddApplicationInsightsTelemetry(Configuration);
 
 
-            services.AddMvc().AddJsonOptions(options =>
-            {
-                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            });
+            services.AddMvc()
+                .AddJsonOptions(
+                    options => { options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore; });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline

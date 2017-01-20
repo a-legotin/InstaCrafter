@@ -1,11 +1,11 @@
 ﻿using System;
+using InstaCrafter.Providers.PostgreSQL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using InstaCrafter;
 
-namespace InstaCrafter.DataStore.Migrations
+namespace InstaCrafter.Migrations
 {
     [DbContext(typeof(PostgreSqlDatabaseContext))]
     [Migration("20170119181332_Initial")]

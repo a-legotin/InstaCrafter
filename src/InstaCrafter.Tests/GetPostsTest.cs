@@ -2,10 +2,11 @@
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using InstaCrafter.Classes.Wrapper;
 using Newtonsoft.Json;
 using Xunit;
 
-namespace Tests
+namespace InstaCrafter.Tests
 {
     public class GetPostsTest
     {
@@ -17,7 +18,7 @@ namespace Tests
                 string html;
                 var url = @"https://www.instagram.com/kogefan/media/";
 
-                HttpClient client = new HttpClient();
+                var client = new HttpClient();
                 client.BaseAddress = new Uri(url);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -27,7 +28,7 @@ namespace Tests
                     html = reader.ReadToEnd();
                 }
 
-                var instaresponse = JsonConvert.DeserializeObject<InstaCrafter.Classes.Wrapper.InstaResponse>(html);
+                var instaresponse = JsonConvert.DeserializeObject<InstaResponse>(html);
                 Assert.NotNull(instaresponse);
                 Assert.Equal(20, instaresponse.Items.Count);
             }
@@ -36,6 +37,5 @@ namespace Tests
             }
             Assert.True(true);
         }
-
     }
 }

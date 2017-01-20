@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace InstaCrafter.Models
+namespace InstaCrafter.Classes.Database
 {
     public class InstaPost
     {
@@ -31,10 +28,7 @@ namespace InstaCrafter.Models
 
         public static InstaPost Empty
         {
-            get
-            {
-                return new InstaPost(0, 0, string.Empty);
-            }
+            get { return new InstaPost(0, 0, string.Empty); }
         }
 
         public bool Equals(InstaPost post)
@@ -44,7 +38,5 @@ namespace InstaCrafter.Models
             if (UserId != post.UserId) return false;
             return true;
         }
-
     }
-
 }

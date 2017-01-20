@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using InstaCrafter.Classes.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -37,11 +36,13 @@ namespace InstaCrafter.Providers.PostgreSQL
             _context.InstaUsers.Remove(entity);
             _context.SaveChanges();
         }
+
         public InstaUser Get(string name)
         {
             if (!_context.InstaUsers.Any(t => t.UserName == name)) return InstaUser.Empty;
             return _context.InstaUsers.First(t => t.UserName == name);
         }
+
         public InstaUser Get(int postId)
         {
             return _context.InstaUsers.First(t => t.Id == postId);
@@ -49,7 +50,8 @@ namespace InstaCrafter.Providers.PostgreSQL
 
         public List<InstaUser> GetItems()
         {
-            return _context.InstaUsers.OrderByDescending(item => EF.Property<DateTime>(item, "UpdatedTimestamp")).ToList();
+            return
+                _context.InstaUsers.OrderByDescending(item => EF.Property<DateTime>(item, "UpdatedTimestamp")).ToList();
         }
 
         public bool Exist(InstaUser item)

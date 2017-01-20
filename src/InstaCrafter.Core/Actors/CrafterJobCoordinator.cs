@@ -1,39 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Akka.Actor;
-using Akka.Event;
+﻿using Akka.Actor;
 using InstaCrafter.Core.CrafterJobs;
-using Newtonsoft.Json;
 
 namespace InstaCrafter.Core.Actors
 {
     public class OrderProcessorActor : UntypedActor
     {
-        #region Message types
-        public class QueueJob
-        {
-            public void Queue(ICraftJob job)
-            {
-                Job = job;
-            }
-
-            public ICraftJob Job { get; private set; }
-        }
-
-        public class DeQueueJob
-        {
-            public void DeQueue(ICraftJob job)
-            {
-                Job = job;
-            }
-
-            public ICraftJob Job { get; private set; }
-        }
-
-        #endregion
-
         protected override void OnReceive(object message)
         {
             if (message is CraftMediaJob)
@@ -46,7 +17,30 @@ namespace InstaCrafter.Core.Actors
                 var msg = message as CraftUserJob;
                 Context.ActorOf(Props.Create(() => new CraftUsersActor()));
             }
-
         }
+
+        #region Message types
+
+        public class QueueJob
+        {
+            public ICraftJob Job { get; private set; }
+
+            public void Queue(ICraftJob job)
+            {
+                Job = job;
+            }
+        }
+
+        public class DeQueueJob
+        {
+            public ICraftJob Job { get; private set; }
+
+            public void DeQueue(ICraftJob job)
+            {
+                Job = job;
+            }
+        }
+
+        #endregion
     }
 }

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using InstaCrafter.Models;
+﻿using System.Collections.Generic;
 
-namespace InstaCrafter
+namespace InstaCrafter.Providers
 {
     public interface IDataAccessProvider<T>
     {

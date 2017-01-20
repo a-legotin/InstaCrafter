@@ -1,17 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace InstaCrafter.DataStore.Migrations
+namespace InstaCrafter.Migrations
 {
     public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "InstaUsers",
-                columns: table => new
+                "InstaUsers",
+                table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
@@ -21,14 +20,11 @@ namespace InstaCrafter.DataStore.Migrations
                     UpdatedTimestamp = table.Column<DateTime>(nullable: false),
                     UserName = table.Column<string>(nullable: true)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_InstaUsers", x => x.Id);
-                });
+                constraints: table => { table.PrimaryKey("PK_InstaUsers", x => x.Id); });
 
             migrationBuilder.CreateTable(
-                name: "InstaPosts",
-                columns: table => new
+                "InstaPosts",
+                table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
@@ -40,19 +36,16 @@ namespace InstaCrafter.DataStore.Migrations
                     Url = table.Column<string>(nullable: true),
                     UserId = table.Column<int>(nullable: false)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_InstaPosts", x => x.Id);
-                });
+                constraints: table => { table.PrimaryKey("PK_InstaPosts", x => x.Id); });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "InstaUsers");
+                "InstaUsers");
 
             migrationBuilder.DropTable(
-                name: "InstaPosts");
+                "InstaPosts");
         }
     }
 }

@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using InstaCrafter.Classes.Database;
-using InstaCrafter.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace InstaCrafter
+namespace InstaCrafter.Providers.PostgreSQL
 {
     public class PostgreSqlDatabaseContext : DbContext
     {
         public PostgreSqlDatabaseContext()
         {
-
         }
+
         public PostgreSqlDatabaseContext(DbContextOptions<PostgreSqlDatabaseContext> options) : base(options)
         {
         }
@@ -48,9 +45,7 @@ namespace InstaCrafter
                     .Where(e => e.State == EntityState.Added || e.State == EntityState.Modified);
 
             foreach (var entry in modifiedSourceInfo)
-            {
                 entry.Property("UpdatedTimestamp").CurrentValue = DateTime.UtcNow;
-            }
         }
     }
 }
