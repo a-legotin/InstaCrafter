@@ -38,7 +38,7 @@ namespace InstaCrafter
             {
                 Datacenter = "dc1",
                 Node = "AL-LAPTOP",
-                Address = "192.168.1.150",
+                Address = "localhost",
                 Service = service
             };
 

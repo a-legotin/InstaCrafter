@@ -13,9 +13,6 @@ script:
   - cd src/InstaCrafter.DataStore
   - dotnet --verbose build
   - dotnet publish
-  - cd ../InstaCrafter.Core
-  - dotnet --verbose build
-  - dotnet publish
   - cd ../InstaCrafter.Classes
   - dotnet --verbose build
   - cd ../InstaCrafter.Tests

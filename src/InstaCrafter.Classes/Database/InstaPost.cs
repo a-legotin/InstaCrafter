@@ -4,7 +4,7 @@ namespace InstaCrafter.Classes.Database
 {
     public class InstaPost
     {
-        public InstaPost(int id, int userId, string code)
+        public InstaPost(int id, long userId, string code)
         {
             Id = id;
             UserId = userId;
@@ -16,8 +16,7 @@ namespace InstaCrafter.Classes.Database
         }
 
         public int Id { get; set; }
-        public int UserId { get; set; }
-        public string Url { get; set; }
+        public long UserId { get; set; }
         public string Code { get; set; }
 
         public string Link { get; set; }
@@ -26,10 +25,7 @@ namespace InstaCrafter.Classes.Database
 
         public DateTime CreatedTime { get; set; }
 
-        public static InstaPost Empty
-        {
-            get { return new InstaPost(0, 0, string.Empty); }
-        }
+        public static InstaPost Empty => new InstaPost(0, 0, string.Empty);
 
         public bool Equals(InstaPost post)
         {

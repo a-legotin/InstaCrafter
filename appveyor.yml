@@ -10,9 +10,6 @@ build_script:
   - ps: cd src/InstaCrafter.DataStore
   - ps: dotnet --verbose build
   - ps: dotnet publish
-  - ps: cd ../InstaCrafter.Core
-  - ps: dotnet --verbose build
-  - ps: dotnet publish
   - ps: cd ../InstaCrafter.Classes
   - ps: dotnet --verbose build
   - ps: cd ../InstaCrafter.Tests

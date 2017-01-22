@@ -8,9 +8,10 @@ using InstaCrafter.Providers.PostgreSQL;
 namespace InstaCrafter.Migrations
 {
     [DbContext(typeof(PostgreSqlDatabaseContext))]
-    partial class PostgreSqlDatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20170122163936_First")]
+    partial class First
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)

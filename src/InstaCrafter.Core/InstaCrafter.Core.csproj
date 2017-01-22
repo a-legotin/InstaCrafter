@@ -51,6 +51,10 @@
       <HintPath>..\..\packages\Consul.0.7.0.3\lib\net45\Consul.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="InstaCrafter.Classes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\InstaCrafter.Classes\bin\Debug\net452\InstaCrafter.Classes.dll</HintPath>
+    </Reference>
     <Reference Include="InstagramAPI-Web, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\InstagramAPI-Web.1.2.1\lib\net452\InstagramAPI-Web.dll</HintPath>
       <Private>True</Private>
@@ -120,6 +124,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="InstaWorkerSimple.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
