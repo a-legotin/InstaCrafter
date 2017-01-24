@@ -3,20 +3,20 @@ using InstaCrafter.Core.CrafterJobs;
 
 namespace InstaCrafter.Core.Actors
 {
-    public class OrderProcessorActor : UntypedActor
+    public class CrafterJobCoordinator : UntypedActor
     {
         protected override void OnReceive(object message)
         {
+            IActorRef craftActor = null;
             if (message is CraftMediaJob)
             {
-                var msg = message as CraftMediaJob;
-                Context.ActorOf(Props.Create(() => new CraftUserMediaActor()));
+                craftActor = Context.ActorOf(Props.Create(() => new CraftUserMediaActor()));
             }
             if (message is CraftUserJob)
             {
-                var msg = message as CraftUserJob;
-                Context.ActorOf(Props.Create(() => new CraftUsersActor()));
+                craftActor = Context.ActorOf(Props.Create(() => new CraftUsersActor()));
             }
+           craftActor.Tell(message);
         }
 
         #region Message types

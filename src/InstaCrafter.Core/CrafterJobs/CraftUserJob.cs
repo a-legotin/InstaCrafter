@@ -2,7 +2,7 @@
 {
     public class CraftUserJob : ICraftJob
     {
-        public string Username { get; set; }
         public int PagesCount { get; set; }
+        public string UserName { get; set; }
     }
 }

@@ -114,7 +114,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActorNames.cs" />
     <Compile Include="Actors\CrafterJobCoordinator.cs" />
+    <Compile Include="Actors\CraftJobInitiator.cs" />
     <Compile Include="Actors\CraftUserMediaActor.cs" />
     <Compile Include="Actors\CraftUsersActor.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />

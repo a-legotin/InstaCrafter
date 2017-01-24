@@ -2,5 +2,6 @@
 {
     public interface ICraftJob
     {
+        string UserName { get; set; }
     }
 }

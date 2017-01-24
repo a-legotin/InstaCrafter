@@ -2,5 +2,6 @@
 {
     public class CraftMediaJob : ICraftJob
     {
+        public string UserName { get; set; }
     }
 }

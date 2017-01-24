@@ -11,7 +11,7 @@ namespace InstaCrafter.Core.Actors
             Receive<CraftUserJob>(cratJob =>
             {
                 var instaApi = new InstaApiBuilder().Build();
-                var userMedia = instaApi.GetUserPostsByUsername(cratJob.Username, cratJob.PagesCount);
+                var userMedia = instaApi.GetUserPostsByUsername(cratJob.UserName, cratJob.PagesCount);
             });
         }
     }
