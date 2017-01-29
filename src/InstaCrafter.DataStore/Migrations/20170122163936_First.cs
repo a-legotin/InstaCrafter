@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace InstaCrafter.Migrations
 {
@@ -9,25 +7,25 @@ namespace InstaCrafter.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "Url",
-                table: "InstaPosts");
+                "Url",
+                "InstaPosts");
 
             migrationBuilder.AlterColumn<long>(
-                name: "UserId",
-                table: "InstaPosts",
+                "UserId",
+                "InstaPosts",
                 nullable: false);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<int>(
-                name: "UserId",
-                table: "InstaPosts",
+                "UserId",
+                "InstaPosts",
                 nullable: false);
 
             migrationBuilder.AddColumn<string>(
-                name: "Url",
-                table: "InstaPosts",
+                "Url",
+                "InstaPosts",
                 nullable: true);
         }
     }
