@@ -40,7 +40,7 @@
     "preserveCompilationContext": true
   },
   "runtimes": {
-    "win10-x64": {}
+    "win81-x64": {}
   },
   "runtimeOptions": {
     "configProperties": {
