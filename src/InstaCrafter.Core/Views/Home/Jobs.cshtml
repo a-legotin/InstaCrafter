@@ -4,21 +4,43 @@
 <div class="container">
     <div class="row">
 
-            <h2>New jobs</h2>
-                    <div class="input-group">
-                        <span class="input-group-addon">New craft job</span>
-                        <input id="username" type="text" class="form-control" placeholder="Username">
-                        <span class="input-group-btn">
-                            <button id="sendJob" class="btn btn-secondary" type="button">Create job</button>
-                        </span>
-                    </div>
-            </div>
+        <h2>New jobs</h2>
+        <div class="input-group">
+            <span class="input-group-addon">New craft job</span>
+            <input id="username" type="text" class="form-control" placeholder="Username">
+            <span class="input-group-btn">
+                <button id="sendJob" class="btn btn-secondary" type="button">Create job</button>
+            </span>
+        </div>
+    </div>
     <div class="row">
         <h2>Running jobs</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Username</th>
+                <th>Job kind</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody id="running"></tbody>
+        </table>
     </div>
-<div class="row">
-    <h2>Completed jobs</h2>
-</div>
+    <div class="row">
+        <h2>Completed jobs</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Username</th>
+                <th>Job kind</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody id="completed"></tbody>
+        </table>
+    </div>
 </div>
 @section scripts {
     <!--Script references. -->
@@ -29,11 +51,81 @@
     <script src="/signalr/hubs"></script>
     <!--SignalR script to update the chat page and send messages.-->
     <script>
-        var craftJobHub = $.connection.craftJobHub;
-        $.connection.hub.start().done(function () {
-            $('#sendJob').click(function () {
-                craftJobHub.server.sendCraftMediaJob($('#username').val());
+        $(function() {
+
+            var craftJobHub = $.connection.craftJobHub;
+            $.connection.hub.start({ transport: 'webSockets' }).done(function() {
+                console.debug('Connected to job hub...');
+                $('#sendJob').click(function() {
+                    craftJobHub.server.sendCraftMediaJob($('#username').val());
+                });
             });
+            var hub = $.connection.craftJobProgressHub;
+            $.connection.hub.start().done(function() {
+                console.debug('Connected to reporter hub...');
+            });
+            hub.client.reportJobProgress = function(job) {
+                if (job.Progress.Status === 1) {
+                    var jobId = 0;
+                    $('#running tr').each(function() {
+                        var td = $(this).find("td[name=id]");
+                        jobId = parseInt(td.html());
+                        if (jobId === job.Id) {
+                            td.parent("tr:first").remove();
+                        }
+                    });
+                    $("#completed").append('<tr>\
+                    <td name="id">' +
+                        job.Id +
+                        '</td>' +
+                        '<td>' +
+                        job.UserName +
+                        '</td>\
+                    <td>' +
+                        getJobKind(job.Kind) +
+                        '</td>\
+                    <td>' +
+                        getJobStatus(job.Progress.Status) +
+                        '</td>\
+                            </tr>');
+                }
+            };
+            hub.client.reportJobStarted = function(job) {
+                $("#running").append('<tr>\
+                    <td name="id">' +
+                    job.Id +
+                    '</td>' +
+                    '<td>' +
+                    job.UserName +
+                    '</td>\
+                    <td>' +
+                    getJobKind(job.Kind) +
+                    '</td>\
+                    <td>' +
+                    getJobStatus(job.Progress.Status) +
+                    '</td>\
+                </tr>');
+            };
+            var jobKinds = {
+                0: "Media",
+                1: "Users"
+            };
+
+            function getJobKind(key) {
+                return jobKinds[key];
+            }
+
+            var jobStatuses = {
+                0: "Running",
+                1: "Completed",
+                2: "Failed"
+            };
+
+            function getJobStatus(key) {
+                return jobStatuses[key];
+            }
         });
+
+
     </script>
 }

@@ -1,10 +1,7 @@
-﻿using System.Threading;
-using System.Web;
+﻿using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using InstaCrafter.Core.Hubs;
-using Microsoft.AspNet.SignalR;
 
 namespace InstaCrafter.Core
 {

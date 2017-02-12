@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using InstaCrafter.Core.Crafters;
-using InstaCrafter.Core.Hubs;
+﻿using InstaCrafter.Core.Hubs;
 using Microsoft.AspNet.SignalR;
 
 namespace InstaCrafter.Core.Loggers
@@ -12,7 +7,7 @@ namespace InstaCrafter.Core.Loggers
     {
         public ICraftLogger GetWebLogger()
         {
-            var hub = GlobalHost.ConnectionManager.GetHubContext<CrafterLogsHub>();
+            var hub = GlobalHost.ConnectionManager.GetHubContext<CraftLogsHub>();
             return new WebLogger(hub);
         }
     }

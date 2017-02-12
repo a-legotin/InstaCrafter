@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using InstaCrafter.Core.CrafterJobs;
+﻿using InstaCrafter.Core.CrafterJobs;
 using InstaCrafter.Core.Loggers;
+using Microsoft.AspNet.SignalR;
 
 namespace InstaCrafter.Core.Crafters
 {
@@ -13,6 +9,8 @@ namespace InstaCrafter.Core.Crafters
         int Id { get; }
         ICraftLogger Logger { get; }
         ICraftJob Job { get; set; }
+        IHubContext ProgressReporter { get; }
+
         string Name { get; }
 
         void Craft();

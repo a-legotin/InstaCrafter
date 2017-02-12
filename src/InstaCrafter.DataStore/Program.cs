@@ -10,8 +10,8 @@ namespace InstaCrafter
     {
         public static void Main(string[] args)
         {
-            var discoveryRegisterSucceed = RegisterService();
-            if (!discoveryRegisterSucceed.Result) return;
+            //var discoveryRegisterSucceed = RegisterService();
+            //if (!discoveryRegisterSucceed.Result) return;
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())

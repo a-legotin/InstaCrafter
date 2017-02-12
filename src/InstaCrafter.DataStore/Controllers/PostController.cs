@@ -37,6 +37,7 @@ namespace InstaCrafter.Controllers
         public void Put(int id, [FromBody] InstaPost post)
         {
             if (id < 0) return;
+            post.Id = id;
             _dataAccessProvider.Update(id, post);
         }
 

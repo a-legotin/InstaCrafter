@@ -2,7 +2,7 @@
 
 namespace InstaCrafter.Core.Hubs
 {
-    public class CrafterLogsHub : Hub
+    public class CraftLogsHub : Hub
     {
         public void Notify(string message)
         {
