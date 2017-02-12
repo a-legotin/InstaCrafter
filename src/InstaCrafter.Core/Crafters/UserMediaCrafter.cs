@@ -61,13 +61,11 @@ namespace InstaCrafter.Core.Crafters
 
                     var response = client.GetAsync($"api/post/{media.Code}");
                     if (response.Result.StatusCode != HttpStatusCode.OK)
-                    {
                         Logger.WriteLog(LogMessageType.Error, $"#{Id}: unable to check post : {media.Code}, skipping");
-                    }
 
                     var postJson = response.Result.Content.ReadAsStringAsync().Result;
                     var post = JsonConvert.DeserializeObject<InstaPost>(postJson);
-     
+
                     var mediaContent = new StringContent(JsonConvert.SerializeObject(media), Encoding.UTF8,
                         "application/json");
                     if (post.Equals(InstaPost.Empty))
@@ -81,7 +79,7 @@ namespace InstaCrafter.Core.Crafters
                     {
                         Logger.WriteLog(LogMessageType.Info,
                             $"#{Id}: updating post : {media.Code} for user {craftUserMediaJob.UserName}");
-                        
+
                         client.PutAsync($"api/post/{post.Id}", mediaContent);
                     }
                 }

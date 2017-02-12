@@ -167,6 +167,7 @@
     <Compile Include="Loggers\LoggersRepository.cs" />
     <Compile Include="Loggers\LogMessageType.cs" />
     <Compile Include="Loggers\WebLogger.cs" />
+    <Compile Include="Models\Posts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
