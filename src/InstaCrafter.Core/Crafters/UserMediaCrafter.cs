@@ -53,7 +53,7 @@ namespace InstaCrafter.Core.Crafters
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 foreach (var media in userMedia)
                 {
-                    Thread.Sleep(200);
+                    Thread.Sleep(2000);
                     Job.Progress.Current++;
                     Logger.WriteLog(LogMessageType.Info,
                         $"#{Id}:processing post: {media.Code} for user {craftUserMediaJob.UserName}");
@@ -61,7 +61,7 @@ namespace InstaCrafter.Core.Crafters
 
                     var response = client.GetAsync($"api/post/{media.Code}");
                     if (response.Result.StatusCode != HttpStatusCode.OK)
-                        Logger.WriteLog(LogMessageType.Error, $"#{Id}: unable to check post : {media.Code}, skipping");
+                        Logger.WriteLog(LogMessageType.Error, $"{Name} #{Id}: unable to check post : {media.Code}, skipping");
 
                     var postJson = response.Result.Content.ReadAsStringAsync().Result;
                     var post = JsonConvert.DeserializeObject<InstaPost>(postJson);
