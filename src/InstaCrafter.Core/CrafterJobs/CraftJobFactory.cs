@@ -2,25 +2,25 @@
 
 namespace InstaCrafter.Core.CrafterJobs
 {
-    public class CraftJobRepository
+    public class CraftJobFactory
     {
-        private static CraftJobRepository _instance;
+        private static CraftJobFactory _instance;
         private static readonly object JobLock = new object();
 
-        private CraftJobRepository()
+        private CraftJobFactory()
         {
             Jobs = new List<ICraftJob>();
         }
 
         public List<ICraftJob> Jobs { get; }
 
-        public static CraftJobRepository Instance
+        public static CraftJobFactory Instance
         {
             get
             {
                 lock (JobLock)
                 {
-                    return _instance ?? (_instance = new CraftJobRepository());
+                    return _instance ?? (_instance = new CraftJobFactory());
                 }
             }
         }

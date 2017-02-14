@@ -3,7 +3,7 @@ using Microsoft.AspNet.SignalR;
 
 namespace InstaCrafter.Core.Loggers
 {
-    public class LoggersRepository
+    public class LoggersFactory
     {
         public ICraftLogger GetWebLogger()
         {

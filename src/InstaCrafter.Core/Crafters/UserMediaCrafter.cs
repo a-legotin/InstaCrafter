@@ -25,7 +25,7 @@ namespace InstaCrafter.Core.Crafters
 
         public void Craft()
         {
-            Logger.WriteLog(LogMessageType.Info, $"#{Id}: new job found! Id: {Job}");
+            Logger.WriteLog(LogMessageType.Info, $"#{Id}: new job found! Id: {Job.Id}");
             var craftUserMediaJob = Job as CraftMediaJob;
             if (craftUserMediaJob == null)
             {
@@ -48,7 +48,7 @@ namespace InstaCrafter.Core.Crafters
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://localhost:5000/");
-
+                client.Timeout = TimeSpan.FromSeconds(30);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 foreach (var media in userMedia)
@@ -61,7 +61,11 @@ namespace InstaCrafter.Core.Crafters
 
                     var response = client.GetAsync($"api/post/{media.Code}");
                     if (response.Result.StatusCode != HttpStatusCode.OK)
+                    {
                         Logger.WriteLog(LogMessageType.Error, $"{Name} #{Id}: unable to check post : {media.Code}, skipping");
+                        continue;
+
+                    }
 
                     var postJson = response.Result.Content.ReadAsStringAsync().Result;
                     var post = JsonConvert.DeserializeObject<InstaPost>(postJson);

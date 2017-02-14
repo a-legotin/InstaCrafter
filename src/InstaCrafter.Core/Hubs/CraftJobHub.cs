@@ -10,9 +10,9 @@ namespace InstaCrafter.Core.Hubs
     {
         public void SendCraftMediaJob(string username)
         {
-            var job = CraftJobRepository.Instance.GetNewMediaJob(username);
-            var logger = new LoggersRepository().GetWebLogger();
-            var crafter = CrafterRepository.Instance.GetUserMediaCrafter(job, logger);
+            var job = CraftJobFactory.Instance.GetNewMediaJob(username);
+            var logger = new LoggersFactory().GetWebLogger();
+            var crafter = CrafterFactory.Instance.GetUserMediaCrafter(job, logger);
             Task.Run(() => { crafter.Craft(); });
         }
     }
