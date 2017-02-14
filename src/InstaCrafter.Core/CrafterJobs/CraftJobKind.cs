@@ -3,6 +3,7 @@
     public enum CraftJobKind
     {
         Media = 0,
-        Users = 1
+        Users = 1,
+        Tags = 2
     }
 }

@@ -161,8 +161,10 @@
     <Compile Include="CrafterJobs\CraftJobFactory.cs" />
     <Compile Include="CrafterJobs\CraftJobStatus.cs" />
     <Compile Include="CrafterJobs\CraftMediaJob.cs" />
+    <Compile Include="CrafterJobs\CraftTagsJob.cs" />
     <Compile Include="CrafterJobs\CraftUserJob.cs" />
     <Compile Include="CrafterJobs\ICraftJob.cs" />
+    <Compile Include="CrafterJobs\IUserNamedCraftJob.cs" />
     <Compile Include="Crafters\CrafterFactory.cs" />
     <Compile Include="Crafters\ICrafter.cs" />
     <Compile Include="Crafters\UserMediaCrafter.cs" />

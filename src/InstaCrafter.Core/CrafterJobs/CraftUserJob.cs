@@ -1,6 +1,6 @@
 ﻿namespace InstaCrafter.Core.CrafterJobs
 {
-    public class CraftUserJob : ICraftJob
+    public class CraftUserJob : ICraftJob, IUserNamedCraftJob
     {
         public CraftUserJob(int id)
         {
