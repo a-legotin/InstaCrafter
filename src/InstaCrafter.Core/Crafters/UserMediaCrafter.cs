@@ -68,11 +68,11 @@ namespace InstaCrafter.Core.Crafters
                     }
 
                     var postJson = response.Result.Content.ReadAsStringAsync().Result;
-                    var post = JsonConvert.DeserializeObject<InstaPost>(postJson);
+                    var post = JsonConvert.DeserializeObject<InstaPostDb>(postJson);
 
                     var mediaContent = new StringContent(JsonConvert.SerializeObject(media), Encoding.UTF8,
                         "application/json");
-                    if (post.Equals(InstaPost.Empty))
+                    if (post.Equals(InstaPostDb.Empty))
                     {
                         Logger.WriteLog(LogMessageType.Info,
                             $"#{Id}: inserting post : {media.Code} for user {craftUserMediaJob.UserName}");

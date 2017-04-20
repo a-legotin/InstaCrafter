@@ -1,0 +1,3 @@
+﻿namespace InstaCrafter.Core.Hubs
+{
+}

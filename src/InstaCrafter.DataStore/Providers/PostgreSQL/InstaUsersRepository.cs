@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace InstaCrafter.Providers.PostgreSQL
 {
-    public class InstaUsersRepository : IDataAccessProvider<InstaUser>
+    public class InstaUsersRepository : IDataAccessProvider<InstaUserDb>
     {
         private readonly PostgreSqlDatabaseContext _context;
         private readonly ILogger _logger;
@@ -18,13 +18,13 @@ namespace InstaCrafter.Providers.PostgreSQL
             _logger = loggerFactory.CreateLogger("InstaUsersRepository");
         }
 
-        public void Add(InstaUser item)
+        public void Add(InstaUserDb item)
         {
             _context.InstaUsers.Add(item);
             _context.SaveChanges();
         }
 
-        public void Update(int postId, InstaUser item)
+        public void Update(int postId, InstaUserDb item)
         {
             _context.InstaUsers.Update(item);
             _context.SaveChanges();
@@ -37,24 +37,24 @@ namespace InstaCrafter.Providers.PostgreSQL
             _context.SaveChanges();
         }
 
-        public InstaUser Get(string name)
+        public InstaUserDb Get(string name)
         {
-            if (!_context.InstaUsers.Any(t => t.UserName == name)) return InstaUser.Empty;
+            if (!_context.InstaUsers.Any(t => t.UserName == name)) return InstaUserDb.Empty;
             return _context.InstaUsers.First(t => t.UserName == name);
         }
 
-        public InstaUser Get(int postId)
+        public InstaUserDb Get(int postId)
         {
             return _context.InstaUsers.First(t => t.Id == postId);
         }
 
-        public List<InstaUser> GetItems()
+        public List<InstaUserDb> GetItems()
         {
             return
                 _context.InstaUsers.OrderByDescending(item => EF.Property<DateTime>(item, "UpdatedTimestamp")).ToList();
         }
 
-        public bool Exist(InstaUser item)
+        public bool Exist(InstaUserDb item)
         {
             return _context.InstaUsers.Any(user => user.InstaIdentifier == item.InstaIdentifier);
         }

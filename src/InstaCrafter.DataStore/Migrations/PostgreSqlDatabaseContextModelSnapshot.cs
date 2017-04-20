@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using InstaCrafter.Providers.PostgreSQL;
 
-namespace InstaCrafter.Migrations
+namespace InstaCrafter.DataStore.Migrations
 {
     [DbContext(typeof(PostgreSqlDatabaseContext))]
     partial class PostgreSqlDatabaseContextModelSnapshot : ModelSnapshot
@@ -16,36 +16,44 @@ namespace InstaCrafter.Migrations
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
                 .HasAnnotation("ProductVersion", "1.1.0-rtm-22752");
 
-            modelBuilder.Entity("InstaCrafter.Classes.Database.InstaPost", b =>
+            modelBuilder.Entity("InstaCrafter.Classes.Database.InstaPostDb", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<bool>("CanViewComment");
 
                     b.Property<string>("Code");
 
                     b.Property<DateTime>("CreatedTime");
 
+                    b.Property<string>("ImageLink");
+
                     b.Property<string>("Link");
 
                     b.Property<DateTime>("UpdatedTimestamp");
 
-                    b.Property<long>("UserId");
+                    b.Property<int?>("UserId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("InstaPosts");
                 });
 
-            modelBuilder.Entity("InstaCrafter.Classes.Database.InstaUser", b =>
+            modelBuilder.Entity("InstaCrafter.Classes.Database.InstaUserDb", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("ExternalUrl");
+
+                    b.Property<int>("FollowedByCount");
+
                     b.Property<string>("FullName");
 
                     b.Property<long>("InstaIdentifier");
+
+                    b.Property<string>("IsVerified");
 
                     b.Property<string>("ProfilePicture");
 
@@ -56,6 +64,13 @@ namespace InstaCrafter.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("InstaUsers");
+                });
+
+            modelBuilder.Entity("InstaCrafter.Classes.Database.InstaPostDb", b =>
+                {
+                    b.HasOne("InstaCrafter.Classes.Database.InstaUserDb", "User")
+                        .WithMany("PostCollection")
+                        .HasForeignKey("UserId");
                 });
         }
     }

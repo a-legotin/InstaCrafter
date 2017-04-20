@@ -7,12 +7,12 @@ namespace InstaCrafter.Core.Hubs
     {
         public void ReportJobStarted(ICraftJob job)
         {
-            Clients.All.reportJobStarted(job);
+            Clients.Caller.reportJobStarted(job);
         }
 
         public void ReportJobProgress(ICraftJob job)
         {
-            Clients.All.reportJobProgress(job);
+            Clients.Caller.reportJobProgress(job);
         }
     }
 }

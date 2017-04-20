@@ -1,15 +1,15 @@
 ﻿using System;
-using InstaCrafter.Providers.PostgreSQL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using InstaCrafter.Providers.PostgreSQL;
 
-namespace InstaCrafter.Migrations
+namespace InstaCrafter.DataStore.Migrations
 {
     [DbContext(typeof(PostgreSqlDatabaseContext))]
-    [Migration("20170119181332_Initial")]
-    partial class Initial
+    [Migration("20170420121856_NewGeneration")]
+    partial class NewGeneration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,31 +34,62 @@ namespace InstaCrafter.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("InstaUsers");
+                    b.ToTable("InstaUser");
                 });
 
-            modelBuilder.Entity("InstaCrafter.Models.InstaPost", b =>
+            modelBuilder.Entity("InstaCrafter.Models.InstaPostDb", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<bool>("CanViewComment");
 
                     b.Property<string>("Code");
 
                     b.Property<DateTime>("CreatedTime");
 
+                    b.Property<string>("ImageLink");
+
                     b.Property<string>("Link");
 
                     b.Property<DateTime>("UpdatedTimestamp");
 
-                    b.Property<string>("Url");
-
-                    b.Property<int>("UserId");
+                    b.Property<int?>("UserId1");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("UserId1");
+
                     b.ToTable("InstaPosts");
+                });
+
+            modelBuilder.Entity("InstaCrafter.Models.InstaUserDb", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ExternalUrl");
+
+                    b.Property<int>("FollowedByCount");
+
+                    b.Property<string>("FullName");
+
+                    b.Property<long>("InstaIdentifier");
+
+                    b.Property<string>("IsVerified");
+
+                    b.Property<string>("ProfilePicture");
+
+                    b.Property<string>("UserName");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("InstaUsers");
+                });
+
+            modelBuilder.Entity("InstaCrafter.Models.InstaPostDb", b =>
+                {
+                    b.HasOne("InstaCrafter.Models.InstaUserDb", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId1");
                 });
         }
     }

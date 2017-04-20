@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Web.Mvc;
 using InstaCrafter.Classes.Database;
 using InstaCrafter.Core.Models;
+using InstagramApi.Classes;
 using Newtonsoft.Json;
 
 namespace InstaCrafter.Core.Controllers
@@ -14,7 +16,7 @@ namespace InstaCrafter.Core.Controllers
         // GET: Posts
         public ActionResult Posts()
         {
-            InstaPostList posts;
+            List<InstaPost> posts;
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://localhost:5000/");
@@ -26,7 +28,7 @@ namespace InstaCrafter.Core.Controllers
                     throw new Exception("Unable to get posts from data store");
 
                 var postsJson = response.Result.Content.ReadAsStringAsync().Result;
-                posts = JsonConvert.DeserializeObject<InstaPostList>(postsJson);
+                posts = JsonConvert.DeserializeObject<List<InstaPost>>(postsJson);
             }
             var model = new Posts {List = posts};
             return View(model);

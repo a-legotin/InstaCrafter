@@ -40,7 +40,9 @@ namespace InstaCrafter
                 )
             );
 
-            services.AddScoped<IDataAccessProvider<InstaPost>, InstaPostsRepository>();
+            services.AddScoped<IDataAccessProvider<InstaPostDb>, InstaPostsRepository>();
+            services.AddScoped<IDataAccessProvider<InstaUserDb>, InstaUsersRepository>();
+
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 

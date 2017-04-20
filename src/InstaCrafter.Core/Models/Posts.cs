@@ -1,9 +1,11 @@
-﻿using InstaCrafter.Classes.Database;
+﻿using System.Collections.Generic;
+using InstaCrafter.Classes.Database;
+using InstagramApi.Classes;
 
 namespace InstaCrafter.Core.Models
 {
     public class Posts
     {
-        public InstaPostList List { get; set; }
+        public List<InstaPost> List { get; set; }
     }
 }

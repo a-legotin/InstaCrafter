@@ -21,8 +21,8 @@
     <script>
         $(function() {
             var hub = $.connection.craftLogsHub;
-            $.connection.hub.start({ transport: 'longPolling' }).done(function() {
-                console.debug('Connected to PlanHub...');
+            $.connection.hub.start({ transport: 'serverSentEvents' }).done(function () {
+                console.debug('Connected to CraftLogsHub...');
             });
             hub.client.notify = function(message) {
                 console.debug(message);

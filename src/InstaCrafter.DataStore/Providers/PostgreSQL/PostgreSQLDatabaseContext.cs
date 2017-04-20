@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using InstaCrafter.Classes.Database;
+using InstagramApi.Classes;
 using Microsoft.EntityFrameworkCore;
 
 namespace InstaCrafter.Providers.PostgreSQL
@@ -15,17 +16,17 @@ namespace InstaCrafter.Providers.PostgreSQL
         {
         }
 
-        public DbSet<InstaPost> InstaPosts { get; set; }
-        public DbSet<InstaUser> InstaUsers { get; set; }
+        public DbSet<InstaPostDb> InstaPosts { get; set; }
+        public DbSet<InstaUserDb> InstaUsers { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<InstaPost>().HasKey(m => m.Id);
-            builder.Entity<InstaPost>().Property<DateTime>("UpdatedTimestamp");
+            builder.Entity<InstaPostDb>().HasKey(m => m.Id);
+            builder.Entity<InstaPostDb>().Property<DateTime>("UpdatedTimestamp");
 
-            builder.Entity<InstaUser>().HasKey(m => m.Id);
-            builder.Entity<InstaUser>().Property<DateTime>("UpdatedTimestamp");
+            builder.Entity<InstaUserDb>().HasKey(m => m.Id);
+            builder.Entity<InstaUserDb>().Property<DateTime>("UpdatedTimestamp");
 
             base.OnModelCreating(builder);
         }
@@ -33,8 +34,8 @@ namespace InstaCrafter.Providers.PostgreSQL
         public override int SaveChanges()
         {
             ChangeTracker.DetectChanges();
-            updateUpdatedProperty<InstaPost>();
-            updateUpdatedProperty<InstaUser>();
+            updateUpdatedProperty<InstaPostDb>();
+            updateUpdatedProperty<InstaUserDb>();
             return base.SaveChanges();
         }
 

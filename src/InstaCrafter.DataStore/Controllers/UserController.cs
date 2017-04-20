@@ -8,33 +8,33 @@ namespace InstaCrafter.Controllers
     [Route("api/[controller]")]
     public class UserController : Controller
     {
-        private readonly IDataAccessProvider<InstaUser> _dataAccessProvider;
+        private readonly IDataAccessProvider<InstaUserDb> _dataAccessProvider;
 
-        public UserController(IDataAccessProvider<InstaUser> dataAccessProvider)
+        public UserController(IDataAccessProvider<InstaUserDb> dataAccessProvider)
         {
             _dataAccessProvider = dataAccessProvider;
         }
 
         [HttpGet]
-        public IEnumerable<InstaUser> Get()
+        public IEnumerable<InstaUserDb> Get()
         {
             return _dataAccessProvider.GetItems();
         }
 
         [HttpGet("{id}")]
-        public InstaUser Get(int id)
+        public InstaUserDb Get(string name)
         {
-            return _dataAccessProvider.Get(id);
+            return _dataAccessProvider.Get(name);
         }
 
         [HttpPost]
-        public void Post([FromBody] InstaUser post)
+        public void Post([FromBody] InstaUserDb post)
         {
             _dataAccessProvider.Add(post);
         }
 
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] InstaUser post)
+        public void Put(int id, [FromBody] InstaUserDb post)
         {
             _dataAccessProvider.Update(id, post);
         }
