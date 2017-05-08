@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using InstaCrafter.Classes.Database;
-using InstaCrafter.Providers;
+using InstaCrafter.DataStore.Providers;
 using Microsoft.AspNetCore.Mvc;
 
-namespace InstaCrafter.Controllers
+namespace InstaCrafter.DataStore.Controllers
 {
     [Route("api/[controller]")]
     public class UserController : Controller
@@ -21,7 +21,7 @@ namespace InstaCrafter.Controllers
             return _dataAccessProvider.GetItems();
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{name}")]
         public InstaUserDb Get(string name)
         {
             return _dataAccessProvider.Get(name);

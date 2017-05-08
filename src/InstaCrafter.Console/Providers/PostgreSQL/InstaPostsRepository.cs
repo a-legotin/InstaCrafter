@@ -5,14 +5,14 @@ using InstaCrafter.Classes.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace InstaCrafter.DataStore.Providers.PostgreSQL
+namespace InstaCrafter.Console.Providers.PostgreSQL
 {
     public class InstaPostsRepository : IDataAccessProvider<InstaMediaDb>
     {
-        private readonly PostgreSqlDatabaseContext _context;
+        private readonly InstaCrafterPgsqlContext _context;
         private readonly ILogger _logger;
 
-        public InstaPostsRepository(PostgreSqlDatabaseContext context, ILoggerFactory loggerFactory)
+        public InstaPostsRepository(InstaCrafterPgsqlContext context, ILoggerFactory loggerFactory)
         {
             _context = context;
             _logger = loggerFactory.CreateLogger("InstaPostsRepository");
@@ -20,19 +20,21 @@ namespace InstaCrafter.DataStore.Providers.PostgreSQL
 
         public void Add(InstaMediaDb item)
         {
+            if (Exist(item)) return;
             _context.InstaPosts.Add(item);
             _context.SaveChanges();
         }
 
-        public void Update(int postId, InstaMediaDb item)
+        public void Update(int userId, InstaMediaDb item)
         {
+            if (!Exist(item)) return;
             _context.InstaPosts.Update(item);
             _context.SaveChanges();
         }
 
-        public void Delete(int postId)
+        public void Delete(int userId)
         {
-            var entity = _context.InstaPosts.First(t => t.Id == postId);
+            var entity = _context.InstaPosts.First(t => t.Id == userId);
             _context.InstaPosts.Remove(entity);
             _context.SaveChanges();
         }
@@ -57,7 +59,7 @@ namespace InstaCrafter.DataStore.Providers.PostgreSQL
 
         public bool Exist(InstaMediaDb item)
         {
-            return _context.InstaPosts.Any(post => post.Code == item.Code);
+            return _context.InstaPosts.Any(post => post.Pk == item.Pk);
         }
     }
 }

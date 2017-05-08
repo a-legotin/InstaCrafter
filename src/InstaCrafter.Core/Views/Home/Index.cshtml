@@ -21,7 +21,7 @@
     <script>
         $(function() {
             var hub = $.connection.craftLogsHub;
-            $.connection.hub.start({ transport: 'serverSentEvents' }).done(function () {
+            $.connection.hub.start({ transport: 'serverSentEvents' }).done(function() {
                 console.debug('Connected to CraftLogsHub...');
             });
             hub.client.notify = function(message) {

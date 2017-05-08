@@ -1,6 +1,6 @@
 ﻿using InstaCrafter.Classes.Database;
-using InstaCrafter.Providers;
-using InstaCrafter.Providers.PostgreSQL;
+using InstaCrafter.DataStore.Providers;
+using InstaCrafter.DataStore.Providers.PostgreSQL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace InstaCrafter
+namespace InstaCrafter.DataStore
 {
     public class Startup
     {
@@ -40,7 +40,7 @@ namespace InstaCrafter
                 )
             );
 
-            services.AddScoped<IDataAccessProvider<InstaPostDb>, InstaPostsRepository>();
+            services.AddScoped<IDataAccessProvider<InstaMediaDb>, InstaPostsRepository>();
             services.AddScoped<IDataAccessProvider<InstaUserDb>, InstaUsersRepository>();
 
             // Add framework services.

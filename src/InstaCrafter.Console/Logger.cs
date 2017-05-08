@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using InstagramApi.Logger;
+﻿using InstaSharper.Logger;
 
 namespace InstaCrafter.Console
 {
     public class Logger : ILogger
     {
+        public void Write(string logMessage)
+        {
+        }
     }
 }

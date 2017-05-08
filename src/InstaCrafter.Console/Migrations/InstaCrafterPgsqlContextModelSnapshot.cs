@@ -1,21 +1,20 @@
 ﻿using System;
-using InstaCrafter.DataStore.Providers.PostgreSQL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using InstaCrafter.Console.Providers.PostgreSQL;
 
-namespace InstaCrafter.DataStore.Migrations
+namespace InstaCrafter.Console.Migrations
 {
-    [DbContext(typeof(PostgreSqlDatabaseContext))]
-    [Migration("20170420130116_NewGeneration_1")]
-    partial class NewGeneration_1
+    [DbContext(typeof(InstaCrafterPgsqlContext))]
+    partial class InstaCrafterPgsqlContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
-                .HasAnnotation("ProductVersion", "1.1.0-rtm-22752");
+                .HasAnnotation("ProductVersion", "1.1.1");
 
             modelBuilder.Entity("InstaCrafter.Classes.Database.InstaMediaDb", b =>
                 {
@@ -29,6 +28,8 @@ namespace InstaCrafter.DataStore.Migrations
                     b.Property<string>("ImageLink");
 
                     b.Property<string>("Link");
+
+                    b.Property<long>("Pk");
 
                     b.Property<DateTime>("UpdatedTimestamp");
 
@@ -52,9 +53,9 @@ namespace InstaCrafter.DataStore.Migrations
 
                     b.Property<string>("FullName");
 
-                    b.Property<long>("InstaIdentifier");
-
                     b.Property<string>("IsVerified");
+
+                    b.Property<long>("Pk");
 
                     b.Property<string>("ProfilePicture");
 

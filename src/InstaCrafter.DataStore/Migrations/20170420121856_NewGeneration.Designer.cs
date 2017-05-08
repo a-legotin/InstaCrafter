@@ -1,9 +1,9 @@
 ﻿using System;
+using InstaCrafter.DataStore.Providers.PostgreSQL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using InstaCrafter.Providers.PostgreSQL;
 
 namespace InstaCrafter.DataStore.Migrations
 {
@@ -37,7 +37,7 @@ namespace InstaCrafter.DataStore.Migrations
                     b.ToTable("InstaUser");
                 });
 
-            modelBuilder.Entity("InstaCrafter.Models.InstaPostDb", b =>
+            modelBuilder.Entity("InstaCrafter.Models.InstaMediaDb", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -85,7 +85,7 @@ namespace InstaCrafter.DataStore.Migrations
                     b.ToTable("InstaUsers");
                 });
 
-            modelBuilder.Entity("InstaCrafter.Models.InstaPostDb", b =>
+            modelBuilder.Entity("InstaCrafter.Models.InstaMediaDb", b =>
                 {
                     b.HasOne("InstaCrafter.Models.InstaUserDb", "User")
                         .WithMany()

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using InstaCrafter.Classes.Database;
 using InstagramApi.Classes;
 
 namespace InstaCrafter.Core.Models

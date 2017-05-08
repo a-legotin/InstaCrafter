@@ -5,14 +5,14 @@ using InstaCrafter.Classes.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace InstaCrafter.DataStore.Providers.PostgreSQL
+namespace InstaCrafter.Console.Providers.PostgreSQL
 {
     public class InstaUsersRepository : IDataAccessProvider<InstaUserDb>
     {
-        private readonly PostgreSqlDatabaseContext _context;
+        private readonly InstaCrafterPgsqlContext _context;
         private readonly ILogger _logger;
 
-        public InstaUsersRepository(PostgreSqlDatabaseContext context, ILoggerFactory loggerFactory)
+        public InstaUsersRepository(InstaCrafterPgsqlContext context, ILoggerFactory loggerFactory)
         {
             _context = context;
             _logger = loggerFactory.CreateLogger("InstaUsersRepository");
@@ -20,19 +20,22 @@ namespace InstaCrafter.DataStore.Providers.PostgreSQL
 
         public void Add(InstaUserDb item)
         {
+            if (Exist(item)) return;
             _context.InstaUsers.Add(item);
             _context.SaveChanges();
         }
 
-        public void Update(int postId, InstaUserDb item)
+        public void Update(int userId, InstaUserDb item)
         {
+            if (!Exist(item)) return;
             _context.InstaUsers.Update(item);
             _context.SaveChanges();
         }
 
-        public void Delete(int postId)
+        public void Delete(int userId)
         {
-            var entity = _context.InstaUsers.First(t => t.Id == postId);
+            var entity = _context.InstaUsers.First(t => t.Id == userId);
+            if (entity == null) return;
             _context.InstaUsers.Remove(entity);
             _context.SaveChanges();
         }

@@ -62,17 +62,17 @@ namespace InstaCrafter.Core.Crafters
                     var response = client.GetAsync($"api/post/{media.Code}");
                     if (response.Result.StatusCode != HttpStatusCode.OK)
                     {
-                        Logger.WriteLog(LogMessageType.Error, $"{Name} #{Id}: unable to check post : {media.Code}, skipping");
+                        Logger.WriteLog(LogMessageType.Error,
+                            $"{Name} #{Id}: unable to check post : {media.Code}, skipping");
                         continue;
-
                     }
 
                     var postJson = response.Result.Content.ReadAsStringAsync().Result;
-                    var post = JsonConvert.DeserializeObject<InstaPostDb>(postJson);
+                    var post = JsonConvert.DeserializeObject<InstaMediaDb>(postJson);
 
                     var mediaContent = new StringContent(JsonConvert.SerializeObject(media), Encoding.UTF8,
                         "application/json");
-                    if (post.Equals(InstaPostDb.Empty))
+                    if (post.Equals(InstaMediaDb.Empty))
                     {
                         Logger.WriteLog(LogMessageType.Info,
                             $"#{Id}: inserting post : {media.Code} for user {craftUserMediaJob.UserName}");

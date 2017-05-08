@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace InstaCrafter.DataStore.Migrations
 {
@@ -10,33 +9,33 @@ namespace InstaCrafter.DataStore.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_InstaPosts_InstaUsers_UserId1",
-                table: "InstaPosts");
+                "FK_InstaPosts_InstaUsers_UserId1",
+                "InstaPosts");
 
             migrationBuilder.DropTable(
-                name: "InstaUser");
+                "InstaUser");
 
             migrationBuilder.RenameColumn(
-                name: "UserId1",
-                table: "InstaPosts",
-                newName: "UserId");
+                "UserId1",
+                "InstaPosts",
+                "UserId");
 
             migrationBuilder.RenameIndex(
-                name: "IX_InstaPosts_UserId1",
+                "IX_InstaPosts_UserId1",
                 table: "InstaPosts",
                 newName: "IX_InstaPosts_UserId");
 
             migrationBuilder.AddColumn<DateTime>(
-                name: "UpdatedTimestamp",
-                table: "InstaUsers",
+                "UpdatedTimestamp",
+                "InstaUsers",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
             migrationBuilder.AddForeignKey(
-                name: "FK_InstaPosts_InstaUsers_UserId",
-                table: "InstaPosts",
-                column: "UserId",
-                principalTable: "InstaUsers",
+                "FK_InstaPosts_InstaUsers_UserId",
+                "InstaPosts",
+                "UserId",
+                "InstaUsers",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
         }
@@ -44,26 +43,26 @@ namespace InstaCrafter.DataStore.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_InstaPosts_InstaUsers_UserId",
-                table: "InstaPosts");
+                "FK_InstaPosts_InstaUsers_UserId",
+                "InstaPosts");
 
             migrationBuilder.DropColumn(
-                name: "UpdatedTimestamp",
-                table: "InstaUsers");
+                "UpdatedTimestamp",
+                "InstaUsers");
 
             migrationBuilder.RenameColumn(
-                name: "UserId",
-                table: "InstaPosts",
-                newName: "UserId1");
+                "UserId",
+                "InstaPosts",
+                "UserId1");
 
             migrationBuilder.RenameIndex(
-                name: "IX_InstaPosts_UserId",
+                "IX_InstaPosts_UserId",
                 table: "InstaPosts",
                 newName: "IX_InstaPosts_UserId1");
 
             migrationBuilder.CreateTable(
-                name: "InstaUser",
-                columns: table => new
+                "InstaUser",
+                table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
@@ -73,16 +72,13 @@ namespace InstaCrafter.DataStore.Migrations
                     UpdatedTimestamp = table.Column<DateTime>(nullable: false),
                     UserName = table.Column<string>(nullable: true)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_InstaUser", x => x.Id);
-                });
+                constraints: table => { table.PrimaryKey("PK_InstaUser", x => x.Id); });
 
             migrationBuilder.AddForeignKey(
-                name: "FK_InstaPosts_InstaUsers_UserId1",
-                table: "InstaPosts",
-                column: "UserId1",
-                principalTable: "InstaUsers",
+                "FK_InstaPosts_InstaUsers_UserId1",
+                "InstaPosts",
+                "UserId1",
+                "InstaUsers",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
         }

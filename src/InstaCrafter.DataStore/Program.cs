@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Consul;
 using Microsoft.AspNetCore.Hosting;
 
-namespace InstaCrafter
+namespace InstaCrafter.DataStore
 {
     public class Program
     {

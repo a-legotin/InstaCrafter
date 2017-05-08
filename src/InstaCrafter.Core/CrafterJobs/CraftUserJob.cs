@@ -9,9 +9,9 @@
         }
 
         public int PagesCount { get; set; }
-        public string UserName { get; set; }
         public CraftJobKind Kind { get; }
         public int Id { get; }
         public CraftJobProgress Progress { get; set; } = new CraftJobProgress();
+        public string UserName { get; set; }
     }
 }

@@ -1,44 +1,44 @@
 ﻿using System.Collections.Generic;
 using InstaCrafter.Classes.Database;
-using InstaCrafter.Providers;
+using InstaCrafter.DataStore.Providers;
 using Microsoft.AspNetCore.Mvc;
 
-namespace InstaCrafter.Controllers
+namespace InstaCrafter.DataStore.Controllers
 {
     [Route("api/[controller]")]
     public class PostController : Controller
     {
-        private readonly IDataAccessProvider<InstaPostDb> _dataAccessProvider;
+        private readonly IDataAccessProvider<InstaMediaDb> _dataAccessProvider;
 
-        public PostController(IDataAccessProvider<InstaPostDb> dataAccessProvider)
+        public PostController(IDataAccessProvider<InstaMediaDb> dataAccessProvider)
         {
             _dataAccessProvider = dataAccessProvider;
         }
 
         [HttpGet]
-        public IEnumerable<InstaPostDb> Get()
+        public IEnumerable<InstaMediaDb> Get()
         {
             return _dataAccessProvider.GetItems();
         }
 
         [HttpGet("{code}")]
-        public InstaPostDb Get(string code)
+        public InstaMediaDb Get(string code)
         {
             return _dataAccessProvider.Get(code);
         }
 
         [HttpPost]
-        public void Post([FromBody] InstaPostDb post)
+        public void Post([FromBody] InstaMediaDb media)
         {
-            _dataAccessProvider.Add(post);
+            _dataAccessProvider.Add(media);
         }
 
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] InstaPostDb post)
+        public void Put(int id, [FromBody] InstaMediaDb media)
         {
             if (id < 0) return;
-            post.Id = id;
-            _dataAccessProvider.Update(id, post);
+            media.Id = id;
+            _dataAccessProvider.Update(id, media);
         }
 
         [HttpDelete("{id}")]

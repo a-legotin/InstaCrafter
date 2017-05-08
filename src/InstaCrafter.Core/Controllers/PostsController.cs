@@ -4,7 +4,6 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Web.Mvc;
-using InstaCrafter.Classes.Database;
 using InstaCrafter.Core.Models;
 using InstagramApi.Classes;
 using Newtonsoft.Json;

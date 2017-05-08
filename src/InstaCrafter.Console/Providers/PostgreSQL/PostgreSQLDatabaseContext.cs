@@ -3,11 +3,15 @@ using System.Linq;
 using InstaCrafter.Classes.Database;
 using Microsoft.EntityFrameworkCore;
 
-namespace InstaCrafter.DataStore.Providers.PostgreSQL
+namespace InstaCrafter.Console.Providers.PostgreSQL
 {
-    public class PostgreSqlDatabaseContext : DbContext
+    public class InstaCrafterPgsqlContext : DbContext
     {
-        public PostgreSqlDatabaseContext(DbContextOptions<PostgreSqlDatabaseContext> options) : base(options)
+        public InstaCrafterPgsqlContext(DbContextOptions<InstaCrafterPgsqlContext> options) : base(options)
+        {
+        }
+
+        public InstaCrafterPgsqlContext()
         {
         }
 
@@ -17,10 +21,13 @@ namespace InstaCrafter.DataStore.Providers.PostgreSQL
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<InstaMediaDb>().HasKey(m => m.Id);
+            builder.Entity<InstaMediaDb>()
+                .HasKey(media => new {media.Id});
+
             builder.Entity<InstaMediaDb>().Property<DateTime>("UpdatedTimestamp");
 
-            builder.Entity<InstaUserDb>().HasKey(m => m.Id);
+            builder.Entity<InstaUserDb>()
+                .HasKey(user => new {user.Id});
             builder.Entity<InstaUserDb>().Property<DateTime>("UpdatedTimestamp");
 
             base.OnModelCreating(builder);

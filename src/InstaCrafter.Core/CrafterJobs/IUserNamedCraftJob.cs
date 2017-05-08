@@ -1,6 +1,6 @@
 ﻿namespace InstaCrafter.Core.CrafterJobs
 {
-    interface IUserNamedCraftJob
+    internal interface IUserNamedCraftJob
     {
         string UserName { get; set; }
     }
