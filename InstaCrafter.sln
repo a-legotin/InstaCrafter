@@ -1,22 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B41D2650-1488-47E8-82F9-2375AA2EC433}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BB115886-49A9-419C-8068-40D5E4201CF4}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "InstaCrafter.Classes", "src\InstaCrafter.Classes\InstaCrafter.Classes.xproj", "{6DE6252D-DD72-4B41-AA19-88B8C03459DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstaCrafter.Classes", "src\InstaCrafter.Classes\InstaCrafter.Classes.csproj", "{6DE6252D-DD72-4B41-AA19-88B8C03459DD}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "InstaCrafter.Tests", "src\InstaCrafter.Tests\InstaCrafter.Tests.xproj", "{0A5F967D-6068-4FA5-B8A5-55C4C38F648F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstaCrafter.Tests", "src\InstaCrafter.Tests\InstaCrafter.Tests.csproj", "{0A5F967D-6068-4FA5-B8A5-55C4C38F648F}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "InstaCrafter.DataStore", "src\InstaCrafter.DataStore\InstaCrafter.DataStore.xproj", "{575B5AE7-5DC6-443F-8717-A44C8934797F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstaCrafter.DataStore", "src\InstaCrafter.DataStore\InstaCrafter.DataStore.csproj", "{575B5AE7-5DC6-443F-8717-A44C8934797F}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "InstaCrafter.Web", "src\InstaCrafter.Web\InstaCrafter.Web.xproj", "{3C364101-4F14-4FC6-9A10-5BE8771A7E82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstaCrafter.Web", "src\InstaCrafter.Web\InstaCrafter.Web.csproj", "{3C364101-4F14-4FC6-9A10-5BE8771A7E82}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.Core", "src\InstaCrafter.Core\InstaCrafter.Core.csproj", "{8D3850F2-76A7-4D33-91F5-AD8ADE42836D}"
 EndProject
@@ -56,5 +53,8 @@ Global
 		{575B5AE7-5DC6-443F-8717-A44C8934797F} = {B41D2650-1488-47E8-82F9-2375AA2EC433}
 		{3C364101-4F14-4FC6-9A10-5BE8771A7E82} = {B41D2650-1488-47E8-82F9-2375AA2EC433}
 		{8D3850F2-76A7-4D33-91F5-AD8ADE42836D} = {B41D2650-1488-47E8-82F9-2375AA2EC433}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C7D76D8-1F8E-41A1-93AC-D822B1F03484}
 	EndGlobalSection
 EndGlobal
