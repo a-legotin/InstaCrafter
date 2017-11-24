@@ -22,7 +22,7 @@ build_script:
   - ps: cd ../InstaCrafter.Classes
   - ps: dotnet build
   - ps: cd ../InstaCrafter.Web
-  - ps: npm install
+  - ps: npm install --no-optional
   - ps: dotnet build
   
 test: off 
