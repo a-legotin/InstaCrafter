@@ -8,7 +8,6 @@
     <PackageId>InstaCrafter.DataStore</PackageId>
     <RuntimeIdentifiers>win81-x64;win10-x64;ubuntu.14.04-x64;ubuntu.16.10-x64</RuntimeIdentifiers>
     <RuntimeFrameworkVersion>1.1.1</RuntimeFrameworkVersion>
-    <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;portable-net45+win8</PackageTargetFallback>
   </PropertyGroup>
 
   <ItemGroup>

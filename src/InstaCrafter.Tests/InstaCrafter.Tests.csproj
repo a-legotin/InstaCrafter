@@ -8,7 +8,6 @@
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
     <RuntimeIdentifiers>win81-x64;win10-x64;ubuntu.14.04-x64</RuntimeIdentifiers>
     <RuntimeFrameworkVersion>1.1.1</RuntimeFrameworkVersion>
-    <PackageTargetFallback>$(PackageTargetFallback);dotnet5.4;portable-net451+win8;win10-x64</PackageTargetFallback>
   </PropertyGroup>
 
   <ItemGroup>
