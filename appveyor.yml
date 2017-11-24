@@ -11,7 +11,7 @@ build_script:
   - ps: cd src/InstaCrafter.DataStore
   - ps: dotnet build
   - ps: cd ../InstaCrafter.Classes
-  - ps: dotnet --verbose build
+  - ps: dotnet build
   - ps: cd ../InstaCrafter.Web
   - ps: dotnet build
   
