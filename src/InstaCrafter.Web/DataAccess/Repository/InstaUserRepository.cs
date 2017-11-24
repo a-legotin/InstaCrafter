@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using InstaBackup.Models;
+using InstaCrafter.Web.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace InstaBackup.DataAccess.Repository
+namespace InstaCrafter.Web.DataAccess.Repository
 {
     public class InstaUserRepository : IRepository<InstaUser>
     {

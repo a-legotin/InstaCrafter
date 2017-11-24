@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using InstaBackup.Models;
 
-namespace InstaBackup.DataAccess.Repository
+namespace InstaCrafter.Web.DataAccess.Repository
 {
     public interface IRepository<T> where T : class
     {

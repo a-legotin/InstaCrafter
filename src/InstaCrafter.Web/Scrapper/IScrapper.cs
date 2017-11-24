@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace InstaBackup.Scrapper
+namespace InstaCrafter.Web.Scrapper
 {
     public interface IScrapper<T>
     {

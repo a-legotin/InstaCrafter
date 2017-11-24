@@ -1,13 +1,10 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using InstaBackup.DataAccess;
-using InstaBackup.DataAccess.Repository;
-using InstaBackup.Models;
+using InstaCrafter.Web.DataAccess;
+using InstaCrafter.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace InstaBackup.Controllers
+namespace InstaCrafter.Web.Controllers
 {
     [Route("api/[controller]")]
     public class SampleDataController : Controller

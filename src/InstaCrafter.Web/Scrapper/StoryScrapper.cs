@@ -1,10 +1,9 @@
 ﻿using System.Threading.Tasks;
-using AutoMapper;
-using InstaBackup.Mapper;
-using InstaBackup.Models;
+using InstaCrafter.Web.Mapper;
+using InstaCrafter.Web.Models;
 using InstaSharper.API;
 
-namespace InstaBackup.Scrapper
+namespace InstaCrafter.Web.Scrapper
 {
     public class StoryScrapper : IScrapper<InstaStory>
     {

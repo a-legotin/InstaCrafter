@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace InstaBackup.Models
+namespace InstaCrafter.Web.Models
 {
     public class InstaUser
     {

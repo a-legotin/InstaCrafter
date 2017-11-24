@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace InstaBackup
+namespace InstaCrafter.Web
 {
     public interface ITaskRunner
     {

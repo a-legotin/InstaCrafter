@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
-using InstaBackup.Models;
+using InstaCrafter.Web.Models;
 using InstaSharper.Classes.Models;
-using InstaUser = InstaSharper.Classes.Models.InstaUser;
 
-namespace InstaBackup.Mapper
+namespace InstaCrafter.Web.Mapper
 {
     public static class MapperInternal
     {

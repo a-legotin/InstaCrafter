@@ -4,19 +4,18 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using AutoMapper;
-using InstaBackup.DataAccess;
-using InstaBackup.Mapper;
-using InstaBackup.Models;
-using InstaBackup.Scrapper;
+using InstaCrafter.Web.DataAccess;
+using InstaCrafter.Web.Mapper;
+using InstaCrafter.Web.Models;
+using InstaCrafter.Web.Scrapper;
 using InstaSharper.API;
 using InstaSharper.API.Builder;
 using InstaSharper.Classes;
 using InstaSharper.Classes.Models;
 using InstaSharper.Logger;
-using InstaUser = InstaBackup.Models.InstaUser;
+using InstaUser = InstaCrafter.Web.Models.InstaUser;
 
-namespace InstaBackup
+namespace InstaCrafter.Web
 {
     public class TaskRunner : ITaskRunner
     {

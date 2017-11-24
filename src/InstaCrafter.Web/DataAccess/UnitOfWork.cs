@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
-using InstaBackup.DataAccess.Repository;
-using InstaBackup.Models;
+using InstaCrafter.Web.DataAccess.Repository;
+using InstaCrafter.Web.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace InstaBackup.DataAccess
+namespace InstaCrafter.Web.DataAccess
 {
     public class UnitOfWork : IUnitOfWork
     {

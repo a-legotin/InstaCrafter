@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
-namespace InstaBackup.DataAccess
+namespace InstaCrafter.Web.DataAccess
 {
     public class InstaContextFactory : IDesignTimeDbContextFactory<InstaPostgreSqlContext>
     {

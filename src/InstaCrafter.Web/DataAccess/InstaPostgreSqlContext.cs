@@ -1,10 +1,9 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using InstaBackup.Models;
+using InstaCrafter.Web.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace InstaBackup.DataAccess
+namespace InstaCrafter.Web.DataAccess
 {
     public class InstaPostgreSqlContext : DbContext
     {

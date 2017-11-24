@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace InstaBackup
+namespace InstaCrafter.Web
 {
     public class Program
     {

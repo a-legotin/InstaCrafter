@@ -1,7 +1,7 @@
-﻿using InstaBackup.DataAccess.Repository;
-using InstaBackup.Models;
+﻿using InstaCrafter.Web.DataAccess.Repository;
+using InstaCrafter.Web.Models;
 
-namespace InstaBackup.DataAccess
+namespace InstaCrafter.Web.DataAccess
 {
     public interface IUnitOfWork
     {

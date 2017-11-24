@@ -1,4 +1,4 @@
-using InstaBackup.DataAccess;
+using InstaCrafter.Web.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace InstaBackup
+namespace InstaCrafter.Web
 {
     public class Startup
     {
