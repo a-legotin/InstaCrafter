@@ -11,9 +11,10 @@ using System;
 namespace InstaCrafter.Web.Migrations
 {
     [DbContext(typeof(InstaPostgreSqlContext))]
-    partial class InstaPostgreSqlContextModelSnapshot : ModelSnapshot
+    [Migration("20171125172748_second")]
+    partial class second
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -119,6 +120,10 @@ namespace InstaCrafter.Web.Migrations
 
                     b.Property<bool>("HasLiked");
 
+                    b.Property<string>("Height");
+
+                    b.Property<string>("ImageUrl");
+
                     b.Property<string>("InstaIdentifier");
 
                     b.Property<long?>("InstaStoryInternalStoryId");
@@ -142,6 +147,8 @@ namespace InstaCrafter.Web.Migrations
                     b.Property<long?>("UserInternalUserId");
 
                     b.Property<int>("ViewCount");
+
+                    b.Property<int>("Width");
 
                     b.HasKey("InternalPostId");
 

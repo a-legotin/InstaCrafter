@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using InstaCrafter.Classes.Database;
+using InstaCrafter.DataAccess.Database;
 using Microsoft.EntityFrameworkCore;
 
 namespace InstaCrafter.Providers.PostgreSQL

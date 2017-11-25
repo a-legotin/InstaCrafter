@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace InstaCrafter.Classes.Helpers
+namespace InstaCrafter.DataAccess.Helpers
 {
     public static class DateTimeHelper
     {

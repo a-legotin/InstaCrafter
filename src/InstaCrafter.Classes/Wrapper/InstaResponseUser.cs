@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace InstaCrafter.Classes.Wrapper
+namespace InstaCrafter.DataAccess.Wrapper
 {
     public class InstaResponseUser
     {

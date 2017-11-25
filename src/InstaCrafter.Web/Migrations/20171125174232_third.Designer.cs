@@ -11,9 +11,10 @@ using System;
 namespace InstaCrafter.Web.Migrations
 {
     [DbContext(typeof(InstaPostgreSqlContext))]
-    partial class InstaPostgreSqlContextModelSnapshot : ModelSnapshot
+    [Migration("20171125174232_third")]
+    partial class third
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

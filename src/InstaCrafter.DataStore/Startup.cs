@@ -1,4 +1,4 @@
-﻿using InstaCrafter.Classes.Database;
+﻿using InstaCrafter.DataAccess.Database;
 using InstaCrafter.Providers;
 using InstaCrafter.Providers.PostgreSQL;
 using Microsoft.AspNetCore.Builder;

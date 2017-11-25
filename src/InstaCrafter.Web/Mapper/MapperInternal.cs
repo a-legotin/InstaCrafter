@@ -18,10 +18,13 @@ namespace InstaCrafter.Web.Mapper
                 cfg.CreateMap<InstaCurrentUser, Models.InstaUser>(MemberList.None);
                 cfg.CreateMap<InstaUserShort, Models.InstaUser>(MemberList.None);
                 cfg.CreateMap<Models.InstaUser, InstaUserShort>(MemberList.None);
-                cfg.CreateMap<InstaMedia, InstaMediaPost>(MemberList.None)
-                    .ForMember(m => m.Caption, im => im.MapFrom(media => media.Caption.Text))
-                    .ForMember(m => m.ImageUrl, im => im.MapFrom(media => media.Images.FirstOrDefault().URI));
+                cfg.CreateMap<InstaMedia, InstaMediaPost>(MemberList.None);
                 cfg.CreateMap<InstaSharper.Classes.Models.InstaStory, Models.InstaStory>(MemberList.None);
+                cfg.CreateMap<InstaSharper.Classes.Models.InstaCaption, Models.InstaCaption>(MemberList.None);
+                cfg.CreateMap<InstaImage, InstaMediaInfo>(MemberList.None)
+                    .ForMember(m => m.Url, im => im.MapFrom(media => media.URI));
+                cfg.CreateMap<InstaSharper.Classes.Models.InstaCarouselItem, Models.InstaCarouselItem>(MemberList.None)
+                    .ForMember(m => m.Medias, im => im.MapFrom(media => media.Images));
             });
 
             return config.CreateMapper();

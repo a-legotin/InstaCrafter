@@ -1,4 +1,4 @@
-﻿namespace InstaCrafter.Classes.Database
+﻿namespace InstaCrafter.DataAccess.Database
 {
     public class InstaUser
     {

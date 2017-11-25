@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using InstaCrafter.Classes.Database;
+using InstaCrafter.DataAccess.Database;
 using InstaCrafter.Providers;
 using Microsoft.AspNetCore.Mvc;
 

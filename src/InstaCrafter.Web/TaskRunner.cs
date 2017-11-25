@@ -13,6 +13,7 @@ using InstaSharper.API.Builder;
 using InstaSharper.Classes;
 using InstaSharper.Classes.Models;
 using InstaSharper.Logger;
+using InstaMedia = InstaSharper.Classes.Models.InstaMedia;
 using InstaUser = InstaCrafter.Web.Models.InstaUser;
 
 namespace InstaCrafter.Web
@@ -26,7 +27,7 @@ namespace InstaCrafter.Web
             this.uow = uow;
             instaApi = InstaApiBuilder.CreateBuilder()
                 .SetUser(new UserSessionData { UserName = "alex_codegarage", Password = Environment.GetEnvironmentVariable("instaapiuserpassword") })
-                .SetRequestDelay(TimeSpan.FromSeconds(2))
+                .SetRequestDelay(TimeSpan.FromSeconds(10))
                 .UseLogger(new DebugLogger(LogLevel.All))
                 .Build();
         }
@@ -66,12 +67,12 @@ namespace InstaCrafter.Web
 
                 uow.UserRepository.CreateOrUpdate(currentUser);
 
-                var scrapper = new FollowersScrapper(instaApi);
-                var followers = await  scrapper.Scrap(currentUser.UserName);
-                foreach (var follower in followers)
-                {
-                    uow.UserRepository.CreateOrUpdate(follower);
-                }
+                //var scrapper = new FollowersScrapper(instaApi);
+                //var followers = await  scrapper.Scrap(currentUser.UserName);
+                //foreach (var follower in followers)
+                //{
+                //    uow.UserRepository.CreateOrUpdate(follower);
+                //}
 
                 var followingScrapper = new FollowingsScrapper(instaApi);
                 var followings = await followingScrapper.Scrap(currentUser.UserName);
@@ -79,17 +80,21 @@ namespace InstaCrafter.Web
                 {
                     uow.UserRepository.CreateOrUpdate(following);
                 }
-                
-                var allUsers = new List<InstaUser>{currentUser}.Concat(followings).Concat(followers);
+
+                var allUsers = new List<InstaUser>{currentUser}.Concat(followings);
                 foreach (var user in allUsers)
                 {
-                    var mediasRes = await instaApi.GetUserMediaAsync(user.UserName, 5);
+                    var mediasRes = await instaApi.GetUserMediaAsync(user.UserName, 25);
                     if(!mediasRes.Succeeded || mediasRes.Value == null)
                         continue;
                     foreach (var media in mediasRes.Value)
                     {
                         var backMedia = MapperInternal.Instance.Map<InstaMedia, InstaMediaPost>(media);
                         backMedia.User = user;
+                        if (backMedia.Caption != null)
+                        {
+                            backMedia.Caption.User = user;
+                        }
                         user.Medias.Add(backMedia);
                     }
 
@@ -99,15 +104,21 @@ namespace InstaCrafter.Web
 
                     var storyToBackup = MapperInternal.Instance.Map<InstaSharper.Classes.Models.InstaStory, Models.InstaStory>(story.Value);
                     storyToBackup.User = user;
+                    
                     foreach (var item in storyToBackup.Items)
                     {
+                        if (item.Caption != null)
+                        {
+                            item.Caption.User = user;
+                        }
                         item.User = user;
                     }
                     user.Stories.Add(storyToBackup);
 
                     uow.UserRepository.CreateOrUpdate(user);
+                    uow.SaveChanges();
                 }
-                
+
                 uow.SaveChanges();
 
                 return true;

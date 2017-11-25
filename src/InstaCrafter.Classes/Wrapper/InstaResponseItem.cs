@@ -1,8 +1,8 @@
 ﻿using System;
-using InstaCrafter.Classes.Helpers;
+using InstaCrafter.DataAccess.Helpers;
 using Newtonsoft.Json;
 
-namespace InstaCrafter.Classes.Wrapper
+namespace InstaCrafter.DataAccess.Wrapper
 {
     public class InstaResponseItem
     {

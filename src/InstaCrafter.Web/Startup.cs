@@ -22,7 +22,7 @@ namespace InstaCrafter.Web
         {
             services.AddMvc();
             services.AddDbContext<InstaPostgreSqlContext>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("PostgreSqlProviderConnection")));
+                options.UseNpgsql(Configuration.GetConnectionString("PostgreSqlProviderConnection")) );
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<ITaskRunner, TaskRunner>();
 

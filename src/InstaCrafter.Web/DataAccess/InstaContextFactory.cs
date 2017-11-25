@@ -11,11 +11,13 @@ namespace InstaCrafter.Web.DataAccess
         {
             var optionsBuilder = new DbContextOptionsBuilder<InstaPostgreSqlContext>();
             var configuration = new ConfigurationBuilder()
+                
                 .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
                 .AddJsonFile("appsettings.json")
                 .Build();
             optionsBuilder.UseNpgsql(configuration.GetConnectionString("PostgreSqlProviderConnection"));
             optionsBuilder.EnableSensitiveDataLogging();
+            
             return new InstaPostgreSqlContext(optionsBuilder.Options);
         }
     }

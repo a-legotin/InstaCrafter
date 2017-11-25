@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace InstaCrafter.Classes.Database
+namespace InstaCrafter.DataAccess.Database
 {
     public class InstaUserList : List<InstaUser>
     {
