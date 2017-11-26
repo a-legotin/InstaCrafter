@@ -2,14 +2,14 @@ import { Component, Inject } from '@angular/core';
 import { Http } from '@angular/http';
 
 @Component({
-    selector: 'fetchdata',
-    templateUrl: './fetchdata.component.html'
+    selector: 'users',
+    templateUrl: './users.component.html'
 })
-export class FetchDataComponent {
+export class UsersComponent {
     public users: InstaUser[];
 
     constructor(http: Http, @Inject('BASE_URL') baseUrl: string) {
-        http.get(baseUrl + 'api/SampleData/GetAllUsers').subscribe(result => {
+        http.get(baseUrl + 'api/Users/GetAllUsers').subscribe(result => {
             this.users = result.json() as InstaUser[];
         }, error => console.error(error));
     }

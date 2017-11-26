@@ -9,7 +9,9 @@ namespace InstaCrafter.Web.Models
         public long InternalMediaId { get; set; }
 
         public string Url { get; set; }
-        
+
+        public string LocalPath { get; set; }
+
         public int Width { get; set; }
 
         public int Height { get; set; }

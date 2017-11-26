@@ -2,10 +2,10 @@ import { Component, Inject } from '@angular/core';
 import { Http } from '@angular/http';
 
 @Component({
-    selector: 'counter',
-    templateUrl: './counter.component.html'
+    selector: 'jobs',
+    templateUrl: './jobs.component.html'
 })
-export class CounterComponent {
+export class JobsComponent {
     public currentCount = 0;
 
     http: Http;
