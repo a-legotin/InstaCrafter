@@ -1,0 +1,53 @@
+{
+    "ReRoutes": [
+        {
+            "DownstreamPathTemplate": "/api/users/{url}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/api/users/{url}",
+            "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/users/",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5001
+                }
+            ],
+            "UpstreamPathTemplate": "/api/users/",
+            "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/posts/{url}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5002
+                }
+            ],
+            "UpstreamPathTemplate": "/api/posts/{url}",
+            "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/posts/",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5002
+                }
+            ],
+            "UpstreamPathTemplate": "/api/posts/",
+            "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
+        }
+    ],
+    "GlobalConfiguration": {}
+}
