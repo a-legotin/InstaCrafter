@@ -8,4 +8,9 @@
         <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview-19075-0444" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\InstaCrafter.EventBus\InstaCrafter.EventBus.csproj" />
+      <ProjectReference Include="..\InstaCrafter.RabbitMQ\InstaCrafter.RabbitMQ.csproj" />
+    </ItemGroup>
+
 </Project>

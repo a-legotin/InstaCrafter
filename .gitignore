@@ -7,6 +7,9 @@
 *.userosscache
 *.sln.docstates
 
+# Secrets
+*.secret.json
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
