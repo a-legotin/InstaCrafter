@@ -1,3 +1,4 @@
+using InstaCrafter.Classes.Models;
 using InstaCrafter.EventBus.Events;
 using Newtonsoft.Json;
 
@@ -5,12 +6,12 @@ namespace InstaCrafter.UserCrafter.IntegrationEvents.Events
 {
     public class UserLoadedEvent : IntegrationEvent
     {
-        public UserLoadedEvent(long userId)
+        public UserLoadedEvent(InstagramUser user)
         {
-            UserId = userId;
+            User = user;
         }
 
         [JsonProperty]
-        public long UserId { get; set; }
+        public InstagramUser User { get; }
     }
 }

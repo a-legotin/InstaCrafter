@@ -2,6 +2,8 @@ using System;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
+using InstaCrafter.Classes.Models;
 using InstaCrafter.EventBus.Abstractions;
 using InstaCrafter.UserCrafter.IntegrationEvents.Events;
 using InstaSharper.API;
@@ -33,7 +35,7 @@ namespace InstaCrafter.UserCrafter
             _instaApi = InstaApiBuilder.CreateBuilder()
                 .SetUser(userSession)
                 .UseLogger(new DebugLogger(LogLevel.Exceptions))
-                .SetRequestDelay(RequestDelay.FromSeconds(1, 3))
+                .SetRequestDelay(RequestDelay.FromSeconds(5, 10))
                 .Build();
         }
 
@@ -74,8 +76,20 @@ namespace InstaCrafter.UserCrafter
             }
 
             var user = await _instaApi.GetUserAsync("alexandr_le");
-            _eventBus.Publish(new UserLoadedEvent(user.Value.Pk));
-            //var following = await _instaApi.GetUserFollowingAsync(user.Value.UserName, PaginationParameters.Empty);
+            _eventBus.Publish(new UserLoadedEvent(Mapper.Map<InstagramUser>(user.Value)));
+            var following = await _instaApi.GetUserFollowingAsync(user.Value.UserName, PaginationParameters.Empty);
+            foreach (var userShort in following.Value)
+            {
+                var userFull = await _instaApi.GetUserAsync(userShort.UserName);
+                _eventBus.Publish(new UserLoadedEvent(Mapper.Map<InstagramUser>(userFull.Value)));
+                
+                var followingNext = await _instaApi.GetUserFollowingAsync(userFull.Value.UserName, PaginationParameters.Empty);
+                foreach (var nextFollowing in followingNext.Value)
+                {
+                    var userFullNext = await _instaApi.GetUserAsync(nextFollowing.UserName);
+                    _eventBus.Publish(new UserLoadedEvent(Mapper.Map<InstagramUser>(userFullNext.Value)));
+                }
+            }
         }
     }
 }

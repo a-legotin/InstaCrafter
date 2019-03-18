@@ -7,6 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Autofac" Version="4.9.1" />
+      <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.4.0" />
+      <PackageReference Include="AutoMapper" Version="8.0.0" />
       <PackageReference Include="InstaSharper" Version="1.4.82" />
       <PackageReference Include="Microsoft.AspNetCore.App" Version="3.0.0-preview-19075-0444" />
     </ItemGroup>
@@ -23,6 +26,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\common\InstaCrafter.Classes\InstaCrafter.Classes.csproj" />
       <ProjectReference Include="..\InstaCrafter.RabbitMQ\InstaCrafter.RabbitMQ.csproj" />
     </ItemGroup>
 

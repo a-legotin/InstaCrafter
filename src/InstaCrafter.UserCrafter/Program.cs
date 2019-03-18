@@ -1,8 +1,14 @@
 ﻿using System;
+using System.ComponentModel.Design;
 using System.Threading.Tasks;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using AutoMapper;
+using InstaCrafter.Classes.Models;
 using InstaCrafter.EventBus;
 using InstaCrafter.EventBus.Abstractions;
 using InstaCrafter.RabbitMQ;
+using InstaSharper.Classes.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -16,6 +22,8 @@ namespace InstaCrafter.UserCrafter
         private static IConfiguration _config;
         static async Task Main(string[] args)
         {
+            await ConfigureMapper();
+            
             var builder = new HostBuilder()
                 .ConfigureHostConfiguration(config =>
                 {
@@ -38,6 +46,7 @@ namespace InstaCrafter.UserCrafter
 
                     _config = config.Build();
                 })
+                .UseServiceProviderFactory(new AutofacServiceProviderFactory())
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddOptions();
@@ -68,15 +77,26 @@ namespace InstaCrafter.UserCrafter
                     {
                         var rabbitMQPersistentConnection = sp.GetRequiredService<IRabbitMQPersistentConnection>();
                         var logger = sp.GetRequiredService<ILogger<EventBusRabbitMQ>>();
+                        var iLifetimeScope = sp.GetRequiredService<ILifetimeScope>();
                         var eventBusSubcriptionsManager = sp.GetRequiredService<IEventBusSubscriptionsManager>();
                         var subscriptionClientName = _config["SubscriptionClientName"];
-                        return new EventBusRabbitMQ(rabbitMQPersistentConnection, logger, eventBusSubcriptionsManager, subscriptionClientName);
+                        return new EventBusRabbitMQ(rabbitMQPersistentConnection, logger, eventBusSubcriptionsManager,iLifetimeScope, subscriptionClientName);
                     });
                     
                     services.Configure<InstaSharperConfig>(hostContext.Configuration.GetSection("InstaSharperConfig"));
                     services.AddHostedService<UserCrafterService>();
-                });
+                })
+                .UseConsoleLifetime();
             await builder.RunConsoleAsync();
+        }
+
+        static async Task ConfigureMapper()
+        {
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<InstaUser, InstagramUser>(); 
+                cfg.CreateMap<InstaUserShort, InstagramUser>();
+            });
         }
     }
 }

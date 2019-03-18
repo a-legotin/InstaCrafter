@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.EventBus", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.RabbitMQ", "src\InstaCrafter.RabbitMQ\InstaCrafter.RabbitMQ.csproj", "{6D4643C0-2950-4A74-92BC-F9B56780E120}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.Classes", "src\common\InstaCrafter.Classes\InstaCrafter.Classes.csproj", "{8B2F6156-FCF4-473C-ABB2-D77C160C6A26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{6D4643C0-2950-4A74-92BC-F9B56780E120}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D4643C0-2950-4A74-92BC-F9B56780E120}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D4643C0-2950-4A74-92BC-F9B56780E120}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B2F6156-FCF4-473C-ABB2-D77C160C6A26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B2F6156-FCF4-473C-ABB2-D77C160C6A26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B2F6156-FCF4-473C-ABB2-D77C160C6A26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B2F6156-FCF4-473C-ABB2-D77C160C6A26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +78,7 @@ Global
 		{4263C327-B385-4761-B0B4-D07EC667231D} = {EC6F1202-0EB0-4CF5-ABF6-A5466AA68350}
 		{5BF72E58-02EE-485C-AB13-FAD4BF690E70} = {4263C327-B385-4761-B0B4-D07EC667231D}
 		{6D4643C0-2950-4A74-92BC-F9B56780E120} = {4263C327-B385-4761-B0B4-D07EC667231D}
+		{8B2F6156-FCF4-473C-ABB2-D77C160C6A26} = {EC6F1202-0EB0-4CF5-ABF6-A5466AA68350}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9C7D76D8-1F8E-41A1-93AC-D822B1F03484}
