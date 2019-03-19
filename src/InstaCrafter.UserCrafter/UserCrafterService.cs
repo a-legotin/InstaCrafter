@@ -1,95 +1,58 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using InstaCrafter.Classes.Models;
 using InstaCrafter.EventBus.Abstractions;
+using InstaCrafter.Extensions;
 using InstaCrafter.UserCrafter.IntegrationEvents.Events;
+using InstaCrafter.UserCrafter.UserProviders;
 using InstaSharper.API;
 using InstaSharper.API.Builder;
 using InstaSharper.Classes;
 using InstaSharper.Logger;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Serilog;
+using ILogger = Microsoft.Extensions.Logging.ILogger;
+using LogLevel = InstaSharper.Logger.LogLevel;
 
 namespace InstaCrafter.UserCrafter
 {
     public class UserCrafterService : BackgroundService
     {
-        private readonly IOptions<InstaSharperConfig> _appConfig;
         private readonly IEventBus _eventBus;
-        private readonly IInstaApi _instaApi;
+        private readonly ILogger _logger;
+        private readonly IUserDataProvider _userProvider;
 
-        public UserCrafterService(IOptions<InstaSharperConfig> appConfig, IEventBus eventBus)
+        public UserCrafterService(IEventBus eventBus, IUserDataProvider userProvider, ILogger<UserCrafterService> logger)
         {
-            _appConfig = appConfig;
             _eventBus = eventBus;
-            var userSession = new UserSessionData
-            {
-                UserName = _appConfig.Value.Username,
-                Password = _appConfig.Value.Password
-            };
-
-
-            _instaApi = InstaApiBuilder.CreateBuilder()
-                .SetUser(userSession)
-                .UseLogger(new DebugLogger(LogLevel.Exceptions))
-                .SetRequestDelay(RequestDelay.FromSeconds(5, 10))
-                .Build();
+            _logger = logger;
+            _userProvider = userProvider;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            const string stateFile = "state.bin";
-            try
+            _logger.LogDebug("Executing users loading task");
+            var user = await _userProvider.GetUser("alexandr_le");
+            _eventBus.Publish(new UserLoadedEvent(user));
+            
+            var userFollowers = await _userProvider.GetUserFollowers(user.UserName);
+            foreach (var follower in userFollowers.Randomize())
             {
-                if (File.Exists(stateFile))
-                {
-                    Console.WriteLine("Loading state from file");
-                    using (var fs = File.OpenRead(stateFile))
-                    {
-                        _instaApi.LoadStateDataFromStream(fs);
-                    }
-                }
+                _eventBus.Publish(new UserLoadedEvent(follower));
             }
-            catch (Exception e)
+            
+            var userFollowings = await _userProvider.GetUserFollowings(user.UserName);
+            foreach (var following in userFollowings.Randomize())
             {
-                Console.WriteLine(e);
+                _eventBus.Publish(new UserLoadedEvent(following));
             }
-
-            if (!_instaApi.IsUserAuthenticated)
-            {
-                var logInResult = await _instaApi.LoginAsync();
-                if (!logInResult.Succeeded)
-                {
-                    Console.WriteLine($"Unable to login: {logInResult.Info.Message}");
-                    return;
-                }
-            }
-
-            var state = _instaApi.GetStateDataAsStream();
-            using (var fileStream = File.Create(stateFile))
-            {
-                state.Seek(0, SeekOrigin.Begin);
-                state.CopyTo(fileStream);
-            }
-
-            var user = await _instaApi.GetUserAsync("alexandr_le");
-            _eventBus.Publish(new UserLoadedEvent(Mapper.Map<InstagramUser>(user.Value)));
-            var following = await _instaApi.GetUserFollowingAsync(user.Value.UserName, PaginationParameters.Empty);
-            foreach (var userShort in following.Value)
-            {
-                var userFull = await _instaApi.GetUserAsync(userShort.UserName);
-                _eventBus.Publish(new UserLoadedEvent(Mapper.Map<InstagramUser>(userFull.Value)));
-                
-                var followingNext = await _instaApi.GetUserFollowingAsync(userFull.Value.UserName, PaginationParameters.Empty);
-                foreach (var nextFollowing in followingNext.Value)
-                {
-                    var userFullNext = await _instaApi.GetUserAsync(nextFollowing.UserName);
-                    _eventBus.Publish(new UserLoadedEvent(Mapper.Map<InstagramUser>(userFullNext.Value)));
-                }
-            }
+            _logger.LogDebug("Task completed");
         }
     }
 }

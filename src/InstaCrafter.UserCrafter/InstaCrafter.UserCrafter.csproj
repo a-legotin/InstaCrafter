@@ -12,6 +12,11 @@
       <PackageReference Include="AutoMapper" Version="8.0.0" />
       <PackageReference Include="InstaSharper" Version="1.4.82" />
       <PackageReference Include="Microsoft.AspNetCore.App" Version="3.0.0-preview-19075-0444" />
+      <PackageReference Include="Serilog" Version="2.8.0" />
+      <PackageReference Include="Serilog.Extensions.Hosting" Version="2.0.1-dev-00009" />
+      <PackageReference Include="Serilog.Extensions.Logging" Version="2.0.2" />
+      <PackageReference Include="Serilog.Settings.Configuration" Version="3.0.2-dev-00187" />
+      <PackageReference Include="Serilog.Sinks.Console" Version="3.1.2-dev-00792" />
     </ItemGroup>
 
     <ItemGroup>
@@ -27,6 +32,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\common\InstaCrafter.Classes\InstaCrafter.Classes.csproj" />
+      <ProjectReference Include="..\common\InstaCrafter.Extensions\InstaCrafter.Extensions.csproj" />
       <ProjectReference Include="..\InstaCrafter.RabbitMQ\InstaCrafter.RabbitMQ.csproj" />
     </ItemGroup>
 

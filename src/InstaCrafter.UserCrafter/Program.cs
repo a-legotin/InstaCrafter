@@ -8,12 +8,15 @@ using InstaCrafter.Classes.Models;
 using InstaCrafter.EventBus;
 using InstaCrafter.EventBus.Abstractions;
 using InstaCrafter.RabbitMQ;
+using InstaCrafter.UserCrafter.UserProviders;
 using InstaSharper.Classes.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
+using Serilog;
+using Serilog.Events;
 
 namespace InstaCrafter.UserCrafter
 {
@@ -24,6 +27,13 @@ namespace InstaCrafter.UserCrafter
         {
             await ConfigureMapper();
             
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Verbose()
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Verbose)
+                .Enrich.FromLogContext()
+                .WriteTo.Console()
+                .CreateLogger();
+
             var builder = new HostBuilder()
                 .ConfigureHostConfiguration(config =>
                 {
@@ -46,12 +56,13 @@ namespace InstaCrafter.UserCrafter
 
                     _config = config.Build();
                 })
+                .UseSerilog()
                 .UseServiceProviderFactory(new AutofacServiceProviderFactory())
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddOptions();
                     services.AddSingleton<IEventBusSubscriptionsManager, InMemoryEventBusSubscriptionsManager>();
-
+                    services.AddSingleton<IUserDataProvider, InstasharperUserProvider>();
                     services.AddSingleton<IRabbitMQPersistentConnection>(sp =>
                     {
                         var logger = sp.GetRequiredService<ILogger<DefaultRabbitMQPersistentConnection>>();
@@ -72,7 +83,7 @@ namespace InstaCrafter.UserCrafter
 
                         return new DefaultRabbitMQPersistentConnection(factory, logger);
                     });
-                    
+
                     services.AddSingleton<IEventBus, EventBusRabbitMQ>(sp =>
                     {
                         var rabbitMQPersistentConnection = sp.GetRequiredService<IRabbitMQPersistentConnection>();
@@ -80,13 +91,21 @@ namespace InstaCrafter.UserCrafter
                         var iLifetimeScope = sp.GetRequiredService<ILifetimeScope>();
                         var eventBusSubcriptionsManager = sp.GetRequiredService<IEventBusSubscriptionsManager>();
                         var subscriptionClientName = _config["SubscriptionClientName"];
-                        return new EventBusRabbitMQ(rabbitMQPersistentConnection, logger, eventBusSubcriptionsManager,iLifetimeScope, subscriptionClientName);
+                        return new EventBusRabbitMQ(rabbitMQPersistentConnection, logger, eventBusSubcriptionsManager,
+                            iLifetimeScope, subscriptionClientName);
                     });
-                    
+
                     services.Configure<InstaSharperConfig>(hostContext.Configuration.GetSection("InstaSharperConfig"));
                     services.AddHostedService<UserCrafterService>();
                 })
+//                .ConfigureContainer<ContainerBuilder>((context, containerBuilder) =>
+//                {
+//                    containerBuilder.RegisterInstance(new LoggerFactory().AddSerilog()).As<ILoggerFactory>();
+//                    containerBuilder.RegisterGeneric(typeof(Logger<>)).As(typeof(ILogger<>));
+//                    //containerBuilder.RegisterType<InstasharperUserProvider>().As<IUserDataProvider>();
+//                })
                 .UseConsoleLifetime();
+            
             await builder.RunConsoleAsync();
         }
 
