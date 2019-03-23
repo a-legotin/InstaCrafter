@@ -9,11 +9,11 @@ using InstaCrafter.Classes.Models;
 using InstaCrafter.EventBus;
 using InstaCrafter.EventBus.Abstractions;
 using InstaCrafter.RabbitMQ;
+using InstaCrafter.UserCrafter.IntegrationEvents.Events;
 using InstaCrafter.UserService.DataProvider;
 using InstaCrafter.UserService.DataProvider.PostgreSQL;
 using InstaCrafter.UserService.DtoModels;
 using InstaCrafter.UserService.IntegrationEvents.EventHandlers;
-using InstaCrafter.UserService.IntegrationEvents.Events;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +24,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using RabbitMQ.Client;
+using Serilog;
+using Serilog.Events;
+using Serilog.Sinks.Elasticsearch;
 
 namespace InstaCrafter.UserService
 {
@@ -41,6 +44,19 @@ namespace InstaCrafter.UserService
         {
             services.AddMvc().AddNewtonsoftJson();
             
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Verbose()
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Verbose)
+                .Enrich.FromLogContext()
+                .WriteTo.Async(w=>w.File("log.txt", rollingInterval: RollingInterval.Day))
+                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
+                {
+                    MinimumLogEventLevel = LogEventLevel.Verbose,
+                })                
+                .WriteTo.ColoredConsole( 
+                    LogEventLevel.Verbose,
+                    "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
+                .CreateLogger();
             
             //Use a PostgreSQL database
             var sqlConnectionString = Configuration.GetConnectionString("DataAccessPostgreSqlProvider");
@@ -51,6 +67,7 @@ namespace InstaCrafter.UserService
                     b => b.MigrationsAssembly("InstaCrafter.UserService")
                 )
             );
+
 
             services.AddScoped<IDataAccessProvider<InstagramUserDto>, InstagramUsersRepository>();
             
@@ -88,7 +105,11 @@ namespace InstaCrafter.UserService
             });
 
             services.AddTransient<UserLoadedEventHandler>();
-            Mapper.Initialize(config => { config.CreateMap<InstagramUser, InstagramUserDto>(); });
+            Mapper.Initialize(config =>
+            {
+                config.CreateMap<InstagramUser, InstagramUserDto>();
+                config.CreateMap<InstagramUserDto, InstagramUser>();
+            });
             
             var container = new ContainerBuilder();
             container.Populate(services);

@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace InstaCrafter.UserService
 {
@@ -28,6 +29,7 @@ namespace InstaCrafter.UserService
                 .UseKestrel(options => {
                     options.Listen(IPAddress.Loopback, 5001); //HTTP port
                 })
-                .UseStartup<Startup>();
+                .UseStartup<Startup>()
+                .UseSerilog();
     }
 }

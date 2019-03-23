@@ -11,7 +11,6 @@ namespace InstaCrafter.UserCrafter.IntegrationEvents.Events
             User = user;
         }
 
-        [JsonProperty]
-        public InstagramUser User { get; }
+        [JsonProperty] public InstagramUser User { get; }
     }
 }

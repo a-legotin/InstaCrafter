@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using InstaCrafter.Classes.Models;
+using InstaCrafter.UserService.DataProvider;
+using InstaCrafter.UserService.DtoModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InstaCrafter.UserService.Controllers
@@ -10,10 +14,17 @@ namespace InstaCrafter.UserService.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        private readonly IDataAccessProvider<InstagramUserDto> _repo;
+
+        public UsersController(IDataAccessProvider<InstagramUserDto> _repo)
         {
-            return new string[] {"user"};
+            this._repo = _repo;
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<InstagramUser>> Get()
+        {
+            return new ActionResult<IEnumerable<InstagramUser>>(_repo.GetItems().Select(Mapper.Map<InstagramUser>));
         }
 
         [HttpGet("{id}")]

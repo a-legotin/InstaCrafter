@@ -17,21 +17,30 @@ using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
 using Serilog;
 using Serilog.Events;
+using Serilog.Sinks.Elasticsearch;
 
 namespace InstaCrafter.UserCrafter
 {
     class Program
     {
         private static IConfiguration _config;
+
         static async Task Main(string[] args)
         {
             await ConfigureMapper();
-            
+
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Verbose()
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Verbose)
                 .Enrich.FromLogContext()
-                .WriteTo.Console()
+                .WriteTo.Async(w=>w.File("log.txt", rollingInterval: RollingInterval.Day))
+                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
+                {
+                    MinimumLogEventLevel = LogEventLevel.Verbose,
+                })                
+                .WriteTo.ColoredConsole( 
+                    LogEventLevel.Verbose,
+                    "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
                 .CreateLogger();
 
             var builder = new HostBuilder()
@@ -98,14 +107,8 @@ namespace InstaCrafter.UserCrafter
                     services.Configure<InstaSharperConfig>(hostContext.Configuration.GetSection("InstaSharperConfig"));
                     services.AddHostedService<UserCrafterService>();
                 })
-//                .ConfigureContainer<ContainerBuilder>((context, containerBuilder) =>
-//                {
-//                    containerBuilder.RegisterInstance(new LoggerFactory().AddSerilog()).As<ILoggerFactory>();
-//                    containerBuilder.RegisterGeneric(typeof(Logger<>)).As(typeof(ILogger<>));
-//                    //containerBuilder.RegisterType<InstasharperUserProvider>().As<IUserDataProvider>();
-//                })
                 .UseConsoleLifetime();
-            
+
             await builder.RunConsoleAsync();
         }
 
@@ -113,7 +116,7 @@ namespace InstaCrafter.UserCrafter
         {
             Mapper.Initialize(cfg =>
             {
-                cfg.CreateMap<InstaUser, InstagramUser>(); 
+                cfg.CreateMap<InstaUser, InstagramUser>();
                 cfg.CreateMap<InstaUserShort, InstagramUser>();
             });
         }

@@ -11,7 +11,6 @@ using InstaSharper.Classes;
 using InstaSharper.Logger;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using LogLevel = InstaSharper.Logger.LogLevel;
 
 namespace InstaCrafter.UserCrafter.UserProviders
 {
@@ -21,7 +20,8 @@ namespace InstaCrafter.UserCrafter.UserProviders
         private readonly ILogger _logger;
         private readonly IInstaApi _instaApi;
 
-        public InstasharperUserProvider(IOptions<InstaSharperConfig> appConfig, ILogger<InstasharperUserProvider> logger)
+        public InstasharperUserProvider(IOptions<InstaSharperConfig> appConfig,
+            ILogger<InstasharperUserProvider> logger)
         {
             _appConfig = appConfig;
             _logger = logger;
@@ -30,13 +30,13 @@ namespace InstaCrafter.UserCrafter.UserProviders
                 UserName = _appConfig.Value.Username,
                 Password = _appConfig.Value.Password
             };
-            
+
             _instaApi = InstaApiBuilder.CreateBuilder()
                 .SetUser(userSession)
-                .UseLogger(new DebugLogger(LogLevel.Exceptions))
+                .UseLogger(new DebugLogger(InstaSharper.Logger.LogLevel.Exceptions))
                 .SetRequestDelay(RequestDelay.FromSeconds(5, 20))
                 .Build();
-            
+
             const string stateFile = "state.bin";
             try
             {
@@ -71,40 +71,46 @@ namespace InstaCrafter.UserCrafter.UserProviders
                 state.CopyTo(fileStream);
                 _logger.LogDebug($"Instasharper state saved to: {stateFile}");
             }
-            _logger.LogDebug($"Instasharper library initialized. User '{_appConfig.Value.Username}' authenticated: {_instaApi.IsUserAuthenticated}");
+
+            _logger.LogDebug(
+                $"Instasharper library initialized. User '{_appConfig.Value.Username}' authenticated: {_instaApi.IsUserAuthenticated}");
         }
 
         public async Task<InstagramUser> GetUser(string username)
         {
             var user = await _instaApi.GetUserAsync(username);
-            if (user.Succeeded) 
+            if (user.Succeeded)
                 return Mapper.Map<InstagramUser>(user.Value);
             _logger.LogError($"Unable to load user '{username}': {user.Info.Message}");
             return InstagramUser.Empty;
         }
-        
+
         public async Task<IEnumerable<InstagramUser>> GetUserFollowings(string username)
         {
             _logger.LogDebug($"Loading followings for user '{username}'");
-            var followingResult = await _instaApi.GetUserFollowingAsync(username, PaginationParameters.MaxPagesToLoad(1));
+            var followingResult =
+                await _instaApi.GetUserFollowingAsync(username, PaginationParameters.MaxPagesToLoad(1));
             if (followingResult.Succeeded)
             {
                 _logger.LogDebug($"Loaded {followingResult.Value.Count} followers for user '{username}'");
                 return followingResult.Value.Select(Mapper.Map<InstagramUser>);
             }
+
             _logger.LogError($"Unable to load user '{username}' followings: {followingResult.Info.Message}");
             return new List<InstagramUser>();
         }
-        
+
         public async Task<IEnumerable<InstagramUser>> GetUserFollowers(string username)
         {
             _logger.LogDebug($"Loading followers for user '{username}'");
-            var followersResult = await _instaApi.GetUserFollowersAsync(username, PaginationParameters.MaxPagesToLoad(1));
+            var followersResult =
+                await _instaApi.GetUserFollowersAsync(username, PaginationParameters.MaxPagesToLoad(1));
             if (followersResult.Succeeded)
             {
                 _logger.LogDebug($"Loaded {followersResult.Value.Count} followers for user '{username}'");
                 return followersResult.Value.Select(Mapper.Map<InstagramUser>);
             }
+
             _logger.LogError($"Unable to load user '{username}' followers: {followersResult.Info.Message}");
             return new List<InstagramUser>();
         }
