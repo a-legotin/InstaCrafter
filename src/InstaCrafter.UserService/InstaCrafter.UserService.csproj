@@ -24,6 +24,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\common\InstaCrafter.Classes\InstaCrafter.Classes.csproj" />
+      <ProjectReference Include="..\common\InstaCrafter.Extensions\InstaCrafter.Extensions.csproj" />
       <ProjectReference Include="..\InstaCrafter.EventBus\InstaCrafter.EventBus.csproj" />
       <ProjectReference Include="..\InstaCrafter.RabbitMQ\InstaCrafter.RabbitMQ.csproj" />
     </ItemGroup>

@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 
 namespace InstaCrafter.UserService.IntegrationEvents.EventHandlers
 {
-    public class UserLoadedEventHandler : IIntegrationEventHandler<UserLoadedEvent>
+    public class UserLoadedEventHandler : IIntegrationEventHandler<UserLoadedMessage>
     {
         private readonly IDataAccessProvider<InstagramUserDto> _repo;
         private readonly ILogger<UserLoadedEventHandler> _logger;
@@ -20,28 +20,28 @@ namespace InstaCrafter.UserService.IntegrationEvents.EventHandlers
             this._logger = _logger;
         }
 
-        public async Task Handle(UserLoadedEvent userLoadedEvent)
+        public async Task Handle(UserLoadedMessage userLoadedMessage)
         {
-            _logger.LogDebug($"Got an event! User: '{userLoadedEvent.User.UserName}'");
+            _logger.LogDebug($"Got an event! User: '{userLoadedMessage.User.UserName}'");
             try
             {
-                var user = userLoadedEvent.User;
+                var user = userLoadedMessage.User;
                 var dtoUser = Mapper.Map<InstagramUserDto>(user);
                 if (_repo.Exist(dtoUser))
                 {
                     var existingUser = _repo.Get(dtoUser.UserName);
                     _repo.Update(existingUser.Id, dtoUser);
-                    _logger.LogDebug($"User: '{userLoadedEvent.User.UserName}' updated");
+                    _logger.LogDebug($"User: '{userLoadedMessage.User.UserName}' updated");
                 }
                 else
                 {
                     _repo.Add(dtoUser);
-                    _logger.LogDebug($"User: '{userLoadedEvent.User.UserName}' created");
+                    _logger.LogDebug($"User: '{userLoadedMessage.User.UserName}' created");
                 }
             }
             catch (Exception e)
             {
-                _logger.LogCritical(e, "Unable to process event {Guid}", userLoadedEvent.Guid);
+                _logger.LogCritical(e, "Unable to process event {Guid}", userLoadedMessage.Guid);
             }
         }
     }

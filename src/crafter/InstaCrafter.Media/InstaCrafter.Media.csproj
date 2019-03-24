@@ -39,8 +39,4 @@
         <ProjectReference Include="..\..\InstaCrafter.RabbitMQ\InstaCrafter.RabbitMQ.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="IntegrationEvents\Events" />
-    </ItemGroup>
-
 </Project>

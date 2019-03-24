@@ -2,11 +2,14 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using InstaCrafter.EventBus.Abstractions;
+using InstaCrafter.EventBus.Messages;
 using InstaCrafter.Extensions;
 using InstaCrafter.Media.MediaProviders;
 using InstaCrafter.UserCrafter.IntegrationEvents.Events;
+using InstaCrafter.UserService.IntegrationEvents.EventHandlers;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 namespace InstaCrafter.Media
@@ -15,22 +18,26 @@ namespace InstaCrafter.Media
     {
         private readonly IEventBus _eventBus;
         private readonly ILogger _logger;
-        private readonly IMediaDataProvider _mediaProvider;
 
-        public MediaCrafterService(IEventBus eventBus, IMediaDataProvider mediaProvider,
-            ILogger<MediaCrafterService> logger)
+        public MediaCrafterService(IEventBus eventBus, ILogger<MediaCrafterService> logger)
         {
             _eventBus = eventBus;
+            _eventBus.Subscribe<UserLoadMessage, UserLoadEventHandler>();
             _logger = logger;
-            _mediaProvider = mediaProvider;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            _logger.LogDebug("Executing media  loading task");
+            _logger.LogDebug("Approaching users for posts & stories");
             try
             {
-                var story = await _mediaProvider.GetUserStory("lenatemnikovaofficial");
+
+                for (int i = 0; i < 20; i++)
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(15));
+                    _eventBus.Publish(new RandomUserRequestMessage());
+                }
+
             }
             catch (Exception e)
             {

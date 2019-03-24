@@ -4,10 +4,13 @@ namespace InstaCrafter.EventBus.Messages
 {
     public class UserLoadMessage : IntegrationMessage
     {
-        public UserLoadMessage(InstagramUser user)
+        public UserLoadMessage( long userId, InstagramUser user)
         {
             User = user;
+            UserId = userId;
         }
+        
+        public long UserId { get; }
 
         public InstagramUser User { get; }
     }

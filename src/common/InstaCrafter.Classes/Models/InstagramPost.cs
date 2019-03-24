@@ -53,6 +53,8 @@ namespace InstaCrafter.Classes.Models
     public class InstagramVideo
     {
         public string Url { get; set; }
+        
+        public string Path { get; set; }
 
         public int Width { get; set; }
 
@@ -64,6 +66,8 @@ namespace InstaCrafter.Classes.Models
     public class InstagramImage
     {
         public string URI { get; set; }
+        
+        public string Path { get; set; }
 
         public int Width { get; set; }
 

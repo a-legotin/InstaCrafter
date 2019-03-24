@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using InstaCrafter.EventBus.Abstractions;
-using InstaCrafter.EventBus.Events;
+using InstaCrafter.EventBus.Messages;
 
 namespace InstaCrafter.EventBus
 {
@@ -31,7 +31,7 @@ namespace InstaCrafter.EventBus
         }
 
         public void AddSubscription<T, TH>()
-            where T : IntegrationEvent
+            where T : IntegrationMessage
             where TH : IIntegrationEventHandler<T>
         {
             var eventName = GetEventKey<T>();
@@ -78,7 +78,7 @@ namespace InstaCrafter.EventBus
 
         public void RemoveSubscription<T, TH>()
             where TH : IIntegrationEventHandler<T>
-            where T : IntegrationEvent
+            where T : IntegrationMessage
         {
             var handlerToRemove = FindSubscriptionToRemove<T, TH>();
             var eventName = GetEventKey<T>();
@@ -105,7 +105,7 @@ namespace InstaCrafter.EventBus
             }
         }
 
-        public IEnumerable<SubscriptionInfo> GetHandlersForEvent<T>() where T : IntegrationEvent
+        public IEnumerable<SubscriptionInfo> GetHandlersForEvent<T>() where T : IntegrationMessage
         {
             var key = GetEventKey<T>();
             return GetHandlersForEvent(key);
@@ -130,7 +130,7 @@ namespace InstaCrafter.EventBus
 
 
         private SubscriptionInfo FindSubscriptionToRemove<T, TH>()
-             where T : IntegrationEvent
+             where T : IntegrationMessage
              where TH : IIntegrationEventHandler<T>
         {
             var eventName = GetEventKey<T>();
@@ -148,7 +148,7 @@ namespace InstaCrafter.EventBus
 
         }
 
-        public bool HasSubscriptionsForEvent<T>() where T : IntegrationEvent
+        public bool HasSubscriptionsForEvent<T>() where T : IntegrationMessage
         {
             var key = GetEventKey<T>();
             return HasSubscriptionsForEvent(key);

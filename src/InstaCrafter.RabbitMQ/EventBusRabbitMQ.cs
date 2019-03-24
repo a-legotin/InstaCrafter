@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Autofac;
 using InstaCrafter.EventBus;
 using InstaCrafter.EventBus.Abstractions;
-using InstaCrafter.EventBus.Events;
 using InstaCrafter.EventBus.Extensions;
+using InstaCrafter.EventBus.Messages;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -62,7 +62,7 @@ namespace InstaCrafter.RabbitMQ
             }
         }
 
-        public void Publish(IntegrationEvent @event)
+        public void Publish(IntegrationMessage integrationMessage)
         {
             if (!_persistentConnection.IsConnected)
             {
@@ -71,7 +71,7 @@ namespace InstaCrafter.RabbitMQ
 
             using (var channel = _persistentConnection.CreateModel())
             {
-                var eventName = @event.GetType()
+                var eventName = integrationMessage.GetType()
                     .Name;
 
                 channel.ExchangeDeclare(exchange: BROKER_NAME,
@@ -80,7 +80,7 @@ namespace InstaCrafter.RabbitMQ
                                     true,
                                     null);
 
-                var message = JsonConvert.SerializeObject(@event);
+                var message = JsonConvert.SerializeObject(integrationMessage);
                 var body = Encoding.UTF8.GetBytes(message);
 
                 var properties = channel.CreateBasicProperties();
@@ -104,7 +104,7 @@ namespace InstaCrafter.RabbitMQ
         }
 
         public void Subscribe<T, TH>()
-            where T : IntegrationEvent
+            where T : IntegrationMessage
             where TH : IIntegrationEventHandler<T>
         {
             var eventName = _subsManager.GetEventKey<T>();
@@ -136,7 +136,7 @@ namespace InstaCrafter.RabbitMQ
         }
 
         public void Unsubscribe<T, TH>()
-            where T : IntegrationEvent
+            where T : IntegrationMessage
             where TH : IIntegrationEventHandler<T>
         {
             var eventName = _subsManager.GetEventKey<T>();

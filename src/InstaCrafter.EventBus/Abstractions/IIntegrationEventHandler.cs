@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
-using InstaCrafter.EventBus.Events;
+using InstaCrafter.EventBus.Messages;
 
 namespace InstaCrafter.EventBus.Abstractions
 {
     public interface IIntegrationEventHandler<in TIntegrationEvent> : IIntegrationEventHandler 
-        where TIntegrationEvent: IntegrationEvent
+        where TIntegrationEvent: IntegrationMessage
     {
         Task Handle(TIntegrationEvent @event);
     }

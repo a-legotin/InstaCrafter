@@ -1,13 +1,13 @@
-﻿using InstaCrafter.EventBus.Events;
+﻿using InstaCrafter.EventBus.Messages;
 
 namespace InstaCrafter.EventBus.Abstractions
 {
     public interface IEventBus
     {
-        void Publish(IntegrationEvent @event);
+        void Publish(IntegrationMessage message);
 
         void Subscribe<T, TH>()
-            where T : IntegrationEvent
+            where T : IntegrationMessage
             where TH : IIntegrationEventHandler<T>;
 
         void SubscribeDynamic<TH>(string eventName)
@@ -18,6 +18,6 @@ namespace InstaCrafter.EventBus.Abstractions
 
         void Unsubscribe<T, TH>()
             where TH : IIntegrationEventHandler<T>
-            where T : IntegrationEvent;
+            where T : IntegrationMessage;
     }
 }

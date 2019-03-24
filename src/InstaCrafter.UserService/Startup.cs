@@ -8,6 +8,7 @@ using AutoMapper;
 using InstaCrafter.Classes.Models;
 using InstaCrafter.EventBus;
 using InstaCrafter.EventBus.Abstractions;
+using InstaCrafter.EventBus.Messages;
 using InstaCrafter.RabbitMQ;
 using InstaCrafter.UserCrafter.IntegrationEvents.Events;
 using InstaCrafter.UserService.DataProvider;
@@ -105,6 +106,8 @@ namespace InstaCrafter.UserService
             });
 
             services.AddTransient<UserLoadedEventHandler>();
+            services.AddTransient<RandomUserLoadRequestHandler>();
+
             Mapper.Initialize(config =>
             {
                 config.CreateMap<InstagramUser, InstagramUserDto>();
@@ -132,7 +135,8 @@ namespace InstaCrafter.UserService
         private void ConfigureEventBus(IApplicationBuilder app)
         {
             var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
-            eventBus.Subscribe<UserLoadedEvent, UserLoadedEventHandler>();
+            eventBus.Subscribe<UserLoadedMessage, UserLoadedEventHandler>();
+            eventBus.Subscribe<RandomUserRequestMessage, RandomUserLoadRequestHandler>();
         }  
     }
 }

@@ -6,7 +6,7 @@ namespace InstaCrafter.Media.MediaProviders
 {
     public interface IMediaDataProvider
     {
-        Task<IEnumerable<InstagramPost>> GetUserPostsFollowers(string username);
+        Task<IEnumerable<InstagramPost>> GetUserPosts(string username);
         Task<InstagramReelFeed> GetUserStory(string username);
     }
 }

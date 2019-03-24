@@ -42,18 +42,18 @@ namespace InstaCrafter.UserCrafter
             try
             {
                 var user = await _userProvider.GetUser("alexandr_le");
-                _eventBus.Publish(new UserLoadedEvent(user));
+                _eventBus.Publish(new UserLoadedMessage(user));
 
                 var userFollowers = await _userProvider.GetUserFollowers(user.UserName);
                 foreach (var follower in userFollowers.Randomize())
                 {
-                    _eventBus.Publish(new UserLoadedEvent(follower));
+                    _eventBus.Publish(new UserLoadedMessage(follower));
                 }
 
                 var userFollowings = await _userProvider.GetUserFollowings(user.UserName);
                 foreach (var following in userFollowings.Randomize())
                 {
-                    _eventBus.Publish(new UserLoadedEvent(following));
+                    _eventBus.Publish(new UserLoadedMessage(following));
                 }
             }
             catch (Exception e)

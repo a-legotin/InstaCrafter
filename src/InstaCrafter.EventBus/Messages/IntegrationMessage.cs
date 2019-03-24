@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Newtonsoft.Json;
 
 namespace InstaCrafter.EventBus.Messages
@@ -18,8 +18,10 @@ namespace InstaCrafter.EventBus.Messages
             CreationDate = createDate;
         }
 
-        [JsonProperty] public Guid Guid { get; private set; }
+        [JsonProperty]
+        public Guid Guid { get; private set; }
 
-        [JsonProperty] public DateTime CreationDate { get; private set; }
+        [JsonProperty]
+        public DateTime CreationDate { get; private set; }
     }
 }

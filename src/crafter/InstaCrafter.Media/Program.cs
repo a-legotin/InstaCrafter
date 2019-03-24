@@ -4,11 +4,13 @@ using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
+using InstaCrafter.Classes;
 using InstaCrafter.Classes.Models;
 using InstaCrafter.EventBus;
 using InstaCrafter.EventBus.Abstractions;
 using InstaCrafter.Media.MediaProviders;
 using InstaCrafter.RabbitMQ;
+using InstaCrafter.UserService.IntegrationEvents.EventHandlers;
 using InstaSharper.Classes.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -107,6 +109,8 @@ namespace InstaCrafter.Media
 
                     services.Configure<InstaSharperConfig>(hostContext.Configuration.GetSection("InstaSharperConfig"));
                     services.AddHostedService<MediaCrafterService>();
+                    services.AddTransient<UserLoadEventHandler>();
+                    services.AddSingleton<IImageLoader, ImageLoader>();
                 })
                 .UseConsoleLifetime();
 
