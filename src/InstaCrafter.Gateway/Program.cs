@@ -28,7 +28,7 @@ namespace InstaCrafter.Gateway
                     config.AddJsonFile("ocelot.json", optional: true, reloadOnChange: true);
                 })
                 .UseKestrel(options => {
-                    options.Listen(IPAddress.Loopback, 5000); //HTTP port
+                    options.Listen(IPAddress.Loopback, 5555); //HTTP port
                 })
                 .UseStartup<Startup>();
     }

@@ -19,10 +19,64 @@ namespace InstaCrafter.PostService.Migrations
                 .HasAnnotation("ProductVersion", "3.0.0-preview3.19153.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
+            modelBuilder.Entity("InstaCrafter.PostService.DtoModels.InstagramCaptionDto", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<DateTime>("CreatedAtUtc");
+
+                    b.Property<string>("MediaId");
+
+                    b.Property<string>("Pk");
+
+                    b.Property<string>("Text");
+
+                    b.Property<DateTime>("UpdatedTimestamp");
+
+                    b.Property<long>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Captions");
+                });
+
+            modelBuilder.Entity("InstaCrafter.PostService.DtoModels.InstagramCarouselItemDto", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CarouselParentId");
+
+                    b.Property<int>("Height");
+
+                    b.Property<string>("InstaIdentifier");
+
+                    b.Property<int>("MediaType");
+
+                    b.Property<string>("Pk");
+
+                    b.Property<long?>("PostId");
+
+                    b.Property<DateTime>("UpdatedTimestamp");
+
+                    b.Property<int>("Width");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PostId");
+
+                    b.ToTable("CarouselItems");
+                });
+
             modelBuilder.Entity("InstaCrafter.PostService.DtoModels.InstagramImageDto", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<long?>("CarouselId");
 
                     b.Property<int>("Height");
 
@@ -38,15 +92,51 @@ namespace InstaCrafter.PostService.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CarouselId");
+
                     b.HasIndex("PostId");
 
-                    b.ToTable("InstaImages");
+                    b.ToTable("Images");
+                });
+
+            modelBuilder.Entity("InstaCrafter.PostService.DtoModels.InstagramLocationDto", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Address");
+
+                    b.Property<string>("City");
+
+                    b.Property<string>("ExternalId");
+
+                    b.Property<string>("ExternalSource");
+
+                    b.Property<long>("FacebookPlacesId");
+
+                    b.Property<double>("Lat");
+
+                    b.Property<double>("Lng");
+
+                    b.Property<string>("Name");
+
+                    b.Property<long>("Pk");
+
+                    b.Property<string>("ShortName");
+
+                    b.Property<DateTime>("UpdatedTimestamp");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Locations");
                 });
 
             modelBuilder.Entity("InstaCrafter.PostService.DtoModels.InstagramPostDto", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<long?>("CaptionId");
 
                     b.Property<string>("ClientCacheKey");
 
@@ -67,6 +157,8 @@ namespace InstaCrafter.PostService.Migrations
                     b.Property<string>("InstaIdentifier");
 
                     b.Property<int>("LikesCount");
+
+                    b.Property<long?>("LocationId");
 
                     b.Property<int>("MediaType");
 
@@ -90,13 +182,19 @@ namespace InstaCrafter.PostService.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("InstaPosts");
+                    b.HasIndex("CaptionId");
+
+                    b.HasIndex("LocationId");
+
+                    b.ToTable("Posts");
                 });
 
             modelBuilder.Entity("InstaCrafter.PostService.DtoModels.InstagramVideoDto", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<long?>("CarouselId");
 
                     b.Property<int>("Height");
 
@@ -114,20 +212,48 @@ namespace InstaCrafter.PostService.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CarouselId");
+
                     b.HasIndex("PostId");
 
-                    b.ToTable("InstaVideos");
+                    b.ToTable("Videos");
+                });
+
+            modelBuilder.Entity("InstaCrafter.PostService.DtoModels.InstagramCarouselItemDto", b =>
+                {
+                    b.HasOne("InstaCrafter.PostService.DtoModels.InstagramPostDto", "Post")
+                        .WithMany("Carousel")
+                        .HasForeignKey("PostId");
                 });
 
             modelBuilder.Entity("InstaCrafter.PostService.DtoModels.InstagramImageDto", b =>
                 {
+                    b.HasOne("InstaCrafter.PostService.DtoModels.InstagramCarouselItemDto", "Carousel")
+                        .WithMany("Images")
+                        .HasForeignKey("CarouselId");
+
                     b.HasOne("InstaCrafter.PostService.DtoModels.InstagramPostDto", "Post")
                         .WithMany("Images")
                         .HasForeignKey("PostId");
                 });
 
+            modelBuilder.Entity("InstaCrafter.PostService.DtoModels.InstagramPostDto", b =>
+                {
+                    b.HasOne("InstaCrafter.PostService.DtoModels.InstagramCaptionDto", "Caption")
+                        .WithMany()
+                        .HasForeignKey("CaptionId");
+
+                    b.HasOne("InstaCrafter.PostService.DtoModels.InstagramLocationDto", "Location")
+                        .WithMany("Posts")
+                        .HasForeignKey("LocationId");
+                });
+
             modelBuilder.Entity("InstaCrafter.PostService.DtoModels.InstagramVideoDto", b =>
                 {
+                    b.HasOne("InstaCrafter.PostService.DtoModels.InstagramCarouselItemDto", "Carousel")
+                        .WithMany("Videos")
+                        .HasForeignKey("CarouselId");
+
                     b.HasOne("InstaCrafter.PostService.DtoModels.InstagramPostDto", "Post")
                         .WithMany("Videos")
                         .HasForeignKey("PostId");

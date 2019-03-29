@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.Extensions", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.Media", "src\crafter\InstaCrafter.Media\InstaCrafter.Media.csproj", "{3141615C-B963-44A0-8D00-1A5E513481AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.Web", "src\InstaCrafter.Web\InstaCrafter.Web.csproj", "{198A8E07-A863-4F14-A5AA-8F014B4EB37A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{3141615C-B963-44A0-8D00-1A5E513481AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3141615C-B963-44A0-8D00-1A5E513481AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3141615C-B963-44A0-8D00-1A5E513481AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{198A8E07-A863-4F14-A5AA-8F014B4EB37A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{198A8E07-A863-4F14-A5AA-8F014B4EB37A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{198A8E07-A863-4F14-A5AA-8F014B4EB37A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{198A8E07-A863-4F14-A5AA-8F014B4EB37A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,6 +99,7 @@ Global
 		{8B2F6156-FCF4-473C-ABB2-D77C160C6A26} = {EC6F1202-0EB0-4CF5-ABF6-A5466AA68350}
 		{ABC85804-C9EA-46A1-8656-A6CCE05ECDFD} = {EC6F1202-0EB0-4CF5-ABF6-A5466AA68350}
 		{3141615C-B963-44A0-8D00-1A5E513481AF} = {D5374233-54E3-43E3-8E69-00E15B117734}
+		{198A8E07-A863-4F14-A5AA-8F014B4EB37A} = {B41D2650-1488-47E8-82F9-2375AA2EC433}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9C7D76D8-1F8E-41A1-93AC-D822B1F03484}

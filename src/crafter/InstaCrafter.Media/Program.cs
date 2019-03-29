@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Threading.Tasks;
 using Autofac;
@@ -123,12 +124,18 @@ namespace InstaCrafter.Media
             {
                 cfg.CreateMap<InstaUser, InstagramUser>();
                 cfg.CreateMap<InstaUserShort, InstagramUser>();
-                cfg.CreateMap<InstaMedia, InstagramPost>();
                 cfg.CreateMap<InstaImage, InstagramImage>();
                 cfg.CreateMap<InstaVideo, InstagramVideo>();
                 cfg.CreateMap<InstaReelFeed, InstagramReelFeed>();
                 cfg.CreateMap<InstaStoryItem, InstagramStoryItem>();
                 cfg.CreateMap<InstaMediaType, InstagramMediaType>();
+                cfg.CreateMap<InstaCaption, InstagramCaption>();
+                cfg.CreateMap<InstaLocation, InstagramLocation>();
+                cfg.CreateMap<InstaCarousel, InstagramCarousel>();
+                cfg.CreateMap<InstaCarouselItem, InstagramCarouselItem>();
+                cfg.CreateMap<InstaMedia, InstagramPost>();
+
+                cfg.AllowNullCollections = true;
             });
         }
     }

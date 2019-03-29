@@ -15,10 +15,12 @@ namespace InstaCrafter.PostService.DataProvider.PostgreSQL
         {
         }
 
-        public DbSet<InstagramPostDto> InstaPosts { get; set; }
-        public DbSet<InstagramVideoDto> InstaVideos { get; set; }
-        public DbSet<InstagramImageDto> InstaImages { get; set; }
-
+        public DbSet<InstagramPostDto> Posts { get; set; }
+        public DbSet<InstagramVideoDto> Videos { get; set; }
+        public DbSet<InstagramImageDto> Images { get; set; }
+        public DbSet<InstagramCarouselItemDto> CarouselItems { get; set; }
+        public DbSet<InstagramCaptionDto> Captions { get; set; }
+        public DbSet<InstagramLocationDto> Locations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -30,6 +32,15 @@ namespace InstaCrafter.PostService.DataProvider.PostgreSQL
             
             builder.Entity<InstagramVideoDto>().HasKey(m => m.Id);
             builder.Entity<InstagramVideoDto>().Property<DateTime>("UpdatedTimestamp");
+            
+            builder.Entity<InstagramLocationDto>().HasKey(m => m.Id);
+            builder.Entity<InstagramLocationDto>().Property<DateTime>("UpdatedTimestamp");
+            
+            builder.Entity<InstagramCarouselItemDto>().HasKey(m => m.Id);
+            builder.Entity<InstagramCarouselItemDto>().Property<DateTime>("UpdatedTimestamp");
+            
+            builder.Entity<InstagramCaptionDto>().HasKey(m => m.Id);
+            builder.Entity<InstagramCaptionDto>().Property<DateTime>("UpdatedTimestamp");
 
             builder.Entity<InstagramPostDto>()
                 .HasMany(post => post.Images)
@@ -39,6 +50,25 @@ namespace InstaCrafter.PostService.DataProvider.PostgreSQL
                 .HasMany(post => post.Videos)
                 .WithOne(video => video.Post);
             
+            builder.Entity<InstagramPostDto>()
+                .HasMany(post => post.Carousel)
+                .WithOne(carousel => carousel.Post);
+
+            builder.Entity<InstagramPostDto>()
+                .HasOne(post => post.Caption);
+
+            builder.Entity<InstagramCarouselItemDto>()
+                .HasMany(carousel => carousel.Images)
+                .WithOne(image => image.Carousel);
+            
+            builder.Entity<InstagramCarouselItemDto>()
+                .HasMany(carousel => carousel.Videos)
+                .WithOne(image => image.Carousel);
+            
+            builder.Entity<InstagramLocationDto>()
+                .HasMany(location => location.Posts)
+                .WithOne(post => post.Location);
+            
             base.OnModelCreating(builder);
         }
 
@@ -46,6 +76,12 @@ namespace InstaCrafter.PostService.DataProvider.PostgreSQL
         {
             ChangeTracker.DetectChanges();
             updateUpdatedProperty<InstagramPostDto>();
+            updateUpdatedProperty<InstagramImageDto>();
+            updateUpdatedProperty<InstagramVideoDto>();
+            updateUpdatedProperty<InstagramLocationDto>();
+            updateUpdatedProperty<InstagramCaptionDto>();
+            updateUpdatedProperty<InstagramCarouselItemDto>();
+
             return base.SaveChanges();
         }
 

@@ -31,13 +31,11 @@ namespace InstaCrafter.Media
             _logger.LogDebug("Approaching users for posts & stories");
             try
             {
-
                 for (int i = 0; i < 20; i++)
                 {
-                    await Task.Delay(TimeSpan.FromSeconds(15));
                     _eventBus.Publish(new RandomUserRequestMessage());
+                    await Task.Delay(TimeSpan.FromSeconds(120));
                 }
-
             }
             catch (Exception e)
             {

@@ -110,6 +110,16 @@ namespace InstaCrafter.PostService
                 
                 config.CreateMap<InstagramVideo, InstagramVideoDto>();
                 config.CreateMap<InstagramVideoDto, InstagramVideo>();
+                
+                                
+                config.CreateMap<InstagramLocation, InstagramLocationDto>();
+                config.CreateMap<InstagramLocationDto, InstagramLocation>();
+                
+                config.CreateMap<InstagramCaption, InstagramCaptionDto>();
+                config.CreateMap<InstagramCaptionDto, InstagramCaption>();
+                
+                config.CreateMap<InstagramCarouselItem, InstagramCarouselItemDto>();
+                config.CreateMap<InstagramCarouselItemDto, InstagramCarouselItem>();
             });
             
             var container = new ContainerBuilder();

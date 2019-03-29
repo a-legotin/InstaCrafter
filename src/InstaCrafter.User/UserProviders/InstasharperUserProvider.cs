@@ -89,7 +89,7 @@ namespace InstaCrafter.UserCrafter.UserProviders
         {
             _logger.LogDebug($"Loading followings for user '{username}'");
             var followingResult =
-                await _instaApi.GetUserFollowingAsync(username, PaginationParameters.MaxPagesToLoad(1));
+                await _instaApi.GetUserFollowingAsync(username, PaginationParameters.Empty);
             if (followingResult.Succeeded)
             {
                 _logger.LogDebug($"Loaded {followingResult.Value.Count} followers for user '{username}'");

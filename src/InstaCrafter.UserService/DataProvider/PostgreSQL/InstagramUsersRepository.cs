@@ -27,6 +27,7 @@ namespace InstaCrafter.UserService.DataProvider.PostgreSQL
 
         public void Update(long userId, InstagramUserDto item)
         {
+            item.Id = userId;
             _context.InstaUsers.Update(item);
             _context.SaveChanges();
         }

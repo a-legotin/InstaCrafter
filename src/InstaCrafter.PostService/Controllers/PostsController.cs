@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using InstaCrafter.Classes.Models;
+using InstaCrafter.PostService.DataProvider;
+using InstaCrafter.PostService.DtoModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InstaCrafter.PostService.Controllers
@@ -10,36 +13,41 @@ namespace InstaCrafter.PostService.Controllers
     [ApiController]
     public class PostsController : ControllerBase
     {
-        // GET api/values
+        private readonly IDataAccessProvider<InstagramPostDto> _repository;
+
+        public PostsController(IDataAccessProvider<InstagramPostDto> repository)
+        {
+            _repository = repository;
+        }
+
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<InstagramPostDto>> Get()
         {
-            return new string[] {"post"};
+            return _repository.GetItems();
         }
 
-        // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<InstagramPostDto> Get(long id)
         {
-            return "post #1";
+            return _repository.Get(id);
         }
 
-        // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] InstagramPostDto post)
         {
+            _repository.Add(post);
         }
 
-        // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(long id, [FromBody] InstagramPostDto post)
         {
+            _repository.Update(id, post);
         }
 
-        // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(long id)
         {
+            _repository.Delete(id);
         }
     }
 }

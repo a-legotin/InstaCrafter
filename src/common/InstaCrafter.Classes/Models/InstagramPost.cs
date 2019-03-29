@@ -48,6 +48,72 @@ namespace InstaCrafter.Classes.Models
         public int ViewCount { get; set; }
 
         public bool HasAudio { get; set; }
+        
+        public InstagramCaption Caption { get; set; }
+
+        public List<InstagramCarouselItem> Carousel { get; set; }
+        public InstagramLocation Location { get; set; }
+    }
+    
+    public class InstagramCarouselItem
+    {
+        public string InstaIdentifier { get; set; }
+
+        public InstagramMediaType MediaType { get; set; }
+
+        public List<InstagramImage> Images { get; set; } = new List<InstagramImage>();
+
+        public List<InstagramVideo> Videos { get; set; } = new List<InstagramVideo>();
+
+        public int Width { get; set; }
+
+        public int Height { get; set; }
+
+        public string Pk { get; set; }
+
+        public string CarouselParentId { get; set; }
+    }
+    
+    public class InstagramCarousel : List<InstagramCarouselItem>
+    { }
+    
+    public class InstagramCaption
+    {
+        public long UserId { get; set; }
+        public DateTime CreatedAtUtc { get; set; }
+
+        public DateTime CreatedAt { get; set; }
+
+        public InstagramUser User { get; set; }
+
+        public string Text { get; set; }
+
+        public string MediaId { get; set; }
+
+        public string Pk { get; set; }
+    }
+    
+    public class InstagramLocation
+    {
+        public long FacebookPlacesId { get; set; }
+
+        public string City { get; set; }
+
+        public long Pk { get; set; }
+
+        public string ShortName { get; set; }
+        
+        public string ExternalSource { get; set; }
+
+        public string ExternalId { get; set; }
+
+        public string Address { get; set; }
+
+        public double Lng { get; set; }
+
+        public double Lat { get; set; }
+
+        public string Name { get; set; }
     }
 
     public class InstagramVideo
