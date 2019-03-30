@@ -1,0 +1,67 @@
+2019-03-23 23:09:26.528 +03:00 [DBG] Hosting starting
+2019-03-23 23:09:26.816 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-23 23:09:27.240 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-23 23:09:27.399 +03:00 [DBG] Loading state from file
+2019-03-23 23:09:27.537 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-23 23:09:27.538 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-23 23:09:27.542 +03:00 [DBG] Approaching users for posts & stories
+2019-03-23 23:09:27.571 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-23 23:09:27.745 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-23 23:09:27.745 +03:00 [INF] Hosting environment: Production
+2019-03-23 23:09:27.746 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-23 23:09:27.746 +03:00 [DBG] Hosting started
+2019-03-23 23:10:29.941 +03:00 [DBG] Hosting starting
+2019-03-23 23:10:30.230 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-23 23:10:30.524 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-23 23:10:30.649 +03:00 [DBG] Loading state from file
+2019-03-23 23:10:30.763 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-23 23:10:30.764 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-23 23:10:30.769 +03:00 [DBG] Approaching users for posts & stories
+2019-03-23 23:10:30.795 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-23 23:10:30.979 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-23 23:10:30.980 +03:00 [INF] Hosting environment: Production
+2019-03-23 23:10:30.980 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-23 23:10:30.981 +03:00 [DBG] Hosting started
+2019-03-23 23:14:22.825 +03:00 [DBG] Hosting starting
+2019-03-23 23:14:23.085 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-23 23:14:23.374 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-23 23:14:23.529 +03:00 [DBG] Loading state from file
+2019-03-23 23:14:23.673 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-23 23:14:23.673 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-23 23:14:23.677 +03:00 [DBG] Approaching users for posts & stories
+2019-03-23 23:14:23.695 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-23 23:14:27.828 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-23 23:14:27.829 +03:00 [INF] Hosting environment: Production
+2019-03-23 23:14:27.829 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-23 23:14:27.830 +03:00 [DBG] Hosting started
+2019-03-23 23:17:27.011 +03:00 [DBG] Hosting starting
+2019-03-23 23:17:27.365 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-23 23:17:27.690 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-23 23:17:27.935 +03:00 [DBG] Loading state from file
+2019-03-23 23:17:28.090 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-23 23:17:28.090 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-23 23:17:28.095 +03:00 [DBG] Approaching users for posts & stories
+2019-03-23 23:17:28.119 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-23 23:17:28.339 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-23 23:17:28.339 +03:00 [INF] Hosting environment: Production
+2019-03-23 23:17:28.339 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-23 23:17:28.339 +03:00 [DBG] Hosting started
+2019-03-23 23:21:56.169 +03:00 [DBG] Hosting starting
+2019-03-23 23:21:56.438 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-23 23:21:56.750 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-23 23:21:56.896 +03:00 [DBG] Loading state from file
+2019-03-23 23:21:57.000 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-23 23:21:57.001 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-23 23:21:57.007 +03:00 [DBG] Approaching users for posts & stories
+2019-03-23 23:21:57.041 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-23 23:21:57.195 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-23 23:21:57.195 +03:00 [INF] Hosting environment: Production
+2019-03-23 23:21:57.195 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-23 23:21:57.196 +03:00 [DBG] Hosting started
+2019-03-23 23:22:23.223 +03:00 [DBG] Got an event! User: 'kartozz'
+2019-03-23 23:22:23.227 +03:00 [DBG] Loading story for user 'kartozz'
+2019-03-23 23:22:30.436 +03:00 [DBG] Got an event! User: 'elvisfromsouth'
+2019-03-23 23:22:30.437 +03:00 [DBG] Loading story for user 'elvisfromsouth'
+2019-03-23 23:22:43.683 +03:00 [DBG] Loaded 0 stories for user 'kartozz'
+2019-03-23 23:22:58.965 +03:00 [DBG] Got an event! User: 'cabobawy'
+2019-03-23 23:22:58.965 +03:00 [DBG] Loading story for user 'cabobawy'

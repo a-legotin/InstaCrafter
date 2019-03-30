@@ -1,0 +1,302 @@
+2019-03-30 22:07:44.218 +03:00 [DBG] Hosting starting
+2019-03-30 22:07:44.287 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-30 22:07:44.447 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-30 22:07:44.528 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-30 22:07:44.532 +03:00 [DBG] Approaching users for posts & stories
+2019-03-30 22:07:44.660 +03:00 [DBG] Task completed
+2019-03-30 22:07:44.661 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-30 22:07:44.661 +03:00 [INF] Hosting environment: Production
+2019-03-30 22:07:44.662 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-30 22:07:44.662 +03:00 [DBG] Hosting started
+2019-03-30 22:07:44.996 +03:00 [DBG] Loading state from file
+2019-03-30 22:07:45.044 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-30 22:07:45.062 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-30 22:07:45.102 +03:00 [DBG] Got an event! User: 'dmitrygrot'
+2019-03-30 22:07:45.108 +03:00 [DBG] Loading posts for user 'dmitrygrot'
+2019-03-30 22:07:45.121 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=dmitrygrot
+2019-03-30 22:07:59.262 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=dmitrygrot
+2019-03-30 22:07:59.301 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/653021974
+2019-03-30 22:08:14.075 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/653021974/
+2019-03-30 22:08:14.170 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/653021974?max_id=1918460968560825278_653021974
+2019-03-30 22:08:27.915 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/653021974/?max_id=1918460968560825278_653021974
+2019-03-30 22:08:27.978 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/653021974?max_id=1848691936052726455_653021974
+2019-03-30 22:08:39.511 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/653021974/?max_id=1848691936052726455_653021974
+2019-03-30 22:09:30.595 +03:00 [DBG] Loaded 54 posts for user 'dmitrygrot'
+2019-03-30 22:21:52.268 +03:00 [DBG] Hosting starting
+2019-03-30 22:21:52.354 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-30 22:21:52.515 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-30 22:21:52.573 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-30 22:21:52.580 +03:00 [DBG] Approaching users for posts & stories
+2019-03-30 22:21:52.740 +03:00 [DBG] Task completed
+2019-03-30 22:21:52.741 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-30 22:21:52.742 +03:00 [INF] Hosting environment: Production
+2019-03-30 22:21:52.743 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-30 22:21:52.744 +03:00 [DBG] Hosting started
+2019-03-30 22:21:54.395 +03:00 [DBG] Loading state from file
+2019-03-30 22:21:54.427 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-30 22:21:54.427 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-30 22:21:54.457 +03:00 [DBG] Got an event! User: 'tanya__karpova'
+2019-03-30 22:21:54.463 +03:00 [DBG] Loading posts for user 'tanya__karpova'
+2019-03-30 22:21:54.474 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=tanya__karpova
+2019-03-30 22:22:03.695 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=tanya__karpova
+2019-03-30 22:22:03.738 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/866619736
+2019-03-30 22:22:13.065 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/866619736/
+2019-03-30 22:22:13.082 +03:00 [ERR] Unable to load user 'tanya__karpova' all posts: Not authorized to view user
+2019-03-30 22:22:23.985 +03:00 [DBG] Hosting starting
+2019-03-30 22:22:24.060 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-30 22:22:24.206 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-30 22:22:24.250 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-30 22:22:24.255 +03:00 [DBG] Approaching users for posts & stories
+2019-03-30 22:22:24.330 +03:00 [DBG] Task completed
+2019-03-30 22:22:24.331 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-30 22:22:24.331 +03:00 [INF] Hosting environment: Production
+2019-03-30 22:22:24.331 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-30 22:22:24.332 +03:00 [DBG] Hosting started
+2019-03-30 22:22:24.495 +03:00 [DBG] Loading state from file
+2019-03-30 22:22:24.530 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-30 22:22:24.531 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-30 22:22:24.575 +03:00 [DBG] Got an event! User: 'robertdowneyjr'
+2019-03-30 22:22:24.579 +03:00 [DBG] Loading posts for user 'robertdowneyjr'
+2019-03-30 22:22:24.587 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=robertdowneyjr
+2019-03-30 22:22:30.445 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=robertdowneyjr
+2019-03-30 22:22:30.481 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1518284433
+2019-03-30 22:22:50.247 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1518284433/
+2019-03-30 22:22:50.364 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1518284433?max_id=1983612403606144752_1518284433
+2019-03-30 22:23:10.060 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1518284433/?max_id=1983612403606144752_1518284433
+2019-03-30 22:23:10.102 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1518284433?max_id=1946722719752103732_1518284433
+2019-03-30 22:23:18.671 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1518284433/?max_id=1946722719752103732_1518284433
+2019-03-30 22:24:11.475 +03:00 [DBG] Loaded 36 posts for user 'robertdowneyjr'
+2019-03-30 22:25:25.734 +03:00 [DBG] Hosting starting
+2019-03-30 22:25:25.813 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-30 22:25:25.933 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-30 22:25:25.981 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-30 22:25:25.986 +03:00 [DBG] Approaching users for posts & stories
+2019-03-30 22:25:26.064 +03:00 [DBG] Task completed
+2019-03-30 22:25:26.065 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-30 22:25:26.065 +03:00 [INF] Hosting environment: Production
+2019-03-30 22:25:26.066 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-30 22:25:26.066 +03:00 [DBG] Hosting started
+2019-03-30 22:25:26.193 +03:00 [DBG] Loading state from file
+2019-03-30 22:25:26.237 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-30 22:25:26.237 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-30 22:25:26.276 +03:00 [DBG] Got an event! User: 'julia_pshenichka'
+2019-03-30 22:25:26.280 +03:00 [DBG] Loading posts for user 'julia_pshenichka'
+2019-03-30 22:25:26.289 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=julia_pshenichka
+2019-03-30 22:25:41.881 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=julia_pshenichka
+2019-03-30 22:25:41.917 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/409030805
+2019-03-30 22:25:53.204 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/409030805/
+2019-03-30 22:25:53.221 +03:00 [ERR] Unable to load user 'julia_pshenichka' all posts: Not authorized to view user
+2019-03-30 22:26:11.983 +03:00 [DBG] Hosting starting
+2019-03-30 22:26:12.244 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-30 22:26:12.519 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-30 22:26:12.595 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-30 22:26:12.598 +03:00 [DBG] Approaching users for posts & stories
+2019-03-30 22:26:12.804 +03:00 [DBG] Task completed
+2019-03-30 22:26:12.807 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-30 22:26:12.808 +03:00 [INF] Hosting environment: Production
+2019-03-30 22:26:12.810 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-30 22:26:12.812 +03:00 [DBG] Hosting started
+2019-03-30 22:26:13.003 +03:00 [DBG] Loading state from file
+2019-03-30 22:26:13.093 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-30 22:26:13.093 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-30 22:26:13.119 +03:00 [DBG] Got an event! User: 'shulikome'
+2019-03-30 22:26:13.123 +03:00 [DBG] Loading posts for user 'shulikome'
+2019-03-30 22:26:13.133 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=shulikome
+2019-03-30 22:26:31.807 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=shulikome
+2019-03-30 22:26:31.845 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/18799740
+2019-03-30 22:26:51.441 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/18799740/
+2019-03-30 22:26:51.520 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/18799740?max_id=1919901215924418760_18799740
+2019-03-30 22:27:01.102 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/18799740/?max_id=1919901215924418760_18799740
+2019-03-30 22:27:01.127 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/18799740?max_id=1861683760078439788_18799740
+2019-03-30 22:27:13.588 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/18799740/?max_id=1861683760078439788_18799740
+2019-03-30 22:54:47.725 +03:00 [DBG] Hosting starting
+2019-03-30 22:54:48.093 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-30 22:54:48.683 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-30 22:54:48.832 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-30 22:54:48.841 +03:00 [DBG] Approaching users for posts & stories
+2019-03-30 22:54:49.371 +03:00 [DBG] Task completed
+2019-03-30 22:54:49.373 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-30 22:54:49.375 +03:00 [INF] Hosting environment: Production
+2019-03-30 22:54:49.376 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-30 22:54:49.377 +03:00 [DBG] Hosting started
+2019-03-30 22:55:32.944 +03:00 [DBG] Hosting starting
+2019-03-30 22:55:33.212 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-30 22:55:33.498 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-30 22:55:33.574 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-30 22:55:33.578 +03:00 [DBG] Approaching users for posts & stories
+2019-03-30 22:55:33.820 +03:00 [DBG] Task completed
+2019-03-30 22:55:33.822 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-30 22:55:33.822 +03:00 [INF] Hosting environment: Production
+2019-03-30 22:55:33.823 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-30 22:55:33.824 +03:00 [DBG] Hosting started
+2019-03-30 22:55:37.023 +03:00 [DBG] Loading state from file
+2019-03-30 22:55:37.130 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-30 22:55:37.132 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-30 22:55:37.168 +03:00 [DBG] Got an event! User: 'marvel.rus'
+2019-03-30 22:55:37.175 +03:00 [DBG] Loading posts for user 'marvel.rus'
+2019-03-30 22:55:37.197 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=marvel.rus
+2019-03-30 22:55:48.435 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=marvel.rus
+2019-03-30 22:55:48.478 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1451036219
+2019-03-30 22:56:00.150 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1451036219/
+2019-03-30 22:56:00.250 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1451036219?max_id=2008173685692798000_1451036219
+2019-03-30 22:56:15.842 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1451036219/?max_id=2008173685692798000_1451036219
+2019-03-30 22:56:15.854 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1451036219?max_id=2002540914157021483_1451036219
+2019-03-30 22:56:24.731 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1451036219/?max_id=2002540914157021483_1451036219
+2019-03-30 23:06:46.637 +03:00 [DBG] Hosting starting
+2019-03-30 23:06:46.939 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-30 23:06:47.236 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-30 23:06:47.349 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-30 23:06:47.355 +03:00 [DBG] Approaching users for posts & stories
+2019-03-30 23:06:47.621 +03:00 [DBG] Task completed
+2019-03-30 23:06:47.622 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-30 23:06:47.622 +03:00 [INF] Hosting environment: Production
+2019-03-30 23:06:47.623 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-30 23:06:47.623 +03:00 [DBG] Hosting started
+2019-03-30 23:07:23.947 +03:00 [DBG] Hosting starting
+2019-03-30 23:07:24.185 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-30 23:07:24.523 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-30 23:07:24.624 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-30 23:07:24.632 +03:00 [DBG] Approaching users for posts & stories
+2019-03-30 23:07:24.907 +03:00 [DBG] Task completed
+2019-03-30 23:07:24.908 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-30 23:07:24.909 +03:00 [INF] Hosting environment: Production
+2019-03-30 23:07:24.909 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-30 23:07:24.910 +03:00 [DBG] Hosting started
+2019-03-30 23:07:25.136 +03:00 [DBG] Loading state from file
+2019-03-30 23:07:25.206 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-30 23:07:25.206 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-30 23:07:25.231 +03:00 [DBG] Got an event! User: 'samburskaya'
+2019-03-30 23:07:25.238 +03:00 [DBG] Loading posts for user 'samburskaya'
+2019-03-30 23:07:25.252 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=samburskaya
+2019-03-30 23:07:45.138 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=samburskaya
+2019-03-30 23:07:45.197 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1516824713
+2019-03-30 23:07:52.804 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1516824713/
+2019-03-30 23:07:52.898 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1516824713?max_id=2002940238004354322_1516824713
+2019-03-30 23:08:08.469 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1516824713/?max_id=2002940238004354322_1516824713
+2019-03-30 23:08:08.498 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1516824713?max_id=1993013881254284967_1516824713
+2019-03-30 23:08:27.085 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1516824713/?max_id=1993013881254284967_1516824713
+2019-03-30 23:14:39.025 +03:00 [DBG] Hosting starting
+2019-03-30 23:14:39.327 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-30 23:14:39.674 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-30 23:14:39.738 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-30 23:14:39.747 +03:00 [DBG] Approaching users for posts & stories
+2019-03-30 23:14:39.975 +03:00 [DBG] Task completed
+2019-03-30 23:14:39.976 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-30 23:14:39.976 +03:00 [INF] Hosting environment: Production
+2019-03-30 23:14:39.976 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-30 23:14:39.977 +03:00 [DBG] Hosting started
+2019-03-30 23:15:28.826 +03:00 [DBG] Hosting starting
+2019-03-30 23:15:29.117 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-30 23:15:29.413 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-30 23:15:29.498 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-30 23:15:29.502 +03:00 [DBG] Approaching users for posts & stories
+2019-03-30 23:15:29.753 +03:00 [DBG] Task completed
+2019-03-30 23:15:29.757 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-30 23:15:29.758 +03:00 [INF] Hosting environment: Production
+2019-03-30 23:15:29.762 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-30 23:15:29.764 +03:00 [DBG] Hosting started
+2019-03-30 23:15:29.996 +03:00 [DBG] Loading state from file
+2019-03-30 23:15:30.071 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-30 23:15:30.071 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-30 23:15:30.103 +03:00 [DBG] Got an event! User: 'elenapegas'
+2019-03-30 23:15:30.113 +03:00 [DBG] Loading posts for user 'elenapegas'
+2019-03-30 23:15:30.135 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=elenapegas
+2019-03-30 23:15:46.980 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=elenapegas
+2019-03-30 23:15:47.024 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/241024950
+2019-03-30 23:16:03.589 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/241024950/
+2019-03-30 23:16:03.692 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/241024950?max_id=2006563604668688897_241024950
+2019-03-30 23:16:16.576 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/241024950/?max_id=2006563604668688897_241024950
+2019-03-30 23:16:16.607 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/241024950?max_id=2003558762836904460_241024950
+2019-03-30 23:16:32.287 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/241024950/?max_id=2003558762836904460_241024950
+2019-03-30 23:19:36.298 +03:00 [DBG] Hosting starting
+2019-03-30 23:19:36.592 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-30 23:19:36.920 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-30 23:19:37.016 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-30 23:19:37.021 +03:00 [DBG] Approaching users for posts & stories
+2019-03-30 23:19:37.236 +03:00 [DBG] Task completed
+2019-03-30 23:19:37.237 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-30 23:19:37.237 +03:00 [INF] Hosting environment: Production
+2019-03-30 23:19:37.238 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-30 23:19:37.238 +03:00 [DBG] Hosting started
+2019-03-30 23:19:57.517 +03:00 [DBG] Hosting starting
+2019-03-30 23:19:57.835 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-30 23:19:58.145 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-30 23:19:58.218 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-30 23:19:58.223 +03:00 [DBG] Approaching users for posts & stories
+2019-03-30 23:19:58.423 +03:00 [DBG] Task completed
+2019-03-30 23:19:58.423 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-30 23:19:58.424 +03:00 [INF] Hosting environment: Production
+2019-03-30 23:19:58.424 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-30 23:19:58.424 +03:00 [DBG] Hosting started
+2019-03-30 23:19:58.618 +03:00 [DBG] Loading state from file
+2019-03-30 23:19:58.691 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-30 23:19:58.692 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-30 23:19:58.725 +03:00 [DBG] Got an event! User: 'serkhiomel'
+2019-03-30 23:19:58.730 +03:00 [DBG] Loading posts for user 'serkhiomel'
+2019-03-30 23:19:58.746 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=serkhiomel
+2019-03-30 23:20:11.296 +03:00 [DBG] Hosting starting
+2019-03-30 23:20:11.729 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-30 23:20:11.989 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-30 23:20:12.050 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-30 23:20:12.057 +03:00 [DBG] Approaching users for posts & stories
+2019-03-30 23:20:12.348 +03:00 [DBG] Task completed
+2019-03-30 23:20:12.350 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-30 23:20:12.351 +03:00 [INF] Hosting environment: Production
+2019-03-30 23:20:12.352 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-30 23:20:12.353 +03:00 [DBG] Hosting started
+2019-03-30 23:20:39.888 +03:00 [DBG] Hosting starting
+2019-03-30 23:20:40.214 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-30 23:20:40.696 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-30 23:20:40.808 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-30 23:20:40.819 +03:00 [DBG] Approaching users for posts & stories
+2019-03-30 23:20:41.292 +03:00 [DBG] Task completed
+2019-03-30 23:20:41.293 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-30 23:20:41.293 +03:00 [INF] Hosting environment: Production
+2019-03-30 23:20:41.294 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-30 23:20:41.294 +03:00 [DBG] Hosting started
+2019-03-30 23:20:41.458 +03:00 [DBG] Loading state from file
+2019-03-30 23:20:41.532 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-30 23:20:41.532 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-30 23:20:41.560 +03:00 [DBG] Got an event! User: 'reginatodorenko'
+2019-03-30 23:20:41.564 +03:00 [DBG] Loading posts for user 'reginatodorenko'
+2019-03-30 23:20:41.576 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=reginatodorenko
+2019-03-30 23:20:59.323 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=reginatodorenko
+2019-03-30 23:20:59.363 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/12496926
+2019-03-30 23:21:14.929 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/12496926/
+2019-03-30 23:21:15.023 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/12496926?max_id=2003125950123891230_12496926
+2019-03-30 23:21:29.511 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/12496926/?max_id=2003125950123891230_12496926
+2019-03-30 23:21:29.544 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/12496926?max_id=1995665079076585268_12496926
+2019-03-30 23:21:36.598 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/12496926/?max_id=1995665079076585268_12496926
+2019-03-30 23:36:49.599 +03:00 [DBG] Hosting starting
+2019-03-30 23:36:49.869 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-30 23:36:50.194 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-30 23:36:50.270 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-30 23:36:50.274 +03:00 [DBG] Approaching users for posts & stories
+2019-03-30 23:36:50.473 +03:00 [DBG] Task completed
+2019-03-30 23:36:50.474 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-30 23:36:50.475 +03:00 [INF] Hosting environment: Production
+2019-03-30 23:36:50.475 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-30 23:36:50.475 +03:00 [DBG] Hosting started
+2019-03-30 23:37:13.354 +03:00 [DBG] Hosting starting
+2019-03-30 23:37:13.642 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-30 23:37:13.906 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-30 23:37:13.968 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-30 23:37:13.972 +03:00 [DBG] Approaching users for posts & stories
+2019-03-30 23:37:14.200 +03:00 [DBG] Task completed
+2019-03-30 23:37:14.201 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-30 23:37:14.203 +03:00 [INF] Hosting environment: Production
+2019-03-30 23:37:14.204 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-30 23:37:14.206 +03:00 [DBG] Hosting started
+2019-03-30 23:37:14.385 +03:00 [DBG] Loading state from file
+2019-03-30 23:37:14.452 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-30 23:37:14.452 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-30 23:37:14.480 +03:00 [DBG] Got an event! User: 'istoricheskie_memy'
+2019-03-30 23:37:14.485 +03:00 [DBG] Loading posts for user 'istoricheskie_memy'
+2019-03-30 23:37:14.499 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=istoricheskie_memy
+2019-03-30 23:37:34.191 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=istoricheskie_memy
+2019-03-30 23:37:34.235 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/6786147369
+2019-03-30 23:37:39.811 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/6786147369/
+2019-03-30 23:37:39.902 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/6786147369?max_id=2004475076628722112_6786147369
+2019-03-30 23:37:58.452 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/6786147369/?max_id=2004475076628722112_6786147369
+2019-03-30 23:37:58.460 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/6786147369?max_id=1992271858150848828_6786147369
+2019-03-30 23:38:05.906 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/6786147369/?max_id=1992271858150848828_6786147369

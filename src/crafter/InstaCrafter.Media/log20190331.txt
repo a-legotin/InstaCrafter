@@ -1,0 +1,895 @@
+2019-03-31 14:02:14.592 +03:00 [DBG] Hosting starting
+2019-03-31 14:02:14.894 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 14:02:15.190 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 14:02:15.276 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 14:02:15.280 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 14:02:15.531 +03:00 [DBG] Task completed
+2019-03-31 14:02:15.531 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 14:02:15.532 +03:00 [INF] Hosting environment: Production
+2019-03-31 14:02:15.532 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 14:02:15.532 +03:00 [DBG] Hosting started
+2019-03-31 14:02:18.176 +03:00 [DBG] Loading state from file
+2019-03-31 14:02:18.255 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-31 14:02:18.256 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-31 14:02:18.280 +03:00 [DBG] Got an event! User: 'elenapegas'
+2019-03-31 14:02:18.284 +03:00 [DBG] Loading posts for user 'elenapegas'
+2019-03-31 14:02:18.298 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=elenapegas
+2019-03-31 14:02:27.091 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=elenapegas
+2019-03-31 14:02:27.139 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/241024950
+2019-03-31 14:02:38.805 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/241024950/
+2019-03-31 14:02:38.916 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/241024950?max_id=2006811165014999473_241024950
+2019-03-31 14:02:45.500 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/241024950/?max_id=2006811165014999473_241024950
+2019-03-31 14:02:45.520 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/241024950?max_id=2003837906837397589_241024950
+2019-03-31 14:02:56.327 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/241024950/?max_id=2003837906837397589_241024950
+2019-03-31 14:04:33.557 +03:00 [DBG] Hosting starting
+2019-03-31 14:04:33.877 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 14:04:34.137 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 14:04:34.220 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 14:04:34.225 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 14:04:34.517 +03:00 [DBG] Task completed
+2019-03-31 14:04:34.518 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 14:04:34.519 +03:00 [INF] Hosting environment: Production
+2019-03-31 14:04:34.519 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 14:04:34.519 +03:00 [DBG] Hosting started
+2019-03-31 14:04:58.767 +03:00 [DBG] Hosting starting
+2019-03-31 14:04:59.059 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 14:04:59.432 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 14:04:59.491 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 14:04:59.495 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 14:04:59.716 +03:00 [DBG] Task completed
+2019-03-31 14:04:59.717 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 14:04:59.717 +03:00 [INF] Hosting environment: Production
+2019-03-31 14:04:59.717 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 14:04:59.718 +03:00 [DBG] Hosting started
+2019-03-31 14:04:59.930 +03:00 [DBG] Loading state from file
+2019-03-31 14:04:59.997 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-31 14:04:59.998 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-31 14:05:00.026 +03:00 [DBG] Got an event! User: 'tipichkrd'
+2019-03-31 14:05:00.031 +03:00 [DBG] Loading posts for user 'tipichkrd'
+2019-03-31 14:05:00.043 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=tipichkrd
+2019-03-31 14:05:11.705 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=tipichkrd
+2019-03-31 14:05:11.749 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/286295618
+2019-03-31 14:05:19.322 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/286295618/
+2019-03-31 14:05:19.417 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/286295618?max_id=2010870240879292489_286295618
+2019-03-31 14:05:32.964 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/286295618/?max_id=2010870240879292489_286295618
+2019-03-31 14:05:32.991 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/286295618?max_id=2010082317963396651_286295618
+2019-03-31 14:05:51.766 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/286295618/?max_id=2010082317963396651_286295618
+2019-03-31 14:08:08.799 +03:00 [DBG] Loaded 36 posts for user 'tipichkrd'
+2019-03-31 14:09:25.834 +03:00 [DBG] Hosting starting
+2019-03-31 14:09:25.908 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 14:09:26.020 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 14:09:26.063 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 14:09:26.068 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 14:09:26.155 +03:00 [DBG] Task completed
+2019-03-31 14:09:26.156 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 14:09:26.156 +03:00 [INF] Hosting environment: Production
+2019-03-31 14:09:26.157 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 14:09:26.157 +03:00 [DBG] Hosting started
+2019-03-31 14:09:26.301 +03:00 [DBG] Loading state from file
+2019-03-31 14:09:26.357 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-31 14:09:26.358 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-31 14:09:26.389 +03:00 [DBG] Got an event! User: 'makhorov'
+2019-03-31 14:09:26.394 +03:00 [DBG] Loading posts for user 'makhorov'
+2019-03-31 14:09:26.405 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=makhorov
+2019-03-31 14:09:40.871 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=makhorov
+2019-03-31 14:09:40.933 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/470774027
+2019-03-31 14:09:58.706 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/470774027/
+2019-03-31 14:09:58.853 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/470774027?max_id=1980656655204916579_470774027
+2019-03-31 14:10:12.696 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/470774027/?max_id=1980656655204916579_470774027
+2019-03-31 14:10:12.768 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/470774027?max_id=1926271027554350401_470774027
+2019-03-31 14:10:32.456 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/470774027/?max_id=1926271027554350401_470774027
+2019-03-31 14:12:46.401 +03:00 [DBG] Loaded 36 posts for user 'makhorov'
+2019-03-31 15:22:02.194 +03:00 [DBG] Hosting starting
+2019-03-31 15:22:02.458 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 15:22:02.746 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 15:22:02.809 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 15:22:02.812 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 15:22:03.041 +03:00 [DBG] Task completed
+2019-03-31 15:22:03.042 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 15:22:03.042 +03:00 [INF] Hosting environment: Production
+2019-03-31 15:22:03.042 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 15:22:03.043 +03:00 [DBG] Hosting started
+2019-03-31 15:22:05.451 +03:00 [DBG] Loading state from file
+2019-03-31 15:22:05.527 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-31 15:22:05.528 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-31 15:22:05.561 +03:00 [DBG] Got an event! User: 'matrena_evgenevna'
+2019-03-31 15:22:05.565 +03:00 [DBG] Loading posts for user 'matrena_evgenevna'
+2019-03-31 15:22:05.580 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=matrena_evgenevna
+2019-03-31 15:22:11.623 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=matrena_evgenevna
+2019-03-31 15:22:11.666 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/590198835
+2019-03-31 15:22:21.927 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/590198835/
+2019-03-31 15:22:22.034 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/590198835?max_id=1322336507440416391_590198835
+2019-03-31 15:22:29.774 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/590198835/?max_id=1322336507440416391_590198835
+2019-03-31 15:22:29.801 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/590198835?max_id=943013226209865821_590198835
+2019-03-31 15:22:48.681 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/590198835/?max_id=943013226209865821_590198835
+2019-03-31 15:23:40.296 +03:00 [DBG] Loaded 54 posts for user 'matrena_evgenevna'
+2019-03-31 15:30:02.610 +03:00 [DBG] Hosting starting
+2019-03-31 15:30:02.869 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 15:30:03.149 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 15:30:03.216 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 15:30:03.221 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 15:30:03.432 +03:00 [DBG] Task completed
+2019-03-31 15:30:03.433 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 15:30:03.434 +03:00 [INF] Hosting environment: Production
+2019-03-31 15:30:03.435 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 15:30:03.435 +03:00 [DBG] Hosting started
+2019-03-31 15:30:05.737 +03:00 [DBG] Loading state from file
+2019-03-31 15:30:05.814 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-31 15:30:05.815 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-31 15:30:05.843 +03:00 [DBG] Got an event! User: 'iamplc'
+2019-03-31 15:30:05.850 +03:00 [DBG] Loading posts for user 'iamplc'
+2019-03-31 15:30:05.866 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=iamplc
+2019-03-31 15:30:12.037 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=iamplc
+2019-03-31 15:30:12.080 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/10657911
+2019-03-31 15:30:27.657 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/10657911/
+2019-03-31 15:30:27.773 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/10657911?max_id=2003185050098691672_10657911
+2019-03-31 15:30:41.418 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/10657911/?max_id=2003185050098691672_10657911
+2019-03-31 15:30:41.454 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/10657911?max_id=1995100600869646492_10657911
+2019-03-31 15:30:47.201 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/10657911/?max_id=1995100600869646492_10657911
+2019-03-31 15:33:20.767 +03:00 [DBG] Loaded 36 posts for user 'iamplc'
+2019-03-31 15:38:49.207 +03:00 [DBG] Hosting starting
+2019-03-31 15:38:49.435 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 15:38:49.726 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 15:38:49.791 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 15:38:49.797 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 15:38:50.030 +03:00 [DBG] Task completed
+2019-03-31 15:38:50.041 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 15:38:50.042 +03:00 [INF] Hosting environment: Production
+2019-03-31 15:38:50.042 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 15:38:50.043 +03:00 [DBG] Hosting started
+2019-03-31 15:38:52.400 +03:00 [DBG] Loading state from file
+2019-03-31 15:38:52.475 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-31 15:38:52.475 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-31 15:38:52.504 +03:00 [DBG] Got an event! User: 'creamywhite'
+2019-03-31 15:38:52.509 +03:00 [DBG] Loading posts for user 'creamywhite'
+2019-03-31 15:38:52.521 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=creamywhite
+2019-03-31 15:39:07.423 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=creamywhite
+2019-03-31 15:39:07.474 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/30598212
+2019-03-31 15:39:25.753 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/30598212/
+2019-03-31 15:39:25.768 +03:00 [ERR] Unable to load user 'creamywhite' all posts: Not authorized to view user
+2019-03-31 15:40:19.075 +03:00 [DBG] Hosting starting
+2019-03-31 15:40:19.367 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 15:40:19.660 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 15:40:19.741 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 15:40:19.748 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 15:40:19.964 +03:00 [DBG] Task completed
+2019-03-31 15:40:19.966 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 15:40:19.969 +03:00 [INF] Hosting environment: Production
+2019-03-31 15:40:19.969 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 15:40:19.970 +03:00 [DBG] Hosting started
+2019-03-31 15:40:20.149 +03:00 [DBG] Loading state from file
+2019-03-31 15:40:20.220 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-31 15:40:20.221 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-31 15:40:20.243 +03:00 [DBG] Got an event! User: 'ghestkrd'
+2019-03-31 15:40:20.248 +03:00 [DBG] Loading posts for user 'ghestkrd'
+2019-03-31 15:40:20.265 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=ghestkrd
+2019-03-31 15:40:35.963 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=ghestkrd
+2019-03-31 15:40:36.005 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/2226586843
+2019-03-31 15:40:46.283 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/2226586843/
+2019-03-31 15:40:46.297 +03:00 [ERR] Unable to load user 'ghestkrd' all posts: Not authorized to view user
+2019-03-31 15:42:06.140 +03:00 [DBG] Hosting starting
+2019-03-31 15:42:06.452 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 15:42:06.714 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 15:42:06.784 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 15:42:06.791 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 15:42:07.002 +03:00 [DBG] Task completed
+2019-03-31 15:42:07.002 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 15:42:07.003 +03:00 [INF] Hosting environment: Production
+2019-03-31 15:42:07.003 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 15:42:07.003 +03:00 [DBG] Hosting started
+2019-03-31 15:42:07.140 +03:00 [DBG] Loading state from file
+2019-03-31 15:42:07.216 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-31 15:42:07.217 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-31 15:42:07.244 +03:00 [DBG] Got an event! User: 'asmuskristina'
+2019-03-31 15:42:07.250 +03:00 [DBG] Loading posts for user 'asmuskristina'
+2019-03-31 15:42:07.270 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=asmuskristina
+2019-03-31 15:42:22.936 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=asmuskristina
+2019-03-31 15:42:22.982 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/253477742
+2019-03-31 15:42:39.718 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/253477742/
+2019-03-31 15:42:39.818 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/253477742?max_id=2004442312092709085_253477742
+2019-03-31 15:42:59.322 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/253477742/?max_id=2004442312092709085_253477742
+2019-03-31 15:42:59.335 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/253477742?max_id=1995847707520732476_253477742
+2019-03-31 15:43:16.844 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/253477742/?max_id=1995847707520732476_253477742
+2019-03-31 15:44:14.696 +03:00 [DBG] Loaded 36 posts for user 'asmuskristina'
+2019-03-31 15:48:37.728 +03:00 [DBG] Hosting starting
+2019-03-31 15:48:38.039 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 15:48:38.308 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 15:48:38.379 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 15:48:38.382 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 15:48:38.603 +03:00 [DBG] Task completed
+2019-03-31 15:48:38.606 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 15:48:38.608 +03:00 [INF] Hosting environment: Production
+2019-03-31 15:48:38.610 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 15:48:38.612 +03:00 [DBG] Hosting started
+2019-03-31 15:48:41.027 +03:00 [DBG] Loading state from file
+2019-03-31 15:48:41.103 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-31 15:48:41.103 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-31 15:48:41.137 +03:00 [DBG] Got an event! User: 'fedor.den'
+2019-03-31 15:48:41.145 +03:00 [DBG] Loading posts for user 'fedor.den'
+2019-03-31 15:48:41.160 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=fedor.den
+2019-03-31 15:48:51.039 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=fedor.den
+2019-03-31 15:48:51.088 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1207521107
+2019-03-31 15:48:59.359 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1207521107/
+2019-03-31 15:48:59.375 +03:00 [ERR] Unable to load user 'fedor.den' all posts: Not authorized to view user
+2019-03-31 15:49:23.327 +03:00 [DBG] Hosting starting
+2019-03-31 15:49:23.641 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 15:49:23.933 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 15:49:23.998 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 15:49:24.002 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 15:49:24.203 +03:00 [DBG] Task completed
+2019-03-31 15:49:24.204 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 15:49:24.204 +03:00 [INF] Hosting environment: Production
+2019-03-31 15:49:24.205 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 15:49:24.205 +03:00 [DBG] Hosting started
+2019-03-31 15:49:24.445 +03:00 [DBG] Loading state from file
+2019-03-31 15:49:24.527 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-31 15:49:24.527 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-31 15:49:24.560 +03:00 [DBG] Got an event! User: 'annakhilkevich'
+2019-03-31 15:49:24.564 +03:00 [DBG] Loading posts for user 'annakhilkevich'
+2019-03-31 15:49:24.574 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=annakhilkevich
+2019-03-31 15:49:37.366 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=annakhilkevich
+2019-03-31 15:49:37.408 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/7061024
+2019-03-31 15:49:56.914 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/7061024/
+2019-03-31 15:49:57.019 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/7061024?max_id=2007349072465641938_7061024
+2019-03-31 15:50:08.580 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/7061024/?max_id=2007349072465641938_7061024
+2019-03-31 15:50:08.589 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/7061024?max_id=2003821410245699838_7061024
+2019-03-31 15:50:24.141 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/7061024/?max_id=2003821410245699838_7061024
+2019-03-31 15:51:12.287 +03:00 [DBG] Loaded 36 posts for user 'annakhilkevich'
+2019-03-31 15:55:19.490 +03:00 [DBG] Hosting starting
+2019-03-31 15:55:19.818 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 15:55:20.243 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 15:55:20.350 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 15:55:20.363 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 15:55:20.621 +03:00 [DBG] Task completed
+2019-03-31 15:55:20.623 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 15:55:20.623 +03:00 [INF] Hosting environment: Production
+2019-03-31 15:55:20.624 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 15:55:20.624 +03:00 [DBG] Hosting started
+2019-03-31 15:55:20.795 +03:00 [DBG] Loading state from file
+2019-03-31 15:55:20.885 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-31 15:55:20.886 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-31 15:55:20.932 +03:00 [DBG] Got an event! User: 'anastassiyanovikova'
+2019-03-31 15:55:20.938 +03:00 [DBG] Loading posts for user 'anastassiyanovikova'
+2019-03-31 15:55:20.957 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=anastassiyanovikova
+2019-03-31 15:55:38.684 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=anastassiyanovikova
+2019-03-31 15:55:38.723 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/398807146
+2019-03-31 15:55:50.089 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/398807146/
+2019-03-31 15:55:50.101 +03:00 [ERR] Unable to load user 'anastassiyanovikova' all posts: Not authorized to view user
+2019-03-31 15:56:42.314 +03:00 [DBG] Hosting starting
+2019-03-31 15:56:42.654 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 15:56:42.954 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 15:56:43.008 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 15:56:43.012 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 15:56:43.276 +03:00 [DBG] Task completed
+2019-03-31 15:56:43.277 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 15:56:43.277 +03:00 [INF] Hosting environment: Production
+2019-03-31 15:56:43.277 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 15:56:43.278 +03:00 [DBG] Hosting started
+2019-03-31 15:56:43.448 +03:00 [DBG] Loading state from file
+2019-03-31 15:56:43.519 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-31 15:56:43.520 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-31 15:56:43.548 +03:00 [DBG] Got an event! User: 'oblako_manufacture'
+2019-03-31 15:56:43.552 +03:00 [DBG] Loading posts for user 'oblako_manufacture'
+2019-03-31 15:56:43.565 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=oblako_manufacture
+2019-03-31 15:56:58.216 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=oblako_manufacture
+2019-03-31 15:56:58.267 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/5084079046
+2019-03-31 15:57:14.823 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/5084079046/
+2019-03-31 15:57:14.912 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/5084079046?max_id=1697345818272463582_5084079046
+2019-03-31 15:57:29.538 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/5084079046/?max_id=1697345818272463582_5084079046
+2019-03-31 15:57:29.574 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/5084079046?max_id=1537771381114942379_5084079046
+2019-03-31 15:57:49.021 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/5084079046/?max_id=1537771381114942379_5084079046
+2019-03-31 15:58:07.906 +03:00 [DBG] Loaded 39 posts for user 'oblako_manufacture'
+2019-03-31 16:05:39.278 +03:00 [DBG] Hosting starting
+2019-03-31 16:05:39.521 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 16:05:39.824 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 16:05:39.916 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 16:05:39.920 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 16:05:40.119 +03:00 [DBG] Task completed
+2019-03-31 16:05:40.119 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 16:05:40.120 +03:00 [INF] Hosting environment: Production
+2019-03-31 16:05:40.125 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 16:05:40.125 +03:00 [DBG] Hosting started
+2019-03-31 16:06:46.307 +03:00 [DBG] Hosting starting
+2019-03-31 16:06:46.584 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 16:06:46.850 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 16:06:46.916 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 16:06:46.923 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 16:06:47.183 +03:00 [DBG] Task completed
+2019-03-31 16:06:47.184 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 16:06:47.184 +03:00 [INF] Hosting environment: Production
+2019-03-31 16:06:47.184 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 16:06:47.185 +03:00 [DBG] Hosting started
+2019-03-31 16:06:47.340 +03:00 [DBG] Loading state from file
+2019-03-31 16:06:47.426 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-31 16:06:47.426 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-31 16:06:47.448 +03:00 [DBG] Got an event! User: 'fuagra_iz_topora'
+2019-03-31 16:06:47.454 +03:00 [DBG] Loading posts for user 'fuagra_iz_topora'
+2019-03-31 16:06:47.470 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=fuagra_iz_topora
+2019-03-31 16:07:01.193 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=fuagra_iz_topora
+2019-03-31 16:07:01.240 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/2987878101
+2019-03-31 16:07:16.123 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/2987878101/
+2019-03-31 16:07:16.208 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/2987878101?max_id=2007465984891116092_2987878101
+2019-03-31 16:07:31.586 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/2987878101/?max_id=2007465984891116092_2987878101
+2019-03-31 16:07:31.601 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/2987878101?max_id=2002385796364934169_2987878101
+2019-03-31 16:07:50.235 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/2987878101/?max_id=2002385796364934169_2987878101
+2019-03-31 16:10:30.493 +03:00 [DBG] Loaded 36 posts for user 'fuagra_iz_topora'
+2019-03-31 16:11:03.528 +03:00 [DBG] Hosting starting
+2019-03-31 16:11:03.801 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 16:11:04.069 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 16:11:04.146 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 16:11:04.154 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 16:11:04.384 +03:00 [DBG] Task completed
+2019-03-31 16:11:04.385 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 16:11:04.385 +03:00 [INF] Hosting environment: Production
+2019-03-31 16:11:04.385 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 16:11:04.385 +03:00 [DBG] Hosting started
+2019-03-31 16:11:04.543 +03:00 [DBG] Loading state from file
+2019-03-31 16:11:04.620 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-31 16:11:04.621 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-31 16:11:04.658 +03:00 [DBG] Got an event! User: 'inkpopova'
+2019-03-31 16:11:04.665 +03:00 [DBG] Loading posts for user 'inkpopova'
+2019-03-31 16:11:04.682 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=inkpopova
+2019-03-31 16:11:20.513 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=inkpopova
+2019-03-31 16:11:20.555 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/5505107133
+2019-03-31 16:11:37.628 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/5505107133/
+2019-03-31 16:11:55.896 +03:00 [DBG] Loaded 10 posts for user 'inkpopova'
+2019-03-31 16:14:00.106 +03:00 [DBG] Hosting starting
+2019-03-31 16:14:00.356 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 16:14:00.678 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 16:14:00.738 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 16:14:00.742 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 16:14:00.943 +03:00 [DBG] Task completed
+2019-03-31 16:14:00.944 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 16:14:00.945 +03:00 [INF] Hosting environment: Production
+2019-03-31 16:14:00.945 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 16:14:00.946 +03:00 [DBG] Hosting started
+2019-03-31 16:14:01.106 +03:00 [DBG] Loading state from file
+2019-03-31 16:14:01.177 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-31 16:14:01.178 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-31 16:14:01.204 +03:00 [DBG] Got an event! User: 'therealtechn9ne'
+2019-03-31 16:14:01.209 +03:00 [DBG] Loading posts for user 'therealtechn9ne'
+2019-03-31 16:14:01.222 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=therealtechn9ne
+2019-03-31 16:14:19.883 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=therealtechn9ne
+2019-03-31 16:14:19.928 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/48809537
+2019-03-31 16:14:37.522 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/48809537/
+2019-03-31 16:14:37.617 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/48809537?max_id=2008894274854573069_48809537
+2019-03-31 16:14:45.349 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/48809537/?max_id=2008894274854573069_48809537
+2019-03-31 16:14:45.361 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/48809537?max_id=2006154133484342792_48809537
+2019-03-31 16:14:59.002 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/48809537/?max_id=2006154133484342792_48809537
+2019-03-31 16:16:36.713 +03:00 [DBG] Loaded 36 posts for user 'therealtechn9ne'
+2019-03-31 16:19:16.181 +03:00 [DBG] Hosting starting
+2019-03-31 16:19:16.444 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 16:19:16.737 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 16:19:16.809 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 16:19:16.815 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 16:19:17.034 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 16:19:17.035 +03:00 [INF] Hosting environment: Production
+2019-03-31 16:19:17.035 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 16:19:17.036 +03:00 [DBG] Hosting started
+2019-03-31 16:19:17.186 +03:00 [DBG] Loading state from file
+2019-03-31 16:19:17.269 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-31 16:19:17.269 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-31 16:19:17.297 +03:00 [DBG] Got an event! User: 'ekaterinatikhonova'
+2019-03-31 16:19:17.301 +03:00 [DBG] Loading posts for user 'ekaterinatikhonova'
+2019-03-31 16:19:17.313 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=ekaterinatikhonova
+2019-03-31 16:19:24.199 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=ekaterinatikhonova
+2019-03-31 16:19:24.251 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/4359754660
+2019-03-31 16:19:42.050 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/4359754660/
+2019-03-31 16:19:42.142 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/4359754660?max_id=1792944608775732597_4359754660
+2019-03-31 16:19:57.099 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/4359754660/?max_id=1792944608775732597_4359754660
+2019-03-31 16:19:57.131 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/4359754660?max_id=1630029713450712930_4359754660
+2019-03-31 16:20:10.862 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/4359754660/?max_id=1630029713450712930_4359754660
+2019-03-31 16:21:01.292 +03:00 [DBG] Loaded 54 posts for user 'ekaterinatikhonova'
+2019-03-31 16:22:17.119 +03:00 [DBG] Got an event! User: 'alexandr_le'
+2019-03-31 16:22:17.119 +03:00 [DBG] Loading posts for user 'alexandr_le'
+2019-03-31 16:22:17.120 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=alexandr_le
+2019-03-31 16:22:35.739 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=alexandr_le
+2019-03-31 16:22:35.741 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/196754384
+2019-03-31 16:22:50.649 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/196754384/
+2019-03-31 16:22:50.660 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/196754384?max_id=1684399181503922526_196754384
+2019-03-31 16:22:57.386 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/196754384/?max_id=1684399181503922526_196754384
+2019-03-31 16:22:57.401 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/196754384?max_id=1615109074859501460_196754384
+2019-03-31 16:23:13.122 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/196754384/?max_id=1615109074859501460_196754384
+2019-03-31 16:24:13.237 +03:00 [DBG] Loaded 54 posts for user 'alexandr_le'
+2019-03-31 16:25:17.136 +03:00 [DBG] Got an event! User: 'creamywhite'
+2019-03-31 16:25:17.136 +03:00 [DBG] Loading posts for user 'creamywhite'
+2019-03-31 16:25:17.137 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=creamywhite
+2019-03-31 16:25:30.741 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=creamywhite
+2019-03-31 16:25:30.745 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/30598212
+2019-03-31 16:25:44.023 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/30598212/
+2019-03-31 16:25:44.037 +03:00 [ERR] Unable to load user 'creamywhite' all posts: Not authorized to view user
+2019-03-31 16:26:17.195 +03:00 [DBG] Got an event! User: 'marvel.rus'
+2019-03-31 16:26:17.195 +03:00 [DBG] Loading posts for user 'marvel.rus'
+2019-03-31 16:26:17.195 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=marvel.rus
+2019-03-31 16:26:34.764 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=marvel.rus
+2019-03-31 16:26:34.767 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1451036219
+2019-03-31 16:26:48.555 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1451036219/
+2019-03-31 16:26:48.569 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1451036219?max_id=2007670999961943494_1451036219
+2019-03-31 16:27:05.057 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1451036219/?max_id=2007670999961943494_1451036219
+2019-03-31 16:27:05.069 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1451036219?max_id=2002452464289538973_1451036219
+2019-03-31 16:27:18.182 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1451036219/?max_id=2002452464289538973_1451036219
+2019-03-31 16:28:17.162 +03:00 [DBG] Got an event! User: 'niggativ_v'
+2019-03-31 16:28:17.162 +03:00 [DBG] Loading posts for user 'niggativ_v'
+2019-03-31 16:28:17.163 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=niggativ_v
+2019-03-31 16:28:36.630 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=niggativ_v
+2019-03-31 16:28:36.631 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/256536196
+2019-03-31 16:28:39.847 +03:00 [DBG] Loaded 45 posts for user 'marvel.rus'
+2019-03-31 16:28:52.535 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/256536196/
+2019-03-31 16:28:52.554 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/256536196?max_id=1989098195422074104_256536196
+2019-03-31 16:29:11.190 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/256536196/?max_id=1989098195422074104_256536196
+2019-03-31 16:29:11.198 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/256536196?max_id=1970478277793566600_256536196
+2019-03-31 16:29:17.165 +03:00 [DBG] Got an event! User: 'kostina_vv92'
+2019-03-31 16:29:17.166 +03:00 [DBG] Loading posts for user 'kostina_vv92'
+2019-03-31 16:29:17.166 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=kostina_vv92
+2019-03-31 16:29:30.877 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/256536196/?max_id=1970478277793566600_256536196
+2019-03-31 16:29:33.623 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=kostina_vv92
+2019-03-31 16:29:33.646 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/684022711
+2019-03-31 16:29:43.926 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/684022711/
+2019-03-31 16:29:43.927 +03:00 [ERR] Unable to load user 'kostina_vv92' all posts: Not authorized to view user
+2019-03-31 16:30:17.167 +03:00 [DBG] Got an event! User: 'tanianache'
+2019-03-31 16:30:17.168 +03:00 [DBG] Loading posts for user 'tanianache'
+2019-03-31 16:30:17.169 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=tanianache
+2019-03-31 16:30:22.905 +03:00 [DBG] Loaded 36 posts for user 'niggativ_v'
+2019-03-31 16:30:33.671 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=tanianache
+2019-03-31 16:30:33.674 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/362643356
+2019-03-31 16:30:48.708 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/362643356/
+2019-03-31 16:30:48.729 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/362643356?max_id=1986066054115562227_362643356
+2019-03-31 16:30:59.499 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/362643356/?max_id=1986066054115562227_362643356
+2019-03-31 16:30:59.506 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/362643356?max_id=1978784574188491256_362643356
+2019-03-31 16:31:11.399 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/362643356/?max_id=1978784574188491256_362643356
+2019-03-31 16:31:17.173 +03:00 [DBG] Got an event! User: 'drone_ideas'
+2019-03-31 16:31:17.173 +03:00 [DBG] Loading posts for user 'drone_ideas'
+2019-03-31 16:31:17.174 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=drone_ideas
+2019-03-31 16:31:28.571 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=drone_ideas
+2019-03-31 16:31:28.572 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/8581913068
+2019-03-31 16:31:34.126 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/8581913068/
+2019-03-31 16:31:34.138 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/8581913068?max_id=1911458198802335720_8581913068
+2019-03-31 16:31:52.877 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/8581913068/?max_id=1911458198802335720_8581913068
+2019-03-31 16:31:52.888 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/8581913068?max_id=1906621847414174132_8581913068
+2019-03-31 16:32:07.545 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/8581913068/?max_id=1906621847414174132_8581913068
+2019-03-31 16:32:37.121 +03:00 [DBG] Loaded 54 posts for user 'tanianache'
+2019-03-31 16:33:10.255 +03:00 [DBG] Loaded 54 posts for user 'drone_ideas'
+2019-03-31 16:33:17.214 +03:00 [DBG] Got an event! User: 'ildar_autopodbor'
+2019-03-31 16:33:17.214 +03:00 [DBG] Loading posts for user 'ildar_autopodbor'
+2019-03-31 16:33:17.215 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=ildar_autopodbor
+2019-03-31 16:33:36.943 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=ildar_autopodbor
+2019-03-31 16:33:36.945 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/2018778191
+2019-03-31 16:33:55.721 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/2018778191/
+2019-03-31 16:33:55.740 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/2018778191?max_id=2009547377899674338_2018778191
+2019-03-31 16:34:09.569 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/2018778191/?max_id=2009547377899674338_2018778191
+2019-03-31 16:34:09.586 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/2018778191?max_id=2007322863744691595_2018778191
+2019-03-31 16:34:29.161 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/2018778191/?max_id=2007322863744691595_2018778191
+2019-03-31 16:35:17.227 +03:00 [DBG] Got an event! User: 'mk4golfs'
+2019-03-31 16:35:17.227 +03:00 [DBG] Loading posts for user 'mk4golfs'
+2019-03-31 16:35:17.227 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=mk4golfs
+2019-03-31 16:35:31.598 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=mk4golfs
+2019-03-31 16:35:31.600 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1964196165
+2019-03-31 16:35:41.609 +03:00 [DBG] Loaded 36 posts for user 'ildar_autopodbor'
+2019-03-31 16:35:48.251 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1964196165/
+2019-03-31 16:35:48.259 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1964196165?max_id=2010877778806724568_1964196165
+2019-03-31 16:35:53.672 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1964196165/?max_id=2010877778806724568_1964196165
+2019-03-31 16:35:53.680 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1964196165?max_id=2009833962972643537_1964196165
+2019-03-31 16:36:02.145 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1964196165/?max_id=2009833962972643537_1964196165
+2019-03-31 16:36:17.232 +03:00 [DBG] Got an event! User: 'katkalof'
+2019-03-31 16:36:17.233 +03:00 [DBG] Loading posts for user 'katkalof'
+2019-03-31 16:36:17.234 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=katkalof
+2019-03-31 16:36:23.422 +03:00 [DBG] Loaded 36 posts for user 'mk4golfs'
+2019-03-31 16:36:26.647 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=katkalof
+2019-03-31 16:36:26.648 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/176141436
+2019-03-31 16:36:41.357 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/176141436/
+2019-03-31 16:36:41.372 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/176141436?max_id=1173949753517831515_176141436
+2019-03-31 16:36:47.016 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/176141436/?max_id=1173949753517831515_176141436
+2019-03-31 16:36:47.026 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/176141436?max_id=770091006163317815_176141436
+2019-03-31 16:36:53.849 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/176141436/?max_id=770091006163317815_176141436
+2019-03-31 16:37:17.233 +03:00 [DBG] Got an event! User: 'makhorov'
+2019-03-31 16:37:17.234 +03:00 [DBG] Loading posts for user 'makhorov'
+2019-03-31 16:37:17.234 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=makhorov
+2019-03-31 16:37:31.723 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=makhorov
+2019-03-31 16:37:31.728 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/470774027
+2019-03-31 16:37:40.310 +03:00 [DBG] Loaded 54 posts for user 'katkalof'
+2019-03-31 16:37:42.548 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/470774027/
+2019-03-31 16:37:42.573 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/470774027?max_id=1980656655204916579_470774027
+2019-03-31 16:38:02.316 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/470774027/?max_id=1980656655204916579_470774027
+2019-03-31 16:38:02.340 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/470774027?max_id=1926271027554350401_470774027
+2019-03-31 16:38:10.935 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/470774027/?max_id=1926271027554350401_470774027
+2019-03-31 16:38:17.244 +03:00 [DBG] Got an event! User: 'truhorror'
+2019-03-31 16:38:17.244 +03:00 [DBG] Loading posts for user 'truhorror'
+2019-03-31 16:38:17.245 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=truhorror
+2019-03-31 16:38:36.762 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=truhorror
+2019-03-31 16:38:36.767 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/553843153
+2019-03-31 16:38:55.396 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/553843153/
+2019-03-31 16:38:55.581 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/553843153?max_id=1984966594589962902_553843153
+2019-03-31 16:39:06.391 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/553843153/?max_id=1984966594589962902_553843153
+2019-03-31 16:39:06.580 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/553843153?max_id=1949425837003253285_553843153
+2019-03-31 16:39:17.193 +03:00 [DBG] Task completed
+2019-03-31 16:39:24.414 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/553843153/?max_id=1949425837003253285_553843153
+2019-03-31 16:39:31.839 +03:00 [DBG] Loaded 36 posts for user 'makhorov'
+2019-03-31 16:40:51.670 +03:00 [DBG] Loaded 54 posts for user 'truhorror'
+2019-03-31 16:42:30.267 +03:00 [DBG] Hosting starting
+2019-03-31 16:42:30.365 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 16:42:30.576 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 16:42:30.668 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 16:42:30.676 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 16:42:30.813 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 16:42:30.813 +03:00 [INF] Hosting environment: Production
+2019-03-31 16:42:30.813 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 16:42:30.813 +03:00 [DBG] Hosting started
+2019-03-31 16:44:30.932 +03:00 [DBG] Loading state from file
+2019-03-31 16:44:30.973 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-31 16:44:30.974 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-31 16:44:31.004 +03:00 [DBG] Got an event! User: 'robertdowneyjr'
+2019-03-31 16:44:31.011 +03:00 [DBG] Loading posts for user 'robertdowneyjr'
+2019-03-31 16:44:31.024 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=robertdowneyjr
+2019-03-31 16:44:48.824 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=robertdowneyjr
+2019-03-31 16:44:48.873 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1518284433
+2019-03-31 16:45:01.548 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1518284433/
+2019-03-31 16:45:01.644 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1518284433?max_id=1983612403606144752_1518284433
+2019-03-31 16:45:09.353 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1518284433/?max_id=1983612403606144752_1518284433
+2019-03-31 16:45:09.392 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1518284433?max_id=1946722719752103732_1518284433
+2019-03-31 16:45:24.950 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1518284433/?max_id=1946722719752103732_1518284433
+2019-03-31 16:46:27.467 +03:00 [DBG] Loaded 36 posts for user 'robertdowneyjr'
+2019-03-31 16:46:30.925 +03:00 [DBG] Got an event! User: 'elenapegas'
+2019-03-31 16:46:30.926 +03:00 [DBG] Loading posts for user 'elenapegas'
+2019-03-31 16:46:30.928 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=elenapegas
+2019-03-31 16:46:37.577 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=elenapegas
+2019-03-31 16:46:37.579 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/241024950
+2019-03-31 16:46:53.453 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/241024950/
+2019-03-31 16:46:53.495 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/241024950?max_id=2006811165014999473_241024950
+2019-03-31 16:47:09.139 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/241024950/?max_id=2006811165014999473_241024950
+2019-03-31 16:47:09.155 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/241024950?max_id=2003837906837397589_241024950
+2019-03-31 16:47:21.956 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/241024950/?max_id=2003837906837397589_241024950
+2019-03-31 16:49:16.464 +03:00 [DBG] Loaded 36 posts for user 'elenapegas'
+2019-03-31 16:52:30.997 +03:00 [DBG] Got an event! User: 'crynet'
+2019-03-31 16:52:30.997 +03:00 [DBG] Loading posts for user 'crynet'
+2019-03-31 16:52:30.998 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=crynet
+2019-03-31 16:52:46.669 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=crynet
+2019-03-31 16:52:46.674 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/484542066
+2019-03-31 16:52:53.957 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/484542066/
+2019-03-31 16:52:53.972 +03:00 [ERR] Unable to load user 'crynet' all posts: Not authorized to view user
+2019-03-31 16:54:30.941 +03:00 [DBG] Got an event! User: 'therealmackenzienicole'
+2019-03-31 16:54:30.942 +03:00 [DBG] Loading posts for user 'therealmackenzienicole'
+2019-03-31 16:54:30.942 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=therealmackenzienicole
+2019-03-31 16:54:41.610 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=therealmackenzienicole
+2019-03-31 16:54:41.612 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/26517510
+2019-03-31 16:55:01.247 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/26517510/
+2019-03-31 16:55:01.261 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/26517510?max_id=2002755269305873341_26517510
+2019-03-31 16:55:12.807 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/26517510/?max_id=2002755269305873341_26517510
+2019-03-31 16:55:12.813 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/26517510?max_id=1991930107023270459_26517510
+2019-03-31 16:55:26.321 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/26517510/?max_id=1991930107023270459_26517510
+2019-03-31 16:55:55.442 +03:00 [DBG] Loaded 36 posts for user 'therealmackenzienicole'
+2019-03-31 16:56:30.935 +03:00 [DBG] Got an event! User: 'yusyavanina'
+2019-03-31 16:56:30.936 +03:00 [DBG] Loading posts for user 'yusyavanina'
+2019-03-31 16:56:30.936 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=yusyavanina
+2019-03-31 16:56:39.595 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=yusyavanina
+2019-03-31 16:56:39.597 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/2000015960
+2019-03-31 16:56:59.353 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/2000015960/
+2019-03-31 16:56:59.365 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/2000015960?max_id=1889021610191540055_2000015960
+2019-03-31 16:57:07.224 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/2000015960/?max_id=1889021610191540055_2000015960
+2019-03-31 16:57:07.234 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/2000015960?max_id=1608207809698436587_2000015960
+2019-03-31 16:57:24.072 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/2000015960/?max_id=1608207809698436587_2000015960
+2019-03-31 16:59:32.515 +03:00 [DBG] Loaded 54 posts for user 'yusyavanina'
+2019-03-31 17:02:30.969 +03:00 [DBG] Got an event! User: 'fight_viner'
+2019-03-31 17:02:30.969 +03:00 [DBG] Loading posts for user 'fight_viner'
+2019-03-31 17:02:30.969 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=fight_viner
+2019-03-31 17:02:44.817 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=fight_viner
+2019-03-31 17:02:44.821 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1908419571
+2019-03-31 17:02:52.322 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1908419571/
+2019-03-31 17:02:52.334 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1908419571?max_id=2004462580455511016_1908419571
+2019-03-31 17:03:10.863 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1908419571/?max_id=2004462580455511016_1908419571
+2019-03-31 17:03:10.871 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1908419571?max_id=1989241911681911109_1908419571
+2019-03-31 17:03:20.847 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1908419571/?max_id=1989241911681911109_1908419571
+2019-03-31 17:05:13.841 +03:00 [DBG] Loaded 36 posts for user 'fight_viner'
+2019-03-31 17:08:31.010 +03:00 [DBG] Got an event! User: 'anastasia_kushnir23'
+2019-03-31 17:08:31.010 +03:00 [DBG] Loading posts for user 'anastasia_kushnir23'
+2019-03-31 17:08:31.011 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=anastasia_kushnir23
+2019-03-31 17:08:40.703 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=anastasia_kushnir23
+2019-03-31 17:08:40.706 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1170164005
+2019-03-31 17:08:47.410 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1170164005/
+2019-03-31 17:08:47.421 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1170164005?max_id=1859032485842083994_1170164005
+2019-03-31 17:09:04.164 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1170164005/?max_id=1859032485842083994_1170164005
+2019-03-31 17:09:04.173 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1170164005?max_id=1746665515891093773_1170164005
+2019-03-31 17:09:19.218 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1170164005/?max_id=1746665515891093773_1170164005
+2019-03-31 17:10:11.905 +03:00 [DBG] Loaded 54 posts for user 'anastasia_kushnir23'
+2019-03-31 17:10:30.997 +03:00 [DBG] Got an event! User: 'elenapegas'
+2019-03-31 17:10:30.999 +03:00 [DBG] Loading posts for user 'elenapegas'
+2019-03-31 17:10:31.000 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=elenapegas
+2019-03-31 17:10:36.838 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=elenapegas
+2019-03-31 17:10:36.841 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/241024950
+2019-03-31 17:10:43.729 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/241024950/
+2019-03-31 17:10:43.740 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/241024950?max_id=2006811165014999473_241024950
+2019-03-31 17:10:54.311 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/241024950/?max_id=2006811165014999473_241024950
+2019-03-31 17:10:54.323 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/241024950?max_id=2003837906837397589_241024950
+2019-03-31 17:11:03.058 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/241024950/?max_id=2003837906837397589_241024950
+2019-03-31 17:12:59.802 +03:00 [DBG] Loaded 36 posts for user 'elenapegas'
+2019-03-31 17:16:31.040 +03:00 [DBG] Got an event! User: 'samburskaya'
+2019-03-31 17:16:31.041 +03:00 [DBG] Loading posts for user 'samburskaya'
+2019-03-31 17:16:31.042 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=samburskaya
+2019-03-31 17:16:43.004 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=samburskaya
+2019-03-31 17:16:43.008 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1516824713
+2019-03-31 17:16:55.839 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1516824713/
+2019-03-31 17:16:55.851 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1516824713?max_id=2002940238004354322_1516824713
+2019-03-31 17:17:13.412 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1516824713/?max_id=2002940238004354322_1516824713
+2019-03-31 17:17:13.425 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1516824713?max_id=1993013881254284967_1516824713
+2019-03-31 17:17:19.159 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1516824713/?max_id=1993013881254284967_1516824713
+2019-03-31 17:18:12.884 +03:00 [DBG] Loaded 36 posts for user 'samburskaya'
+2019-03-31 17:18:31.037 +03:00 [DBG] Got an event! User: 'samburskaya'
+2019-03-31 17:18:31.038 +03:00 [DBG] Loading posts for user 'samburskaya'
+2019-03-31 17:18:31.038 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=samburskaya
+2019-03-31 17:18:44.668 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=samburskaya
+2019-03-31 17:18:44.672 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1516824713
+2019-03-31 17:18:58.274 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1516824713/
+2019-03-31 17:18:58.283 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1516824713?max_id=2002940238004354322_1516824713
+2019-03-31 17:19:07.801 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1516824713/?max_id=2002940238004354322_1516824713
+2019-03-31 17:19:07.812 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1516824713?max_id=1993013881254284967_1516824713
+2019-03-31 17:19:23.573 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1516824713/?max_id=1993013881254284967_1516824713
+2019-03-31 17:20:09.089 +03:00 [DBG] Loaded 36 posts for user 'samburskaya'
+2019-03-31 17:20:31.058 +03:00 [DBG] Got an event! User: 'samburskaya'
+2019-03-31 17:20:31.058 +03:00 [DBG] Loading posts for user 'samburskaya'
+2019-03-31 17:20:31.060 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=samburskaya
+2019-03-31 17:20:46.554 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=samburskaya
+2019-03-31 17:20:46.556 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1516824713
+2019-03-31 17:21:03.089 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1516824713/
+2019-03-31 17:21:03.100 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1516824713?max_id=2002940238004354322_1516824713
+2019-03-31 17:21:08.688 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1516824713/?max_id=2002940238004354322_1516824713
+2019-03-31 17:21:08.692 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1516824713?max_id=1993013881254284967_1516824713
+2019-03-31 17:21:14.296 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1516824713/?max_id=1993013881254284967_1516824713
+2019-03-31 17:22:00.485 +03:00 [DBG] Loaded 36 posts for user 'samburskaya'
+2019-03-31 17:22:30.999 +03:00 [DBG] Task completed
+2019-03-31 17:40:19.381 +03:00 [DBG] Hosting starting
+2019-03-31 17:40:19.662 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 17:40:19.945 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 17:40:20.026 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 17:40:20.035 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 17:40:20.271 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 17:40:20.271 +03:00 [INF] Hosting environment: Production
+2019-03-31 17:40:20.271 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 17:40:20.272 +03:00 [DBG] Hosting started
+2019-03-31 17:40:20.418 +03:00 [DBG] Loading state from file
+2019-03-31 17:40:20.485 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-31 17:40:20.486 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-31 17:40:20.508 +03:00 [DBG] Got an event! User: 'brat_oracle'
+2019-03-31 17:40:20.515 +03:00 [DBG] Loading posts for user 'brat_oracle'
+2019-03-31 17:40:20.535 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=brat_oracle
+2019-03-31 17:40:30.372 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=brat_oracle
+2019-03-31 17:40:30.408 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/217332786
+2019-03-31 17:40:48.698 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/217332786/
+2019-03-31 17:40:48.712 +03:00 [ERR] Unable to load user 'brat_oracle' all posts: Not authorized to view user
+2019-03-31 17:42:20.328 +03:00 [DBG] Got an event! User: 'academeg'
+2019-03-31 17:42:20.328 +03:00 [DBG] Loading posts for user 'academeg'
+2019-03-31 17:42:20.329 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=academeg
+2019-03-31 17:42:38.034 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=academeg
+2019-03-31 17:42:38.036 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/597364754
+2019-03-31 17:42:44.479 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/597364754/
+2019-03-31 17:42:44.554 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/597364754?max_id=1996064130788098729_597364754
+2019-03-31 17:43:00.054 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/597364754/?max_id=1996064130788098729_597364754
+2019-03-31 17:43:00.084 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/597364754?max_id=1986992391084925766_597364754
+2019-03-31 17:43:11.200 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/597364754/?max_id=1986992391084925766_597364754
+2019-03-31 17:43:25.301 +03:00 [DBG] Loaded 36 posts for user 'academeg'
+2019-03-31 17:44:21.312 +03:00 [DBG] Got an event! User: 'kogefan'
+2019-03-31 17:44:21.312 +03:00 [DBG] Loading posts for user 'kogefan'
+2019-03-31 17:44:21.312 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=kogefan
+2019-03-31 17:44:26.923 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=kogefan
+2019-03-31 17:44:26.925 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/359167727
+2019-03-31 17:44:33.728 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/359167727/
+2019-03-31 17:44:33.745 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/359167727?max_id=1920972514776765693_359167727
+2019-03-31 17:44:43.114 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/359167727/?max_id=1920972514776765693_359167727
+2019-03-31 17:44:43.148 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/359167727?max_id=1898150848702538963_359167727
+2019-03-31 17:44:50.897 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/359167727/?max_id=1898150848702538963_359167727
+2019-03-31 17:46:36.253 +03:00 [DBG] Loaded 54 posts for user 'kogefan'
+2019-03-31 17:50:21.370 +03:00 [DBG] Got an event! User: 'dmitru_v'
+2019-03-31 17:50:21.371 +03:00 [DBG] Loading posts for user 'dmitru_v'
+2019-03-31 17:50:21.371 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=dmitru_v
+2019-03-31 17:50:37.167 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=dmitru_v
+2019-03-31 17:50:37.170 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/446169355
+2019-03-31 17:50:52.866 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/446169355/
+2019-03-31 17:51:02.420 +03:00 [DBG] Loaded 9 posts for user 'dmitru_v'
+2019-03-31 17:52:21.395 +03:00 [DBG] Got an event! User: 'artur_maker'
+2019-03-31 17:52:21.396 +03:00 [DBG] Loading posts for user 'artur_maker'
+2019-03-31 17:52:21.396 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=artur_maker
+2019-03-31 17:52:30.147 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=artur_maker
+2019-03-31 17:52:30.149 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/3117806043
+2019-03-31 17:52:39.233 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/3117806043/
+2019-03-31 17:52:39.246 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/3117806043?max_id=1898489264242869127_3117806043
+2019-03-31 17:52:50.171 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/3117806043/?max_id=1898489264242869127_3117806043
+2019-03-31 17:52:50.187 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/3117806043?max_id=1682646406518347779_3117806043
+2019-03-31 17:53:04.354 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/3117806043/?max_id=1682646406518347779_3117806043
+2019-03-31 17:55:14.667 +03:00 [DBG] Loaded 54 posts for user 'artur_maker'
+2019-03-31 17:58:21.395 +03:00 [DBG] Got an event! User: 'artur_maker'
+2019-03-31 17:58:21.396 +03:00 [DBG] Loading posts for user 'artur_maker'
+2019-03-31 17:58:21.397 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=artur_maker
+2019-03-31 17:58:32.995 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=artur_maker
+2019-03-31 17:58:32.999 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/3117806043
+2019-03-31 17:58:51.012 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/3117806043/
+2019-03-31 17:58:51.025 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/3117806043?max_id=1898489264242869127_3117806043
+2019-03-31 17:58:56.714 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/3117806043/?max_id=1898489264242869127_3117806043
+2019-03-31 17:58:56.729 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/3117806043?max_id=1682646406518347779_3117806043
+2019-03-31 17:59:05.424 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/3117806043/?max_id=1682646406518347779_3117806043
+2019-03-31 18:00:14.015 +03:00 [DBG] Loaded 54 posts for user 'artur_maker'
+2019-03-31 18:00:21.406 +03:00 [DBG] Got an event! User: 'hyde_mj'
+2019-03-31 18:00:21.406 +03:00 [DBG] Loading posts for user 'hyde_mj'
+2019-03-31 18:00:21.407 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=hyde_mj
+2019-03-31 18:00:35.310 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=hyde_mj
+2019-03-31 18:00:35.314 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/177928180
+2019-03-31 18:00:49.013 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/177928180/
+2019-03-31 18:00:49.026 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/177928180?max_id=1941273466900716442_177928180
+2019-03-31 18:01:03.057 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/177928180/?max_id=1941273466900716442_177928180
+2019-03-31 18:01:03.075 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/177928180?max_id=1887342993006958535_177928180
+2019-03-31 18:01:16.014 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/177928180/?max_id=1887342993006958535_177928180
+2019-03-31 18:02:19.416 +03:00 [DBG] Loaded 54 posts for user 'hyde_mj'
+2019-03-31 18:02:21.449 +03:00 [DBG] Got an event! User: 'lozhka_cook'
+2019-03-31 18:02:21.449 +03:00 [DBG] Loading posts for user 'lozhka_cook'
+2019-03-31 18:02:21.449 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=lozhka_cook
+2019-03-31 18:02:29.080 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=lozhka_cook
+2019-03-31 18:02:29.081 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1574519721
+2019-03-31 18:02:37.864 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1574519721/
+2019-03-31 18:02:37.878 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1574519721?max_id=2006664961291569871_1574519721
+2019-03-31 18:02:48.685 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1574519721/?max_id=2006664961291569871_1574519721
+2019-03-31 18:02:48.806 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1574519721?max_id=2001610638467872632_1574519721
+2019-03-31 18:02:59.604 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1574519721/?max_id=2001610638467872632_1574519721
+2019-03-31 18:05:12.804 +03:00 [DBG] Loaded 36 posts for user 'lozhka_cook'
+2019-03-31 18:08:21.435 +03:00 [DBG] Got an event! User: 'dhohlin'
+2019-03-31 18:08:21.435 +03:00 [DBG] Loading posts for user 'dhohlin'
+2019-03-31 18:08:21.435 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=dhohlin
+2019-03-31 18:08:27.201 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=dhohlin
+2019-03-31 18:08:27.204 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1771211197
+2019-03-31 18:08:42.827 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1771211197/
+2019-03-31 18:08:48.580 +03:00 [DBG] Loaded 8 posts for user 'dhohlin'
+2019-03-31 18:10:21.441 +03:00 [DBG] Got an event! User: 'robertdowneyjr'
+2019-03-31 18:10:21.441 +03:00 [DBG] Loading posts for user 'robertdowneyjr'
+2019-03-31 18:10:21.441 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=robertdowneyjr
+2019-03-31 18:10:30.106 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=robertdowneyjr
+2019-03-31 18:10:30.114 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1518284433
+2019-03-31 18:10:36.791 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1518284433/
+2019-03-31 18:10:36.821 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1518284433?max_id=1983612403606144752_1518284433
+2019-03-31 18:10:55.469 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1518284433/?max_id=1983612403606144752_1518284433
+2019-03-31 18:10:55.480 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1518284433?max_id=1946722719752103732_1518284433
+2019-03-31 18:11:09.100 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1518284433/?max_id=1946722719752103732_1518284433
+2019-03-31 18:12:06.669 +03:00 [DBG] Loaded 36 posts for user 'robertdowneyjr'
+2019-03-31 18:12:21.443 +03:00 [DBG] Got an event! User: 'dabromusic'
+2019-03-31 18:12:21.444 +03:00 [DBG] Loading posts for user 'dabromusic'
+2019-03-31 18:12:21.444 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=dabromusic
+2019-03-31 18:12:26.931 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=dabromusic
+2019-03-31 18:12:26.933 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/361439304
+2019-03-31 18:12:37.044 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/361439304/
+2019-03-31 18:12:37.060 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/361439304?max_id=1635704635938235829_361439304
+2019-03-31 18:12:48.835 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/361439304/?max_id=1635704635938235829_361439304
+2019-03-31 18:12:48.843 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/361439304?max_id=1436158495863306252_361439304
+2019-03-31 18:13:04.969 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/361439304/?max_id=1436158495863306252_361439304
+2019-03-31 18:15:30.715 +03:00 [DBG] Loaded 54 posts for user 'dabromusic'
+2019-03-31 18:16:51.519 +03:00 [DBG] Hosting starting
+2019-03-31 18:16:51.782 +03:00 [INF] RabbitMQ Client is trying to connect
+2019-03-31 18:16:52.078 +03:00 [INF] RabbitMQ Client acquired a persistent connection to 'localhost' and is subscribed to failure events
+2019-03-31 18:16:52.165 +03:00 [INF] Subscribing to event UserLoadMessage with UserLoadEventHandler
+2019-03-31 18:16:52.170 +03:00 [DBG] Approaching users for posts & stories
+2019-03-31 18:16:52.441 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-03-31 18:16:52.442 +03:00 [INF] Hosting environment: Production
+2019-03-31 18:16:52.443 +03:00 [INF] Content root path: /home/alexander/dev/projects/InstaCrafter/src/crafter/InstaCrafter.Media/bin/Debug/netcoreapp3.0/
+2019-03-31 18:16:52.443 +03:00 [DBG] Hosting started
+2019-03-31 18:16:52.588 +03:00 [DBG] Loading state from file
+2019-03-31 18:16:52.653 +03:00 [DBG] Instasharper state saved to: state.bin
+2019-03-31 18:16:52.654 +03:00 [DBG] Instasharper library initialized. User 'boner.bungee' authenticated: True
+2019-03-31 18:16:52.692 +03:00 [DBG] Got an event! User: 'olga_nikolay_avtosvet123'
+2019-03-31 18:16:52.696 +03:00 [DBG] Loading posts for user 'olga_nikolay_avtosvet123'
+2019-03-31 18:16:52.712 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=olga_nikolay_avtosvet123
+2019-03-31 18:17:08.362 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=olga_nikolay_avtosvet123
+2019-03-31 18:17:08.414 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/2541946020
+2019-03-31 18:17:23.151 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/2541946020/
+2019-03-31 18:17:23.244 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/2541946020?max_id=1954565988852087343_2541946020
+2019-03-31 18:17:39.008 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/2541946020/?max_id=1954565988852087343_2541946020
+2019-03-31 18:17:39.032 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/2541946020?max_id=1901498333203481627_2541946020
+2019-03-31 18:17:44.858 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/2541946020/?max_id=1901498333203481627_2541946020
+2019-03-31 18:18:31.467 +03:00 [DBG] Loaded 54 posts for user 'olga_nikolay_avtosvet123'
+2019-03-31 18:18:52.498 +03:00 [DBG] Got an event! User: 'oblako_manufacture'
+2019-03-31 18:18:52.499 +03:00 [DBG] Loading posts for user 'oblako_manufacture'
+2019-03-31 18:18:52.500 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=oblako_manufacture
+2019-03-31 18:19:09.184 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=oblako_manufacture
+2019-03-31 18:19:09.185 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/5084079046
+2019-03-31 18:19:23.081 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/5084079046/
+2019-03-31 18:19:23.093 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/5084079046?max_id=1697345818272463582_5084079046
+2019-03-31 18:19:36.775 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/5084079046/?max_id=1697345818272463582_5084079046
+2019-03-31 18:19:36.785 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/5084079046?max_id=1537771381114942379_5084079046
+2019-03-31 18:19:55.165 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/5084079046/?max_id=1537771381114942379_5084079046
+2019-03-31 18:20:07.752 +03:00 [DBG] Loaded 39 posts for user 'oblako_manufacture'
+2019-03-31 18:20:52.502 +03:00 [DBG] Got an event! User: 'annora028'
+2019-03-31 18:20:52.503 +03:00 [DBG] Loading posts for user 'annora028'
+2019-03-31 18:20:52.503 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=annora028
+2019-03-31 18:21:06.958 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=annora028
+2019-03-31 18:21:06.959 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/5661629865
+2019-03-31 18:21:25.719 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/5661629865/
+2019-03-31 18:21:25.735 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/5661629865?max_id=1702073467384639123_5661629865
+2019-03-31 18:21:33.214 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/5661629865/?max_id=1702073467384639123_5661629865
+2019-03-31 18:21:53.711 +03:00 [DBG] Loaded 27 posts for user 'annora028'
+2019-03-31 18:22:52.513 +03:00 [DBG] Got an event! User: 'kogefan'
+2019-03-31 18:22:52.513 +03:00 [DBG] Loading posts for user 'kogefan'
+2019-03-31 18:22:52.514 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=kogefan
+2019-03-31 18:23:08.951 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=kogefan
+2019-03-31 18:23:08.952 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/359167727
+2019-03-31 18:23:16.886 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/359167727/
+2019-03-31 18:23:16.904 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/359167727?max_id=1920972514776765693_359167727
+2019-03-31 18:23:25.703 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/359167727/?max_id=1920972514776765693_359167727
+2019-03-31 18:23:25.723 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/359167727?max_id=1898150848702538963_359167727
+2019-03-31 18:23:37.408 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/359167727/?max_id=1898150848702538963_359167727
+2019-03-31 18:24:19.609 +03:00 [DBG] Loaded 54 posts for user 'kogefan'
+2019-03-31 18:24:52.517 +03:00 [DBG] Got an event! User: 'drone_ideas'
+2019-03-31 18:24:52.517 +03:00 [DBG] Loading posts for user 'drone_ideas'
+2019-03-31 18:24:52.518 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=drone_ideas
+2019-03-31 18:25:06.964 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=drone_ideas
+2019-03-31 18:25:06.966 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/8581913068
+2019-03-31 18:25:14.684 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/8581913068/
+2019-03-31 18:25:14.695 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/8581913068?max_id=1911458198802335720_8581913068
+2019-03-31 18:25:23.434 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/8581913068/?max_id=1911458198802335720_8581913068
+2019-03-31 18:25:23.445 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/8581913068?max_id=1906621847414174132_8581913068
+2019-03-31 18:25:39.186 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/8581913068/?max_id=1906621847414174132_8581913068
+2019-03-31 18:26:06.753 +03:00 [DBG] Loaded 54 posts for user 'drone_ideas'
+2019-03-31 18:26:52.530 +03:00 [DBG] Got an event! User: 'nadia.maslova'
+2019-03-31 18:26:52.531 +03:00 [DBG] Loading posts for user 'nadia.maslova'
+2019-03-31 18:26:52.532 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=nadia.maslova
+2019-03-31 18:27:01.490 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=nadia.maslova
+2019-03-31 18:27:01.495 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1745793487
+2019-03-31 18:27:15.243 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1745793487/
+2019-03-31 18:27:15.272 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1745793487?max_id=1840726288344562996_1745793487
+2019-03-31 18:27:20.898 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1745793487/?max_id=1840726288344562996_1745793487
+2019-03-31 18:27:20.919 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1745793487?max_id=1650202923652394307_1745793487
+2019-03-31 18:27:37.598 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1745793487/?max_id=1650202923652394307_1745793487
+2019-03-31 18:29:48.799 +03:00 [DBG] Loaded 54 posts for user 'nadia.maslova'
+2019-03-31 18:32:52.569 +03:00 [DBG] Got an event! User: 'katlettka'
+2019-03-31 18:32:52.569 +03:00 [DBG] Loading posts for user 'katlettka'
+2019-03-31 18:32:52.570 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=katlettka
+2019-03-31 18:33:11.093 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=katlettka
+2019-03-31 18:33:11.094 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/530123637
+2019-03-31 18:33:17.832 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/530123637/
+2019-03-31 18:33:17.845 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/530123637?max_id=1788644445954340604_530123637
+2019-03-31 18:33:30.886 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/530123637/?max_id=1788644445954340604_530123637
+2019-03-31 18:33:30.899 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/530123637?max_id=1618876719862022271_530123637
+2019-03-31 18:33:37.908 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/530123637/?max_id=1618876719862022271_530123637
+2019-03-31 18:36:52.576 +03:00 [DBG] Got an event! User: 'mythbusters'
+2019-03-31 18:36:52.576 +03:00 [DBG] Loading posts for user 'mythbusters'
+2019-03-31 18:36:52.577 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=mythbusters
+2019-03-31 18:37:06.358 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=mythbusters
+2019-03-31 18:37:06.362 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/598279490
+2019-03-31 18:37:24.035 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/598279490/
+2019-03-31 18:37:24.046 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/598279490?max_id=1965534565091411487_598279490
+2019-03-31 18:37:29.571 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/598279490/?max_id=1965534565091411487_598279490
+2019-03-31 18:37:29.576 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/598279490?max_id=1961210093249022453_598279490
+2019-03-31 18:37:36.095 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/598279490/?max_id=1961210093249022453_598279490
+2019-03-31 18:37:59.772 +03:00 [DBG] Loaded 54 posts for user 'katlettka'
+2019-03-31 18:38:52.587 +03:00 [DBG] Got an event! User: 'dmitru_v'
+2019-03-31 18:38:52.592 +03:00 [DBG] Loading posts for user 'dmitru_v'
+2019-03-31 18:38:52.593 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=dmitru_v
+2019-03-31 18:39:07.201 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=dmitru_v
+2019-03-31 18:39:07.204 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/446169355
+2019-03-31 18:39:19.822 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/446169355/
+2019-03-31 18:39:28.174 +03:00 [DBG] Loaded 9 posts for user 'dmitru_v'
+2019-03-31 18:39:43.571 +03:00 [DBG] Loaded 36 posts for user 'mythbusters'
+2019-03-31 18:42:52.597 +03:00 [DBG] Got an event! User: 'tanya__karpova'
+2019-03-31 18:42:52.598 +03:00 [DBG] Loading posts for user 'tanya__karpova'
+2019-03-31 18:42:52.598 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=tanya__karpova
+2019-03-31 18:43:11.348 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=tanya__karpova
+2019-03-31 18:43:11.352 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/866619736
+2019-03-31 18:43:22.730 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/866619736/
+2019-03-31 18:43:22.745 +03:00 [ERR] Unable to load user 'tanya__karpova' all posts: Not authorized to view user
+2019-03-31 18:44:52.593 +03:00 [DBG] Got an event! User: 'brat_oracle'
+2019-03-31 18:44:52.593 +03:00 [DBG] Loading posts for user 'brat_oracle'
+2019-03-31 18:44:52.594 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=brat_oracle
+2019-03-31 18:45:10.381 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=brat_oracle
+2019-03-31 18:45:10.383 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/217332786
+2019-03-31 18:45:26.664 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/217332786/
+2019-03-31 18:45:26.665 +03:00 [ERR] Unable to load user 'brat_oracle' all posts: Not authorized to view user
+2019-03-31 18:46:52.603 +03:00 [DBG] Got an event! User: 'niggativ_v'
+2019-03-31 18:46:52.604 +03:00 [DBG] Loading posts for user 'niggativ_v'
+2019-03-31 18:46:52.605 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=niggativ_v
+2019-03-31 18:47:07.255 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=niggativ_v
+2019-03-31 18:47:07.257 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/256536196
+2019-03-31 18:47:18.271 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/256536196/
+2019-03-31 18:47:18.283 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/256536196?max_id=1989098195422074104_256536196
+2019-03-31 18:47:25.081 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/256536196/?max_id=1989098195422074104_256536196
+2019-03-31 18:47:25.097 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/256536196?max_id=1970478277793566600_256536196
+2019-03-31 18:47:38.975 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/256536196/?max_id=1970478277793566600_256536196
+2019-03-31 18:48:24.005 +03:00 [DBG] Loaded 36 posts for user 'niggativ_v'
+2019-03-31 18:48:52.612 +03:00 [DBG] Got an event! User: 'evgeshakorenkova'
+2019-03-31 18:48:52.612 +03:00 [DBG] Loading posts for user 'evgeshakorenkova'
+2019-03-31 18:48:52.612 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/users/search?q=evgeshakorenkova
+2019-03-31 18:49:11.231 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/users/search/?q=evgeshakorenkova
+2019-03-31 18:49:11.232 +03:00 [DBG] Request: GET https://i.instagram.com/api/v1/feed/user/1319277823
+2019-03-31 18:49:25.537 +03:00 [DBG] Response: GET https://i.instagram.com/api/v1/feed/user/1319277823/
+2019-03-31 18:49:25.539 +03:00 [DBG] Loaded 0 posts for user 'evgeshakorenkova'
