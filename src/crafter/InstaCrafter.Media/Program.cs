@@ -95,11 +95,11 @@ namespace InstaCrafter.Media
                     });
 
                     services.Configure<InstaSharperConfig>(hostContext.Configuration.GetSection("InstaSharperConfig"));
-                    services.AddHostedService<MediaCrafterService>();
                     services.AddTransient<UserLoadEventHandler>();
                     services.AddSingleton<IImageLoader, ImageLoader>();
                 })
-                .UseConsoleLifetime();
+                .UseConsoleLifetime()
+                .Build();
             
             var elasticSearchConnection = Configuration["ElasticConnection"];
             Log.Logger = new LoggerConfiguration()
@@ -115,7 +115,7 @@ namespace InstaCrafter.Media
                     "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
                 .CreateLogger();
 
-            await builder.RunConsoleAsync();
+            await builder.RunAsync();
         }
 
         static async Task ConfigureMapper()
