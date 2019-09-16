@@ -8,6 +8,7 @@ using AutoMapper;
 using InstaCrafter.Classes;
 using InstaCrafter.Classes.Logger;
 using InstaCrafter.Classes.Models;
+using InstaCrafter.Extensions;
 using InstaSharper.API;
 using InstaSharper.API.Builder;
 using InstaSharper.Classes;
@@ -173,6 +174,7 @@ namespace InstaCrafter.Media.MediaProviders
             if (!File.Exists(path))
                 image.Save(path);
             instagramImage.Path = relativeFileName;
+            instagramImage.ImageBytes = image.ToByteArray();
         }
 
         public async Task<InstagramReelFeed> GetUserStory(string username)

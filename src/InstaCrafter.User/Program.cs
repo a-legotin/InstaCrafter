@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.Design;
+using System.IO;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
@@ -17,6 +18,7 @@ using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
 using Serilog;
 using Serilog.Events;
+using Serilog.Formatting.Elasticsearch;
 using Serilog.Sinks.Elasticsearch;
 
 namespace InstaCrafter.UserCrafter
@@ -28,20 +30,6 @@ namespace InstaCrafter.UserCrafter
         static async Task Main(string[] args)
         {
             await ConfigureMapper();
-
-            Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Verbose()
-                .MinimumLevel.Override("Microsoft", LogEventLevel.Verbose)
-                .Enrich.FromLogContext()
-                .WriteTo.Async(w=>w.File("log.txt", rollingInterval: RollingInterval.Day))
-                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
-                {
-                    MinimumLogEventLevel = LogEventLevel.Verbose,
-                })                
-                .WriteTo.ColoredConsole( 
-                    LogEventLevel.Verbose,
-                    "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
-                .CreateLogger();
 
             var builder = new HostBuilder()
                 .ConfigureHostConfiguration(config =>
@@ -109,6 +97,26 @@ namespace InstaCrafter.UserCrafter
                 })
                 .UseConsoleLifetime();
 
+            var elasticUri = "http://elastic:changeme@docker-server.lan:9200";
+
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Verbose()
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Verbose)
+                .Enrich.FromLogContext()
+                // .WriteTo.Async(w=>w.File("log.txt", rollingInterval: RollingInterval.Day))
+                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(elasticUri))
+                {
+                    MinimumLogEventLevel = LogEventLevel.Verbose,
+                    AutoRegisterTemplate =  true,
+                    IndexFormat = "instacrafter-{0:yyyy.MM.dd}",
+                    CustomFormatter = new ElasticsearchJsonFormatter(inlineFields: true), 
+                    CustomDurableFormatter = new ElasticsearchJsonFormatter(inlineFields: true),
+                })
+                .WriteTo.ColoredConsole(
+                    LogEventLevel.Verbose,
+                    "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
+                .CreateLogger();
+            Serilog.Debugging.SelfLog.Enable(msg => File.AppendAllText ("self.log", msg));
             await builder.RunConsoleAsync();
         }
 

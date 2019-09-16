@@ -23,13 +23,13 @@ namespace InstaCrafter.PostService.IntegrationEvents.EventHandlers
 
         public async Task Handle(PostsLoadedEvent postsLoadedEvent)
         {
-            _logger.LogDebug($"Got an event! User: '{postsLoadedEvent.User.UserName}', {postsLoadedEvent.Posts.Count()} posts");
+            _logger.LogDebug($"Got an event! User: '{postsLoadedEvent.UserName}', {postsLoadedEvent.Posts.Count()} posts");
             try
             {
                 foreach (var instagramPost in postsLoadedEvent.Posts)
                 {
                     var dto = Mapper.Map<InstagramPostDto>(instagramPost);
-                    dto.UserId = postsLoadedEvent.UserId;
+                    //dto.UserId = postsLoadedEvent.UserId;
                     if (_repo.Exist(dto))
                     {
                         var existingPost = _repo.Get(instagramPost.Code);

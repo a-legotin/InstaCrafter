@@ -6,6 +6,8 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.log
+*.bin
 
 # Secrets
 *.secret.json

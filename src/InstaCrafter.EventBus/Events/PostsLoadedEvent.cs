@@ -7,15 +7,12 @@ namespace InstaCrafter.UserCrafter.IntegrationEvents.Events
 {
     public class PostsLoadedEvent : IntegrationMessage
     {
-        public PostsLoadedEvent(long userId, InstagramUser user, IEnumerable<InstagramPost> posts)
+        public PostsLoadedEvent(string userName, IEnumerable<InstagramPost> posts)
         {
-            UserId = userId;
-            User = user;
+            UserName = userName;
             Posts = posts;
         }
-
-        public long UserId { get; }
-        public InstagramUser User { get; }
+        public string UserName { get; }
         public IEnumerable<InstagramPost> Posts { get; }
     }
 }

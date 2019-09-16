@@ -28,7 +28,7 @@ namespace InstaCrafter.UserService.IntegrationEvents.EventHandlers
             try
             {
                 var posts = await _dataProvider.GetUserPosts(userLoadedMessage.User.UserName);
-                _eventBus.Publish(new PostsLoadedEvent(userLoadedMessage.UserId, userLoadedMessage.User, posts));
+                _eventBus.Publish(new PostsLoadedEvent(userLoadedMessage.User.UserName, posts));
             }
             catch (Exception e)
             {

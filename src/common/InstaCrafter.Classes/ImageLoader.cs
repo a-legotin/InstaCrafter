@@ -60,10 +60,4 @@ namespace InstaCrafter.Classes
             return null;
         }
     }
-
-    public interface IImageLoader
-    {
-        Task<Image> LoadImage(Uri uri);
-        Task<Stream> LoadVideoAsStream(Uri uri);
-    }
 }

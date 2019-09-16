@@ -27,25 +27,11 @@ namespace InstaCrafter.Media
 {
     class Program
     {
-        private static IConfiguration _config;
+        private static IConfiguration Configuration;
 
         static async Task Main(string[] args)
         {
             await ConfigureMapper();
-
-            Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Verbose()
-                .MinimumLevel.Override("Microsoft", LogEventLevel.Verbose)
-                .Enrich.FromLogContext()
-                .WriteTo.Async(w=>w.File("log.txt", rollingInterval: RollingInterval.Day))
-                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
-                {
-                    MinimumLogEventLevel = LogEventLevel.Verbose,
-                })                
-                .WriteTo.ColoredConsole( 
-                    LogEventLevel.Verbose,
-                    "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
-                .CreateLogger();
 
             var builder = new HostBuilder()
                 .ConfigureHostConfiguration(config =>
@@ -67,7 +53,7 @@ namespace InstaCrafter.Media
                         config.AddCommandLine(args);
                     }
 
-                    _config = config.Build();
+                    Configuration = config.Build();
                 })
                 .UseSerilog()
                 .UseServiceProviderFactory(new AutofacServiceProviderFactory())
@@ -81,17 +67,17 @@ namespace InstaCrafter.Media
                         var logger = sp.GetRequiredService<ILogger<DefaultRabbitMQPersistentConnection>>();
                         var factory = new ConnectionFactory()
                         {
-                            HostName = _config["EventBusConnection"]
+                            HostName = Configuration["EventBusConnection"]
                         };
 
-                        if (!string.IsNullOrEmpty(_config["EventBusUserName"]))
+                        if (!string.IsNullOrEmpty(Configuration["EventBusUserName"]))
                         {
-                            factory.UserName = _config["EventBusUserName"];
+                            factory.UserName = Configuration["EventBusUserName"];
                         }
 
-                        if (!string.IsNullOrEmpty(_config["EventBusPassword"]))
+                        if (!string.IsNullOrEmpty(Configuration["EventBusPassword"]))
                         {
-                            factory.Password = _config["EventBusPassword"];
+                            factory.Password = Configuration["EventBusPassword"];
                         }
 
                         return new DefaultRabbitMQPersistentConnection(factory, logger);
@@ -103,7 +89,7 @@ namespace InstaCrafter.Media
                         var logger = sp.GetRequiredService<ILogger<EventBusRabbitMQ>>();
                         var iLifetimeScope = sp.GetRequiredService<ILifetimeScope>();
                         var eventBusSubcriptionsManager = sp.GetRequiredService<IEventBusSubscriptionsManager>();
-                        var subscriptionClientName = _config["SubscriptionClientName"];
+                        var subscriptionClientName = Configuration["SubscriptionClientName"];
                         return new EventBusRabbitMQ(rabbitMQPersistentConnection, logger, eventBusSubcriptionsManager,
                             iLifetimeScope, subscriptionClientName);
                     });
@@ -114,6 +100,20 @@ namespace InstaCrafter.Media
                     services.AddSingleton<IImageLoader, ImageLoader>();
                 })
                 .UseConsoleLifetime();
+            
+            var elasticSearchConnection = Configuration["ElasticConnection"];
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Verbose()
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Verbose)
+                .Enrich.FromLogContext()
+                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(elasticSearchConnection))
+                {
+                    MinimumLogEventLevel = LogEventLevel.Verbose
+                })                
+                .WriteTo.ColoredConsole( 
+                    LogEventLevel.Verbose,
+                    "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
+                .CreateLogger();
 
             await builder.RunConsoleAsync();
         }
