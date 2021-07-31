@@ -20,6 +20,6 @@ jobs:
           dotnet-version: '6.0.x'
           include-prerelease: true
       - name: Restore
-        run: dotnet restore src/common/InstaCrafert.Extensions/InstaCrafert.Extensions.csproj --locked-mode
+        run: dotnet restore InstaCrafter\src\common\InstaCrafter.Extensions\InstaCrafter.Extensions.csproj --locked-mode
       - name: Build
-        run: dotnet build src/common/InstaCrafert.Extensions/InstaCrafert.Extensions.csproj -c Release --no-restore --no-dependencies
+        run: dotnet build InstaCrafter\src\common\InstaCrafter.Extensions\InstaCrafter.Extensions.csproj -c Release --no-restore --no-dependencies
