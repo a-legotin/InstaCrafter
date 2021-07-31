@@ -4,6 +4,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.Desktop", "cli
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "clients", "clients", "{3A1CD1CE-643E-448B-BB31-F52B563ADB33}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{EE84CAAE-5493-4F54-83CE-3D92FD0C3961}"
+ProjectSection(SolutionItems) = preProject
+	..\.github\workflows\dotnet.yml = ..\.github\workflows\dotnet.yml
+	..\.gitlab-ci.yml = ..\.gitlab-ci.yml
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
