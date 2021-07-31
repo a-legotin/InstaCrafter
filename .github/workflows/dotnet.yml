@@ -1,0 +1,24 @@
+name: .NET
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    types: [closed]
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+      - name: Restore
+        run: dotnet restore src/InstaCrafter.sln --locked-mode
+      - name: Build
+        run: dotnet build src/InstaCrafter.sln -c Release --no-restore
