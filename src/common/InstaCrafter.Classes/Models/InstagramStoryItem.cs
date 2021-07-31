@@ -7,11 +7,11 @@ namespace InstaCrafter.Classes.Models
     {
         public bool HasLiked { get; set; }
 
-        public string Code { get; set; }
+        public string? Code { get; set; }
 
         public bool CanReshare { get; set; }
 
-        public string AdAction { get; set; }
+        public string? AdAction { get; set; }
 
         public bool CanViewerSave { get; set; }
 
@@ -33,11 +33,11 @@ namespace InstaCrafter.Classes.Models
 
         public bool HasAudio { get; set; }
 
-        public string LinkText { get; set; }
+        public string? LinkText { get; set; }
 
         public long Pk { get; set; }
 
-        public string Id { get; set; }
+        public string? Id { get; set; }
 
         public bool HasMoreComments { get; set; }
 
@@ -47,7 +47,7 @@ namespace InstaCrafter.Classes.Models
 
         public bool IsReelMedia { get; set; }
 
-        public string OrganicTrackingToken { get; set; }
+        public string? OrganicTrackingToken { get; set; }
 
         public long MediaType { get; set; }
 
@@ -63,11 +63,11 @@ namespace InstaCrafter.Classes.Models
 
         public DateTime TakenAt { get; set; }
 
-        public string VideoDashManifest { get; set; }
+        public string? VideoDashManifest { get; set; }
 
         public bool SupportsReelReactions { get; set; }
 
-        public InstagramUser User { get; set; }
+        public InstagramUser? User { get; set; }
 
         public double VideoDuration { get; set; }
 

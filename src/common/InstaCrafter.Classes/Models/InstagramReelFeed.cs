@@ -23,6 +23,6 @@ namespace InstaCrafter.Classes.Models
 
         public long Seen { get; set; }
 
-        public InstagramUser User { get; set; }
+        public InstagramUser? User { get; set; }
     }
 }

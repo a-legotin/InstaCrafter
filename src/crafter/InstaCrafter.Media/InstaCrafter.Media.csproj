@@ -7,6 +7,16 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="10.1.1" />
+        <PackageReference Include="CozyBus.Core" Version="1.0.5" />
+        <PackageReference Include="InstaSharper" Version="2.0.0" />
+        <PackageReference Include="InstaSharper.Abstractions" Version="2.0.0" />
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0-preview.6.21352.12" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\common\InstaCrafter.Classes\InstaCrafter.Classes.csproj" />
+      <ProjectReference Include="..\..\common\InstaCrafter.EventBus\InstaCrafter.EventBus.csproj" />
+      <ProjectReference Include="..\..\common\InstaCrafter.Extensions\InstaCrafter.Extensions.csproj" />
     </ItemGroup>
 </Project>

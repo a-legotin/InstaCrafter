@@ -4,17 +4,32 @@ namespace InstaCrafter.Classes.Models
 {
     public class InstagramCaption
     {
-        public long UserId { get; set; }
-        public DateTime CreatedAtUtc { get; set; }
+        public InstagramCaption(long userId, DateTime createdAtUtc, DateTime createdAt, InstagramUser user, string text, string mediaId, string pk)
+        {
+            UserId = userId;
+            CreatedAtUtc = createdAtUtc;
+            CreatedAt = createdAt;
+            User = user;
+            Text = text;
+            MediaId = mediaId;
+            Pk = pk;
+        }
 
-        public DateTime CreatedAt { get; set; }
+        public InstagramCaption()
+        {
+        }
 
-        public InstagramUser User { get; set; }
+        public long? UserId { get; set; }
+        public DateTime? CreatedAtUtc { get; set; }
 
-        public string Text { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
-        public string MediaId { get; set; }
+        public InstagramUser? User { get; set; }
 
-        public string Pk { get; set; }
+        public string? Text { get; set; }
+
+        public string? MediaId { get; set; }
+
+        public string? Pk { get; set; }
     }
 }

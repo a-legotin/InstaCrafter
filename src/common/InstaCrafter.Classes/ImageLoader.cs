@@ -18,7 +18,7 @@ namespace InstaCrafter.Classes
             _logger = logger;
         }
 
-        public async Task<Image> LoadImage(Uri uri)
+        public async Task<Image?> LoadImage(Uri uri)
         {
             try
             {
@@ -39,7 +39,7 @@ namespace InstaCrafter.Classes
             return null;
         }
         
-        public async Task<Stream> LoadVideoAsStream(Uri uri)
+        public async Task<Stream?> LoadVideoAsStream(Uri uri)
         {
             try
             {

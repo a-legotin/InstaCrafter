@@ -7,7 +7,7 @@ namespace InstaCrafter.Classes
 {
     public interface IImageLoader
     {
-        Task<Image> LoadImage(Uri uri);
-        Task<Stream> LoadVideoAsStream(Uri uri);
+        Task<Image?> LoadImage(Uri uri);
+        Task<Stream?> LoadVideoAsStream(Uri uri);
     }
 }

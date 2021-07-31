@@ -3,19 +3,22 @@ image: mcr.microsoft.com/dotnet/sdk:6.0-focal
 stages:
   - build
   - test
+    
+before_script:
+  - apt update -y -q && apt install -y -q libc-dev libgdiplus
+  - export PATH="$PATH:/root/.dotnet/tools"
+  - dotnet tool install -g dotnet-reportgenerator-globaltool
+  - dotnet tool install --global coverlet.console
+  - dotnet nuget add source "$CI_SERVER_URL/api/v4/projects/$CI_PROJECT_ID/packages/nuget/index.json" --name gitlab --username gitlab-ci-token --password $CI_JOB_TOKEN --store-password-in-clear-text
 
 build:
   stage: build
   script:
     - dotnet restore src/common/InstaCrafter.Extensions/InstaCrafter.Extensions.csproj --locked-mode
     - dotnet build src/common/InstaCrafter.Extensions/InstaCrafter.Extensions.csproj -c Release --no-restore --no-dependencies
+
 test:
   stage: test
-  before_script:
-    - apt update && apt install -y libc-dev libgdiplus
-    - export PATH="$PATH:/root/.dotnet/tools"
-    - dotnet tool install -g dotnet-reportgenerator-globaltool
-    - dotnet tool install --global coverlet.console
   script:
     - dotnet test src/tests/InstaCrafter.Extensions.Tests/InstaCrafter.Extensions.Tests.csproj --collect:"XPlat Code Coverage"
     - reportgenerator "-reports:src/tests/InstaCrafter.Extensions.Tests/TestResults/*/coverage.cobertura.xml" "-targetdir:Reports/Coverage/Text" -reportTypes:TextSummary
