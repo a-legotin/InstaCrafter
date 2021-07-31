@@ -18,5 +18,12 @@ test:
     - export PATH="$PATH:/root/.dotnet/tools"
   script:
     - dotnet build src/tests/InstaCrafter.Extensions.Tests/InstaCrafter.Extensions.Tests.csproj
-    - coverlet src/common/InstaCrafter.Extensions/bin/Debug/net6.0/InstaCrafter.Extensions.dll --target "dotnet" --targetargs "test src/tests/InstaCrafter.Extensions.Tests/InstaCrafter.Extensions.Tests.csproj --no-build"
-      
+    - dotnet test src/tests/InstaCrafter.Extensions.Tests/InstaCrafter.Extensions.Tests.csproj /p:CollectCoverage=true --no-build
+    - reportgenerator "-reports:src/tests/InstaCrafter.Extensions.Tests/TestResults/*/coverage.cobertura.xml" "-targetdir:Reports/Coverage/Text" -reportTypes:TextSummary
+    - reportgenerator "-reports:src/tests/InstaCrafter.Extensions.Tests/TestResults/*/coverage.cobertura.xml" "-targetdir:Reports/Coverage/Html" -reportTypes:Html
+    - cat Reports/Coverage/Text/Summary.txt
+  coverage: /^\s*Line coverage:\s*\d+.\d+\%$/
+  artifacts:
+    when: always
+    paths:
+      - Reports/Coverage
