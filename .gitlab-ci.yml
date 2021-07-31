@@ -6,5 +6,5 @@ stages:
 build:
   stage: build
   script:
-    - dotnet restore src/InstaCrafter.sln --locked-mode
-    - dotnet build src/InstaCrafter.sln -c Release --no-restore --no-dependencies
+    - dotnet restore src/common/InstaCrafert.Extensions/InstaCrafert.Extensions.csproj --locked-mode
+    - dotnet build src/common/InstaCrafert.Extensions/InstaCrafert.Extensions.csproj -c Release --no-restore --no-dependencies
