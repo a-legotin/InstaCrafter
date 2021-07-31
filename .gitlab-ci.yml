@@ -17,8 +17,8 @@ test:
     - dotnet tool install -g dotnet-reportgenerator-globaltool
     - dotnet tool install --global coverlet.console
   script:
-    - dotnet build src/tests/InstaCrafter.Extensions.Tests/InstaCrafter.Extensions.Tests.csproj
-    - dotnet test src/tests/InstaCrafter.Extensions.Tests/InstaCrafter.Extensions.Tests.csproj /p:CollectCoverage=true --no-build
+    - cd src & dotnet test --collect:"XPlat Code Coverage"
+    - cd ..
     - reportgenerator "-reports:src/tests/InstaCrafter.Extensions.Tests/TestResults/*/coverage.cobertura.xml" "-targetdir:Reports/Coverage/Text" -reportTypes:TextSummary
     - reportgenerator "-reports:src/tests/InstaCrafter.Extensions.Tests/TestResults/*/coverage.cobertura.xml" "-targetdir:Reports/Coverage/Html" -reportTypes:Html
     - cat Reports/Coverage/Text/Summary.txt
