@@ -1,0 +1,10 @@
+image: mcr.microsoft.com/dotnet/sdk:5.0
+
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - dotnet restore src/InstaCrafter.sln --locked-mode
+    - dotnet build src/InstaCrafter.sln -c Release --no-restore --no-dependencies
