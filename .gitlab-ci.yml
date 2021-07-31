@@ -2,9 +2,14 @@ image: mcr.microsoft.com/dotnet/sdk:6.0-focal
 
 stages:
   - build
+  - test
 
 build:
   stage: build
   script:
     - dotnet restore src/common/InstaCrafter.Extensions/InstaCrafter.Extensions.csproj --locked-mode
     - dotnet build src/common/InstaCrafter.Extensions/InstaCrafter.Extensions.csproj -c Release --no-restore --no-dependencies
+test:
+  stage: test
+  script:
+    - dotnet test src/tests/InstaCrafter.Extensions.Tests/InstaCrafter.Extensions.Tests.csproj /p:CollectCoverage=true
