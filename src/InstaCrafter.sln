@@ -21,6 +21,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A93B4461
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.Extensions.Tests", "tests\InstaCrafter.Extensions.Tests\InstaCrafter.Extensions.Tests.csproj", "{E8A51B00-A325-4623-A557-CF8CE11E6D00}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.Classes", "common\InstaCrafter.Classes\InstaCrafter.Classes.csproj", "{788F390C-C0E1-4FC1-926E-187B52E09A88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "crafter", "crafter", "{5084CD3D-24CD-4A60-AAB1-6FEF964F4026}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.Media", "crafter\InstaCrafter.Media\InstaCrafter.Media.csproj", "{1A392E8C-AECC-499A-ACC2-1019152A3836}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,10 +45,20 @@ Global
 		{E8A51B00-A325-4623-A557-CF8CE11E6D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8A51B00-A325-4623-A557-CF8CE11E6D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8A51B00-A325-4623-A557-CF8CE11E6D00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{788F390C-C0E1-4FC1-926E-187B52E09A88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{788F390C-C0E1-4FC1-926E-187B52E09A88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{788F390C-C0E1-4FC1-926E-187B52E09A88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{788F390C-C0E1-4FC1-926E-187B52E09A88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A392E8C-AECC-499A-ACC2-1019152A3836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A392E8C-AECC-499A-ACC2-1019152A3836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A392E8C-AECC-499A-ACC2-1019152A3836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A392E8C-AECC-499A-ACC2-1019152A3836}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{74C76509-3C45-4F65-ABC4-CDC6FBFE9D73} = {3A1CD1CE-643E-448B-BB31-F52B563ADB33}
 		{35866F6C-51DB-44AC-B20C-7690DFF46CE9} = {DB3FC42C-3AB8-4B36-8C01-B16C264F1278}
 		{E8A51B00-A325-4623-A557-CF8CE11E6D00} = {A93B4461-DB5B-46C7-ACE0-76B234D58E2D}
+		{788F390C-C0E1-4FC1-926E-187B52E09A88} = {DB3FC42C-3AB8-4B36-8C01-B16C264F1278}
+		{1A392E8C-AECC-499A-ACC2-1019152A3836} = {5084CD3D-24CD-4A60-AAB1-6FEF964F4026}
 	EndGlobalSection
 EndGlobal
