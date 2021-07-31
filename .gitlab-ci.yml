@@ -11,5 +11,11 @@ build:
     - dotnet build src/common/InstaCrafter.Extensions/InstaCrafter.Extensions.csproj -c Release --no-restore --no-dependencies
 test:
   stage: test
+  before_script:
+    - dotnet tool install dotnet-reportgenerator-globaltool --tool-path tools
+    - dotnet tool install --global coverlet.console
+    - export PATH="$PATH:/root/.dotnet/tools"
   script:
-    - dotnet test src/tests/InstaCrafter.Extensions.Tests/InstaCrafter.Extensions.Tests.csproj /p:CollectCoverage=true
+    - dotnet build src/tests/InstaCrafter.Extensions.Tests/InstaCrafter.Extensions.Tests.csproj
+    - coverlet src/common/InstaCrafter.Extensions/bin/Debug/net6.0/InstaCrafter.Extensions.dll --target "dotnet" --targetargs "test src/tests/InstaCrafter.Extensions.Tests/InstaCrafter.Extensions.Tests.csproj --no-build"
+      
