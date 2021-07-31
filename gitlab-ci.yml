@@ -1,0 +1,10 @@
+image: mcr.microsoft.com/dotnet/sdk:6.0-focal
+
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - dotnet restore InstaCrafter.sln --locked-mode
+    - dotnet build InstaCrafter.sln -c Release --no-restore --no-dependencies

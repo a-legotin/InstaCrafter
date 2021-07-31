@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
@@ -26,8 +26,7 @@
       <ProjectReference Include="..\..\common\eventbus\InstaCrafter.EventBus\InstaCrafter.EventBus.csproj" />
       <ProjectReference Include="..\..\common\eventbus\InstaCrafter.RabbitMQ\InstaCrafter.RabbitMQ.csproj" />
       <ProjectReference Include="..\..\common\InstaCrafter.Classes\InstaCrafter.Classes.csproj" />
-      <ProjectReference Include="..\..\InstaCrafter.EventBus\InstaCrafter.EventBus.csproj" />
-      <ProjectReference Include="..\..\InstaCrafter.RabbitMQ\InstaCrafter.RabbitMQ.csproj" />
+      <ProjectReference Include="..\..\common\InstaCrafter.Extensions\InstaCrafter.Extensions.csproj" />
     </ItemGroup>
 
 </Project>

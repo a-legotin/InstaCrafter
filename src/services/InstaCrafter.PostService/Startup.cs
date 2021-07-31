@@ -1,33 +1,29 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
-using InstaCrafter.CrafterJobs.DataProvider;
-using InstaCrafter.CrafterJobs.DataProvider.PostgreSQL;
-using InstaCrafter.CrafterJobs.DtoModels;
-using InstaCrafter.CrafterJobs.HostedServices;
+using InstaCrafter.Classes.Models;
 using InstaCrafter.EventBus;
 using InstaCrafter.EventBus.Abstractions;
+using InstaCrafter.PostService.DataProvider;
+using InstaCrafter.PostService.DataProvider.PostgreSQL;
+using InstaCrafter.PostService.DtoModels;
+using InstaCrafter.PostService.IntegrationEvents.EventHandlers;
 using InstaCrafter.RabbitMQ;
+using InstaCrafter.UserCrafter.IntegrationEvents.Events;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using RabbitMQ.Client;
 using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.Elasticsearch;
 
-namespace InstaCrafter.CrafterJobs
+namespace InstaCrafter.PostService
 {
     public class Startup
     {
@@ -38,39 +34,37 @@ namespace InstaCrafter.CrafterJobs
 
         public IConfiguration Configuration { get; }
 
-
+        // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().AddNewtonsoftJson();
-
-            var elasticSearchConnection = Configuration["ElasticConnection"];
+            
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Verbose()
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Verbose)
                 .Enrich.FromLogContext()
-                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(elasticSearchConnection))
+                .WriteTo.Async(w=>w.File("log.txt", rollingInterval: RollingInterval.Day))
+                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
                 {
                     MinimumLogEventLevel = LogEventLevel.Verbose,
-                })
-                .WriteTo.ColoredConsole(
+                })                
+                .WriteTo.ColoredConsole( 
                     LogEventLevel.Verbose,
                     "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
                 .CreateLogger();
-
+            
             //Use a PostgreSQL database
             var sqlConnectionString = Configuration.GetConnectionString("DataAccessPostgreSqlProvider");
 
             services.AddDbContext<PostgreSqlDatabaseContext>(options =>
                 options.UseNpgsql(
                     sqlConnectionString,
-                    b => b.MigrationsAssembly("InstaCrafter.CrafterJobs")
+                    b => b.MigrationsAssembly("InstaCrafter.PostService")
                 )
             );
 
 
-            services.AddScoped<IDataAccessProvider<InstaCrafterJobDto>, CrafterJobsRepository>();
-            services.AddHostedService<TimedHostedService>();
-
+            services.AddScoped<IDataAccessProvider<InstagramPostDto>, InstagramPostsRepository>();
             
             services.AddSingleton<IRabbitMQPersistentConnection>(sp =>
             {
@@ -104,6 +98,30 @@ namespace InstaCrafter.CrafterJobs
                 var subscriptionClientName = Configuration["SubscriptionClientName"];
                 return new EventBusRabbitMQ(rabbitMQPersistentConnection, logger, eventBusSubcriptionsManager,iLifetimeScope, subscriptionClientName);
             });
+
+            services.AddTransient<PostsLoadedEventHandler>();
+
+            Mapper.Initialize(config =>
+            {
+                config.CreateMap<InstagramPost, InstagramPostDto>();
+                config.CreateMap<InstagramPostDto, InstagramPost>();
+                
+                config.CreateMap<InstagramImage, InstagramImageDto>();
+                config.CreateMap<InstagramImageDto, InstagramImage>();
+                
+                config.CreateMap<InstagramVideo, InstagramVideoDto>();
+                config.CreateMap<InstagramVideoDto, InstagramVideo>();
+                
+                                
+                config.CreateMap<InstagramLocation, InstagramLocationDto>();
+                config.CreateMap<InstagramLocationDto, InstagramLocation>();
+                
+                config.CreateMap<InstagramCaption, InstagramCaptionDto>();
+                config.CreateMap<InstagramCaptionDto, InstagramCaption>();
+                
+                config.CreateMap<InstagramCarouselItem, InstagramCarouselItemDto>();
+                config.CreateMap<InstagramCarouselItemDto, InstagramCarouselItem>();
+            });
             
             var container = new ContainerBuilder();
             container.Populate(services);
@@ -118,17 +136,15 @@ namespace InstaCrafter.CrafterJobs
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
-
-            app.UseHttpsRedirection();
 
             app.UseRouting();
-
-            app.UseAuthorization();
+            ConfigureEventBus(app);
         }
+        
+        private void ConfigureEventBus(IApplicationBuilder app)
+        {
+            var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
+            eventBus.Subscribe<PostsLoadedEvent, PostsLoadedEventHandler>();
+        }  
     }
 }

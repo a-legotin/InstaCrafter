@@ -31,7 +31,7 @@ namespace InstaCrafter.Media
 
         static async Task Main(string[] args)
         {
-            await ConfigureMapper();
+            ConfigureMapper();
 
             var builder = new HostBuilder()
                 .ConfigureHostConfiguration(config =>
@@ -43,7 +43,6 @@ namespace InstaCrafter.Media
                 })
                 .ConfigureAppConfiguration((hostContext, config) =>
                 {
-                    config.AddJsonFile("instasharper.secret.json", optional: true, reloadOnChange: true);
                     config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 
                     config.AddEnvironmentVariables();
@@ -118,7 +117,7 @@ namespace InstaCrafter.Media
             await builder.RunAsync();
         }
 
-        static async Task ConfigureMapper()
+        static void ConfigureMapper()
         {
             Mapper.Initialize(cfg =>
             {
