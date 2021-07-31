@@ -44,7 +44,7 @@ namespace InstaCrafter.Classes.Models
         public int ViewCount { get; set; }
 
         public bool HasAudio { get; set; }
-        
+
         public InstagramCaption? Caption { get; set; }
 
         public List<InstagramCarouselItem>? Carousel { get; set; }

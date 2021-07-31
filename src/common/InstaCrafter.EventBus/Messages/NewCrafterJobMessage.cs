@@ -11,7 +11,7 @@ namespace InstaCrafter.EventBus.Messages
             User = user;
             JobType = jobType;
         }
-        
+
         public JobType JobType { get; }
 
         public string User { get; }

@@ -9,7 +9,7 @@ namespace InstaCrafter.Extensions
         public static IEnumerable<T> Randomize<T>(this IEnumerable<T> source)
         {
             var rnd = new Random(DateTime.Now.Millisecond);
-            return source.OrderBy<T, int>((item) => rnd.Next());
+            return source.OrderBy(item => rnd.Next());
         }
     }
 }

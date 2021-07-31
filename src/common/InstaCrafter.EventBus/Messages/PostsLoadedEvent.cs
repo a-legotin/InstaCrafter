@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using CozyBus.Core.Messages;
 using InstaCrafter.Classes.Models;
-using InstaCrafter.EventBus.Messages;
 
 namespace InstaCrafter.UserCrafter.IntegrationEvents.Events
 {
@@ -14,6 +12,7 @@ namespace InstaCrafter.UserCrafter.IntegrationEvents.Events
             UserName = userName;
             Posts = posts;
         }
+
         public string UserName { get; }
         public IEnumerable<InstagramPost> Posts { get; }
         public Guid Id { get; }

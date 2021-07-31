@@ -9,7 +9,7 @@ namespace InstaCrafter.Classes.Models
         public long Pk { get; set; }
 
         public string? ShortName { get; set; }
-        
+
         public string? ExternalSource { get; set; }
 
         public string? ExternalId { get; set; }

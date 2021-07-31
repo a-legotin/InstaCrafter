@@ -1,9 +1,7 @@
 using System;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Net.Http;
-using System.Net.Mime;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
@@ -13,10 +11,7 @@ namespace InstaCrafter.Classes
     {
         private readonly ILogger<ImageLoader> _logger;
 
-        public ImageLoader(ILogger<ImageLoader> logger)
-        {
-            _logger = logger;
-        }
+        public ImageLoader(ILogger<ImageLoader> logger) => _logger = logger;
 
         public async Task<Image?> LoadImage(Uri uri)
         {
@@ -38,7 +33,7 @@ namespace InstaCrafter.Classes
 
             return null;
         }
-        
+
         public async Task<Stream?> LoadVideoAsStream(Uri uri)
         {
             try

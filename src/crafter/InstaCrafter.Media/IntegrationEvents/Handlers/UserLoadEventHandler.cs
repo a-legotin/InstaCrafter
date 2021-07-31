@@ -11,11 +11,12 @@ namespace InstaCrafter.UserService.IntegrationEvents.EventHandlers
 {
     public class UserLoadEventHandler : IBusMessageHandler<UserLoadMessage>
     {
-        private readonly ILogger<UserLoadEventHandler> _logger;
         private readonly IMediaDataProvider _dataProvider;
         private readonly IMessageBus _eventBus;
+        private readonly ILogger<UserLoadEventHandler> _logger;
 
-        public UserLoadEventHandler(ILogger<UserLoadEventHandler> _logger, IMediaDataProvider _dataProvider, IMessageBus eventBus)
+        public UserLoadEventHandler(ILogger<UserLoadEventHandler> _logger, IMediaDataProvider _dataProvider,
+            IMessageBus eventBus)
         {
             this._logger = _logger;
             this._dataProvider = _dataProvider;

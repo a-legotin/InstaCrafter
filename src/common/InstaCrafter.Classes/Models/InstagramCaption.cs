@@ -4,7 +4,8 @@ namespace InstaCrafter.Classes.Models
 {
     public class InstagramCaption
     {
-        public InstagramCaption(long userId, DateTime createdAtUtc, DateTime createdAt, InstagramUser user, string text, string mediaId, string pk)
+        public InstagramCaption(long userId, DateTime createdAtUtc, DateTime createdAt, InstagramUser user, string text,
+            string mediaId, string pk)
         {
             UserId = userId;
             CreatedAtUtc = createdAtUtc;
