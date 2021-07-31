@@ -13,9 +13,9 @@ test:
   stage: test
   before_script:
     - apt update && apt install -y libc-dev libgdiplus
-    - dotnet tool install dotnet-reportgenerator-globaltool --tool-path tools
-    - dotnet tool install --global coverlet.console
     - export PATH="$PATH:/root/.dotnet/tools"
+    - dotnet tool install -g dotnet-reportgenerator-globaltool
+    - dotnet tool install --global coverlet.console
   script:
     - dotnet build src/tests/InstaCrafter.Extensions.Tests/InstaCrafter.Extensions.Tests.csproj
     - dotnet test src/tests/InstaCrafter.Extensions.Tests/InstaCrafter.Extensions.Tests.csproj /p:CollectCoverage=true --no-build
@@ -23,7 +23,3 @@ test:
     - reportgenerator "-reports:src/tests/InstaCrafter.Extensions.Tests/TestResults/*/coverage.cobertura.xml" "-targetdir:Reports/Coverage/Html" -reportTypes:Html
     - cat Reports/Coverage/Text/Summary.txt
   coverage: /^\s*Line coverage:\s*\d+.\d+\%$/
-  artifacts:
-    when: always
-    paths:
-      - Reports/Coverage
