@@ -1,9 +1,10 @@
 # InstaCrafter
 InstaCrafter .NET Core app for internal techtalk
 
-#### Build status
+### Build status
 ----
 
-[![Build status](https://ci.appveyor.com/api/projects/status/qnvshb1n83w3cil9?svg=true)](https://ci.appveyor.com/project/a-legotin/instacrafter)
+[![.NET](https://github.com/a-legotin/InstaCrafter/actions/workflows/dotnet.yml/badge.svg)](https://github.com/a-legotin/InstaCrafter/actions/workflows/dotnet.yml)
+[![pipeline status](https://git.codegarage.ru/alexander/InstaCrafter/badges/master/pipeline.svg)](https://git.codegarage.ru/alexander/InstaCrafter/-/commits/master)
 
 ----
