@@ -1,7 +1,5 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.Desktop", "clients\InstaCrafter.Desktop\InstaCrafter.Desktop.csproj", "{74C76509-3C45-4F65-ABC4-CDC6FBFE9D73}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "clients", "clients", "{3A1CD1CE-643E-448B-BB31-F52B563ADB33}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{EE84CAAE-5493-4F54-83CE-3D92FD0C3961}"
@@ -9,6 +7,7 @@ ProjectSection(SolutionItems) = preProject
 	..\.github\workflows\dotnet.yml = ..\.github\workflows\dotnet.yml
 	..\.gitlab-ci.yml = ..\.gitlab-ci.yml
 	..\README.md = ..\README.md
+	..\.gitignore = ..\.gitignore
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{DB3FC42C-3AB8-4B36-8C01-B16C264F1278}"
@@ -29,16 +28,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.Media", "craft
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.EventBus", "common\InstaCrafter.EventBus\InstaCrafter.EventBus.csproj", "{D4942C48-D08E-4CAD-8255-329DB9028EA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.Desktop.Avalonia", "clients\InstaCrafter.Desktop.Avalonia\InstaCrafter.Desktop.Avalonia.csproj", "{7E973329-168F-4E50-B454-BE6251F5C2AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{74C76509-3C45-4F65-ABC4-CDC6FBFE9D73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{74C76509-3C45-4F65-ABC4-CDC6FBFE9D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{74C76509-3C45-4F65-ABC4-CDC6FBFE9D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{74C76509-3C45-4F65-ABC4-CDC6FBFE9D73}.Release|Any CPU.Build.0 = Release|Any CPU
 		{35866F6C-51DB-44AC-B20C-7690DFF46CE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{35866F6C-51DB-44AC-B20C-7690DFF46CE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35866F6C-51DB-44AC-B20C-7690DFF46CE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,13 +56,17 @@ Global
 		{D4942C48-D08E-4CAD-8255-329DB9028EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4942C48-D08E-4CAD-8255-329DB9028EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4942C48-D08E-4CAD-8255-329DB9028EA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E973329-168F-4E50-B454-BE6251F5C2AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E973329-168F-4E50-B454-BE6251F5C2AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E973329-168F-4E50-B454-BE6251F5C2AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E973329-168F-4E50-B454-BE6251F5C2AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{74C76509-3C45-4F65-ABC4-CDC6FBFE9D73} = {3A1CD1CE-643E-448B-BB31-F52B563ADB33}
 		{35866F6C-51DB-44AC-B20C-7690DFF46CE9} = {DB3FC42C-3AB8-4B36-8C01-B16C264F1278}
 		{E8A51B00-A325-4623-A557-CF8CE11E6D00} = {A93B4461-DB5B-46C7-ACE0-76B234D58E2D}
 		{788F390C-C0E1-4FC1-926E-187B52E09A88} = {DB3FC42C-3AB8-4B36-8C01-B16C264F1278}
 		{1A392E8C-AECC-499A-ACC2-1019152A3836} = {5084CD3D-24CD-4A60-AAB1-6FEF964F4026}
 		{D4942C48-D08E-4CAD-8255-329DB9028EA3} = {DB3FC42C-3AB8-4B36-8C01-B16C264F1278}
+		{7E973329-168F-4E50-B454-BE6251F5C2AE} = {3A1CD1CE-643E-448B-BB31-F52B563ADB33}
 	EndGlobalSection
 EndGlobal
