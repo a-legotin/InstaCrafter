@@ -20,6 +20,7 @@ build-net:
 
 test-net:
   stage: test-net
+  image: mcr.microsoft.com/dotnet/sdk:6.0-focal
   script:
     - apt update -y -q && apt install -y -q libc-dev libgdiplus
     - export PATH="$PATH:/root/.dotnet/tools"
@@ -41,6 +42,7 @@ build-app:
 
 test-app:
   stage: test-app
+  image: node
   script:
     - cd src/clients/react-app/
     - npm install --progress=false
