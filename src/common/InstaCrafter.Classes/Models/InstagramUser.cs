@@ -16,6 +16,6 @@ namespace InstaCrafter.Classes.Models
         public string? ProfilePictureId { get; set; } = "unknown";
         public string? UserName { get; set; }
         public string? FullName { get; set; }
-        public static InstagramUser Empty => new InstagramUser {Pk = 0};
+        public static InstagramUser Empty => new InstagramUser { Pk = 0 };
     }
 }

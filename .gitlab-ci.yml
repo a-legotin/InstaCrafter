@@ -3,11 +3,11 @@ stages:
   - build-app
   - test-net
   - test-app
-  
+
 cache:
   paths:
     - src/clients/react-app/node_modules/
-    
+
 build-net:
   stage: build-net
   image: mcr.microsoft.com/dotnet/sdk:6.0-focal
@@ -15,8 +15,8 @@ build-net:
     - apt update -y -q && apt install -y -q libc-dev libgdiplus
     - export PATH="$PATH:/root/.dotnet/tools"
     - dotnet nuget add source "$CI_SERVER_URL/api/v4/projects/$CI_PROJECT_ID/packages/nuget/index.json" --name gitlab --username gitlab-ci-token --password $CI_JOB_TOKEN --store-password-in-clear-text
-    - dotnet restore src/common/InstaCrafter.Extensions/InstaCrafter.Extensions.csproj --locked-mode
-    - dotnet build src/common/InstaCrafter.Extensions/InstaCrafter.Extensions.csproj -c Release --no-restore --no-dependencies
+    - dotnet restore src/InstaCrafter.sln
+    - dotnet build src/InstaCrafter.sln -c Release --no-restore --no-dependencies
 
 test-net:
   stage: test-net

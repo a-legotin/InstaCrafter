@@ -1,26 +1,36 @@
-using Microsoft.OpenApi.Models;
+using System;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 
-var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
-builder.Services.AddControllers();
-builder.Services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new() { Title = "InstaCrafter.API", Version = "v1" }); });
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (builder.Environment.IsDevelopment())
+namespace InstaCrafter.API
 {
-    app.UseDeveloperExceptionPage();
-    app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "InstaCrafter.API v1"));
+    public class Program
+    {
+        public static IConfiguration? Configuration { get; private set; }
+
+        public static void Main(string[] args)
+        {
+            Configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", false, true)
+                .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json", true,
+                    true)
+                .AddCommandLine(args)
+                .AddEnvironmentVariables()
+                .Build();
+
+            CreateHostBuilder(args).Build().Run();
+        }
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>()
+                        .UseConfiguration(Configuration ?? throw new ArgumentNullException("Configuration"));
+                    ;
+                });
+    }
 }
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();

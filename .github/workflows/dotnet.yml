@@ -4,7 +4,7 @@ on:
   push:
     branches: [ master ]
   pull_request:
-    types: [closed]
+    types: [ closed ]
     branches: [ master ]
 
 jobs:
@@ -20,6 +20,6 @@ jobs:
           dotnet-version: '6.0.x'
           include-prerelease: true
       - name: Restore
-        run: dotnet restore src/common/InstaCrafter.Extensions/InstaCrafter.Extensions.csproj --locked-mode
+        run: dotnet restore src/InstaCrafter.sln
       - name: Build
-        run: dotnet build src/common/InstaCrafter.Extensions/InstaCrafter.Extensions.csproj -c Release --no-restore --no-dependencies
+        run: dotnet build src/InstaCrafter.sln -c Release --no-restore --no-dependencies

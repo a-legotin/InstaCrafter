@@ -17,14 +17,10 @@ namespace InstaCrafter.Classes
         {
             try
             {
-                using (HttpClient client = new HttpClient())
-                {
-                    using (var response = await client.GetAsync(uri))
-                    {
-                        response.EnsureSuccessStatusCode();
-                        return new Bitmap(await response.Content.ReadAsStreamAsync());
-                    }
-                }
+                using HttpClient client = new HttpClient();
+                using var response = await client.GetAsync(uri);
+                response.EnsureSuccessStatusCode();
+                return new Bitmap(await response.Content.ReadAsStreamAsync());
             }
             catch (Exception ex)
             {
@@ -38,14 +34,10 @@ namespace InstaCrafter.Classes
         {
             try
             {
-                using (HttpClient client = new HttpClient())
-                {
-                    using (var response = await client.GetAsync(uri))
-                    {
-                        response.EnsureSuccessStatusCode();
-                        return await response.Content.ReadAsStreamAsync();
-                    }
-                }
+                using HttpClient client = new HttpClient();
+                using var response = await client.GetAsync(uri);
+                response.EnsureSuccessStatusCode();
+                return await response.Content.ReadAsStreamAsync();
             }
             catch (Exception ex)
             {

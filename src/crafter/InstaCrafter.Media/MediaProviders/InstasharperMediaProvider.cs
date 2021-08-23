@@ -7,21 +7,21 @@ using AutoMapper;
 using InstaCrafter.Classes;
 using InstaCrafter.Classes.Models;
 using InstaCrafter.Extensions;
+using InstaCrafter.Media.Classes;
 using InstaSharper.Abstractions.API;
 using InstaSharper.Builder;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using PaginationParameters = InstaSharper.Abstractions.Models.PaginationParameters;
 
 namespace InstaCrafter.Media.MediaProviders
 {
     public class InstasharperMediaProvider : IMediaDataProvider
     {
         private readonly IOptions<InstaSharperConfig> _appConfig;
-        private readonly IMapper _mapper;
-        private readonly ILogger _logger;
         private readonly IImageLoader _imageLoader;
         private readonly IInstaApi _instaApi;
+        private readonly ILogger _logger;
+        private readonly IMapper _mapper;
 
         public InstasharperMediaProvider(IOptions<InstaSharperConfig> appConfig,
             IMapper mapper,
@@ -68,7 +68,7 @@ namespace InstaCrafter.Media.MediaProviders
             }
 
             var state = _instaApi.User.GetUserSessionAsByteArray();
-            if(state != null)
+            if (state != null)
             {
                 File.WriteAllBytes(stateFile, state);
                 _logger.LogDebug($"Instasharper state saved to: {stateFile}");
@@ -128,6 +128,36 @@ namespace InstaCrafter.Media.MediaProviders
             return new List<InstagramPost>();
         }
 
+        public async Task<InstagramReelFeed> GetUserStory(string username)
+        {
+            _logger.LogDebug($"Loading story for user '{username}'");
+            return (await _instaApi.User.GetUserAsync(username))
+                .Match(user => { return new InstagramReelFeed(); },
+                    fail =>
+                    {
+                        _logger.LogError($"Unable to load user's '{username}' all posts: {fail.Message}");
+                        return new InstagramReelFeed();
+                    });
+
+
+            // var getStoryResult = await _instaApi.GetUserStoryFeedAsync(user);
+            // if (getStoryResult.Succeeded)
+            // {
+            //     _logger.LogDebug($"Loaded {getStoryResult.Value.Items.Count} stories for user '{username}'");
+            //     return _mapper.Map<InstagramReelFeed>(getStoryResult.Value);
+            // }
+            //
+            // if (!user.IsRight)
+            // {
+            //     
+            // }
+            //
+            //
+            //
+            // _logger.LogError($"Unable to load user '{username}' all posts: {getStoryResult.Info.Message}");
+            // return new InstagramReelFeed();
+        }
+
         private async Task ProcessVideo(string username, InstagramVideo instagramVideo, string postSubPath)
         {
             var videoStream =
@@ -171,39 +201,5 @@ namespace InstaCrafter.Media.MediaProviders
             instagramImage.Path = relativeFileName;
             instagramImage.ImageBytes = image.ToByteArray(ImageFormat.Jpeg);
         }
-
-        public async Task<InstagramReelFeed> GetUserStory(string username)
-        {
-            _logger.LogDebug($"Loading story for user '{username}'");
-            return (await _instaApi.User.GetUserAsync(username))
-                .Match(user =>
-                    {
-                        return new InstagramReelFeed();
-                    },
-                    fail =>
-                    {
-                        _logger.LogError($"Unable to load user's '{username}' all posts: {fail.Message}");
-                        return new InstagramReelFeed();
-                    });
-
-            
-            // var getStoryResult = await _instaApi.GetUserStoryFeedAsync(user);
-            // if (getStoryResult.Succeeded)
-            // {
-            //     _logger.LogDebug($"Loaded {getStoryResult.Value.Items.Count} stories for user '{username}'");
-            //     return _mapper.Map<InstagramReelFeed>(getStoryResult.Value);
-            // }
-            //
-            // if (!user.IsRight)
-            // {
-            //     
-            // }
-            //
-            //
-            //
-            // _logger.LogError($"Unable to load user '{username}' all posts: {getStoryResult.Info.Message}");
-            // return new InstagramReelFeed();
-        }
     }
 }
-

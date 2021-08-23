@@ -4,10 +4,9 @@ using CozyBus.Core.Bus;
 using CozyBus.Core.Handlers;
 using InstaCrafter.EventBus.Messages;
 using InstaCrafter.Media.MediaProviders;
-using InstaCrafter.UserCrafter.IntegrationEvents.Events;
 using Microsoft.Extensions.Logging;
 
-namespace InstaCrafter.UserService.IntegrationEvents.EventHandlers
+namespace InstaCrafter.Media.IntegrationEvents.Handlers
 {
     public class  CraftJobEventHandler : IBusMessageHandler<NewCrafterJobMessage>
     {

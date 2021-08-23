@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using CozyBus.Core.Messages;
 using InstaCrafter.Classes.Models;
 
-namespace InstaCrafter.UserCrafter.IntegrationEvents.Events
+namespace InstaCrafter.EventBus.Messages
 {
     public class PostsLoadedEvent : IBusMessage
     {

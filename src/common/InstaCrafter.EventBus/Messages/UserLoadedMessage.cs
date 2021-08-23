@@ -2,7 +2,7 @@ using System;
 using CozyBus.Core.Messages;
 using InstaCrafter.Classes.Models;
 
-namespace InstaCrafter.UserCrafter.IntegrationEvents.Events
+namespace InstaCrafter.EventBus.Messages
 {
     public class UserLoadedMessage : IBusMessage
     {

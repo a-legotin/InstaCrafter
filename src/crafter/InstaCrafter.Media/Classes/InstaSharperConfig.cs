@@ -1,6 +1,6 @@
 using InstaSharper.Abstractions.Models.User;
 
-namespace InstaCrafter.Media
+namespace InstaCrafter.Media.Classes
 {
     public class InstaSharperConfig
     {
@@ -9,7 +9,7 @@ namespace InstaCrafter.Media
 
         public string FileStoragePath { get; set; }
     }
-    
+
     internal class UserCredentials : IUserCredentials
     {
         public UserCredentials(string username, string password)
