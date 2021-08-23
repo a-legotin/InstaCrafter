@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 namespace InstaCrafter.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [Authorize]
     public class WeatherForecastController : ControllerBase
     {
