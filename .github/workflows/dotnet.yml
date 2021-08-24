@@ -30,4 +30,4 @@ jobs:
       - name: Restore
         run: dotnet restore src/InstaCrafter.sln
       - name: Build
-        run: dotnet build src/InstaCrafter.sln -c Release --no-restore --no-dependencies
+        run: dotnet build src/InstaCrafter.sln -c Release
