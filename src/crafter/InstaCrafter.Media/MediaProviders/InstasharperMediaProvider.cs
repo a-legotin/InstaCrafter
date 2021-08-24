@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -12,6 +11,8 @@ using InstaSharper.Abstractions.API;
 using InstaSharper.Builder;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Formats.Jpeg;
 
 namespace InstaCrafter.Media.MediaProviders
 {
@@ -197,9 +198,9 @@ namespace InstaCrafter.Media.MediaProviders
                 Directory.CreateDirectory(localPath);
             var path = Path.Combine(localPath, filename);
             if (!File.Exists(path))
-                image.Save(path);
+                await image.SaveAsJpegAsync(path);
             instagramImage.Path = relativeFileName;
-            instagramImage.ImageBytes = image.ToByteArray(ImageFormat.Jpeg);
+            instagramImage.ImageBytes = await File.ReadAllBytesAsync(path);
         }
     }
 }

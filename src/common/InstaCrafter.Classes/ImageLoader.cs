@@ -1,9 +1,9 @@
 using System;
-using System.Drawing;
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using SixLabors.ImageSharp;
 
 namespace InstaCrafter.Classes
 {
@@ -17,10 +17,10 @@ namespace InstaCrafter.Classes
         {
             try
             {
-                using HttpClient client = new HttpClient();
+                using HttpClient client = new();
                 using var response = await client.GetAsync(uri);
                 response.EnsureSuccessStatusCode();
-                return new Bitmap(await response.Content.ReadAsStreamAsync());
+                return await Image.LoadAsync(await response.Content.ReadAsStreamAsync());
             }
             catch (Exception ex)
             {
