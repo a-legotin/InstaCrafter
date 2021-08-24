@@ -18,7 +18,7 @@ build-net:
     - dotnet nuget add source "$CI_SERVER_URL/api/v4/projects/63/packages/nuget/index.json" --name cozybus --username gitlab-ci-token --password $CI_JOB_TOKEN --store-password-in-clear-text
     - dotnet nuget add source "$CI_SERVER_URL/api/v4/projects/56/packages/nuget/index.json" --name instasharper --username gitlab-ci-token --password $CI_JOB_TOKEN --store-password-in-clear-text
     - dotnet restore src/InstaCrafter.sln
-    - dotnet build src/InstaCrafter.sln -c Release --no-restore --no-dependencies
+    - dotnet build src/InstaCrafter.sln -c Release
 
 test-net:
   stage: test-net
