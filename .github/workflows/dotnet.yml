@@ -8,8 +8,8 @@ on:
     branches: [ master ]
 
 env:
-  USER: ${{ secrets.SuperSecret }}
-  PASS: ${{ secrets.SuperSecret }}
+  USER: ${{ secrets.USER }}
+  PASS: ${{ secrets.PASS }}
 
 jobs:
   build:
