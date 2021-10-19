@@ -1,17 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk.Worker">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net5.0</TargetFramework>
         <UserSecretsId>dotnet-InstaCrafter.Media-9E65B9EB-F2A3-4AE0-9FE5-8F80030B86E6</UserSecretsId>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AutoMapper" Version="10.1.1" />
-        <PackageReference Include="CozyBus.Core" Version="1.0.5" />
+        <PackageReference Include="AutoMapper" Version="9.0.0" />
         <PackageReference Include="InstaSharper" Version="2.0.1" />
         <PackageReference Include="InstaSharper.Abstractions" Version="2.0.1" />
-        <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0-preview.7.21377.19" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
         <PackageReference Include="SixLabors.ImageSharp" Version="1.0.3" />
     </ItemGroup>
 
