@@ -40,7 +40,7 @@ build-app:
   image: node
   script:
     - cd src/clients/react-app/
-    - npm install -g yarn
+    - npm --force install -g yarn
     - yarn --non-interactive
     - yarn build --non-interactive
 
@@ -49,7 +49,7 @@ test-app:
   image: node
   script:
     - cd src/clients/react-app/
-    - npm install -g yarn
+    - npm --force install -g yarn
     - yarn --non-interactive
     - yarn build --non-interactive
     - CI=true yarn test
