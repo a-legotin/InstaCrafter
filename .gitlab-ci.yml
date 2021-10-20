@@ -40,15 +40,17 @@ build-app:
   image: node
   script:
     - cd src/clients/react-app/
-    - npm install --progress=false
-    - npm run build
+    - npm install -g yarn
+    - yarn --non-interactive
+    - yarn build --non-interactive
 
 test-app:
   stage: test-app
   image: node
   script:
     - cd src/clients/react-app/
-    - npm install --progress=false
-    - npm run build
-    - CI=true npm test
+    - npm install -g yarn
+    - yarn --non-interactive
+    - yarn build --non-interactive
+    - CI=true yarn test
 
