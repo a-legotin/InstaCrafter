@@ -88,24 +88,13 @@ build-app-image:
   script:
     - echo "Building docker images"
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-    - docker-compose build
-    - docker tag instacrafter-identity:latest $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-    - docker tag instacrafter-identity:latest $CI_REGISTRY_IMAGE:latest
+    - cd src/clients/react-app/
+    - docker build -t instacrafter-react . -f prod.dockerfile
+    - docker tag instacrafter-react:latest $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+    - docker tag instacrafter-react:latest $CI_REGISTRY_IMAGE:latest
     - echo "Pushing docker images to registry"
     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
     - docker push $CI_REGISTRY_IMAGE:latest
-
-test-app:
-  stage: test-app
-  image: node:16-alpine3.11
-  script:
-    - node -v
-    - npm -v
-    - cd src/clients/react-app/
-    - npm --force install -g yarn
-    - yarn --non-interactive
-    - yarn build --non-interactive
-    - CI=true yarn test
 
 deploy:
   stage: deploy
