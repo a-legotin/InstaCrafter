@@ -43,11 +43,11 @@ build-net-images:
     - echo "Building docker .NET images"
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - docker-compose build
-    - docker tag instacrafter-identity:latest $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-    - docker tag instacrafter-identity:latest $CI_REGISTRY_IMAGE:latest
+    - docker tag instacrafter-identity instacrafter-identity:$CI_COMMIT_SHA
+    - docker tag instacrafter-identity:$CI_COMMIT_SHA instacrafter-identity:latest
     - echo "Pushing docker images to registry"
-    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-    - docker push $CI_REGISTRY_IMAGE:latest
+    - docker push instacrafter-identity:$CI_COMMIT_SHA
+    - docker push instacrafter-identity:latest
 
 test-net:
   stage: test-net
@@ -92,12 +92,11 @@ build-app-image:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - cd src/clients/react-app/
     - docker build -t instacrafter-react . -f prod.dockerfile
-    - docker tag instacrafter-react:latest $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-    - docker tag instacrafter-react:latest $CI_REGISTRY_IMAGE:latest
+    - docker tag instacrafter-react instacrafter-react:$CI_COMMIT_SHA
+    - docker tag instacrafter-reactE:$CI_COMMIT_SHA instacrafter-react:latest
     - echo "Pushing docker images to registry"
-    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-    - docker push $CI_REGISTRY_IMAGE:latest
-      
+    - docker push instacrafter-react:$CI_COMMIT_SHA
+    - docker push instacrafter-react:latest
       
 deploy:
   stage: deploy
