@@ -9,7 +9,6 @@ namespace InstaCrafter.Infrastructure.Identity.Models
         public string? LastName { get; set; }
         public bool IsEnabled { get; set; }
 
-        [IgnoreDataMember]
-        public string FullName => $"{FirstName} {LastName}";
+        [IgnoreDataMember] public string FullName => $"{FirstName} {LastName}";
     }
 }

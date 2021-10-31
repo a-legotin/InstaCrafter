@@ -8,15 +8,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace InstaCrafter.API.Controllers
 {
-
     [ApiController]
     [Route("api/[controller]")]
     public class TokenController
     {
         private readonly IMediator _mediator;
-        
-        public TokenController(IMediator mediator) => _mediator = mediator;
-        
+
+        public TokenController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
         [AllowAnonymous]
         [HttpPost("authenticate")]
         [ProducesResponseType(StatusCodes.Status200OK)]

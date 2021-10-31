@@ -8,9 +8,9 @@ namespace InstaCrafter.Classes.Models
 
         public InstagramMediaType? MediaType { get; set; }
 
-        public List<InstagramImage> Images { get; set; } = new List<InstagramImage>();
+        public List<InstagramImage> Images { get; set; } = new();
 
-        public List<InstagramVideo> Videos { get; set; } = new List<InstagramVideo>();
+        public List<InstagramVideo> Videos { get; set; } = new();
 
         public int? Width { get; set; }
 

@@ -20,6 +20,6 @@
         public string? EmailAddress { get; set; }
         public string? Token { get; set; }
         public string? Role { get; set; }
-        public static TokenResponse Empty => new TokenResponse(null, string.Empty, string.Empty);
+        public static TokenResponse Empty => new(null, string.Empty, string.Empty);
     }
 }

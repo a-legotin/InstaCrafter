@@ -6,7 +6,7 @@ services:
     build:
       context: .
       network: host
-      dockerfile: src/services/InstaCrafter.Identity/Dockerfile
+      dockerfile: src/services/identity/InstaCrafter.Identity/Dockerfile
     restart: on-failure
     deploy:
       replicas: 1
@@ -14,8 +14,8 @@ services:
       - main-network
     expose:
       - "80"
-  
-  
+
+
 networks:
   main-network:
     driver: bridge

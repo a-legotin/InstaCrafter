@@ -41,7 +41,7 @@ namespace InstaCrafter.Classes.Models
 
         public bool HasMoreComments { get; set; }
 
-        public List<InstagramImage> ImageList { get; set; } = new List<InstagramImage>();
+        public List<InstagramImage> ImageList { get; set; } = new();
 
         public long LikeCount { get; set; }
 
@@ -71,6 +71,6 @@ namespace InstaCrafter.Classes.Models
 
         public double VideoDuration { get; set; }
 
-        public List<InstagramVideo> VideoList { get; set; } = new List<InstagramVideo>();
+        public List<InstagramVideo> VideoList { get; set; } = new();
     }
 }

@@ -15,7 +15,7 @@ namespace InstaCrafter.Classes.Models
 
         public DateTime ExpiringAt { get; set; }
 
-        public List<InstagramStoryItem> Items { get; set; } = new List<InstagramStoryItem>();
+        public List<InstagramStoryItem> Items { get; set; } = new();
 
         public long Id { get; set; }
 

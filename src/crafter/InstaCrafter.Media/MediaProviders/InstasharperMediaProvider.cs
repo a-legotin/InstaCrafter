@@ -5,14 +5,12 @@ using System.Threading.Tasks;
 using AutoMapper;
 using InstaCrafter.Classes;
 using InstaCrafter.Classes.Models;
-using InstaCrafter.Extensions;
 using InstaCrafter.Media.Classes;
 using InstaSharper.Abstractions.API;
 using InstaSharper.Builder;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SixLabors.ImageSharp;
-using SixLabors.ImageSharp.Formats.Jpeg;
 
 namespace InstaCrafter.Media.MediaProviders
 {
@@ -54,7 +52,6 @@ namespace InstaCrafter.Media.MediaProviders
             }
 
             if (!_instaApi.User.IsAuthenticated)
-            {
                 _instaApi.User
                     .LoginAsync()
                     .ConfigureAwait(false)
@@ -66,7 +63,6 @@ namespace InstaCrafter.Media.MediaProviders
                             _logger.LogDebug($"Unable to login: {fail.Message}");
                             throw new Exception("Unable to log in to Instagram");
                         });
-            }
 
             var state = _instaApi.User.GetUserSessionAsByteArray();
             if (state != null)
@@ -175,10 +171,7 @@ namespace InstaCrafter.Media.MediaProviders
             if (!Directory.Exists(localPath))
                 Directory.CreateDirectory(localPath);
             var path = Path.Combine(localPath, filename);
-            if (!File.Exists(path))
-            {
-                File.WriteAllBytes(path, videoStream.ToArray());
-            }
+            if (!File.Exists(path)) File.WriteAllBytes(path, videoStream.ToArray());
 
             instagramVideo.Path = relativeFileName;
         }

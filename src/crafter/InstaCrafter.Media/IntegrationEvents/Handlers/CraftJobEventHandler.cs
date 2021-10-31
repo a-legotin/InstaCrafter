@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 
 namespace InstaCrafter.Media.IntegrationEvents.Handlers
 {
-    public class  CraftJobEventHandler : IBusMessageHandler<NewCrafterJobMessage>
+    public class CraftJobEventHandler : IBusMessageHandler<NewCrafterJobMessage>
     {
         private readonly IMediaDataProvider _dataProvider;
         private readonly IMessageBus _eventBus;

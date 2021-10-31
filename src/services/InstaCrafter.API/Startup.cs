@@ -1,5 +1,4 @@
 using System.Reflection;
-using AutoMapper;
 using InstaCrafter.API.Extensions;
 using InstaCrafter.Infrastructure.Extensions;
 using InstaCrafter.Infrastructure.Identity.Models.Authentication;
@@ -14,7 +13,10 @@ namespace InstaCrafter.API
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration) => Configuration = configuration;
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
 
         public IConfiguration Configuration { get; }
 
@@ -27,7 +29,7 @@ namespace InstaCrafter.API
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApplication.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo {Title = "WebApplication.API", Version = "v1"});
             });
             services.AddHttpContextAccessor();
             services.ConfigureMediatr();

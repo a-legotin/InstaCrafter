@@ -29,7 +29,7 @@ namespace InstaCrafter.Infrastructure.Services
             _token = tokenOptions.Value;
         }
 
-        /// <inheritdoc cref="ITokenService.Authenticate(TokenRequest, string)"/>
+        /// <inheritdoc cref="ITokenService.Authenticate(TokenRequest, string)" />
         public async Task<TokenResponse> Authenticate(TokenRequest request, string ipAddress)
         {
             if (await IsValidUser(request.Username ?? throw new ArgumentNullException("request.Username"),
@@ -58,8 +58,10 @@ namespace InstaCrafter.Infrastructure.Services
             return null!;
         }
 
-        public Task<TokenResponse> RefreshToken(string refreshToken, string ipAddress) =>
+        public Task<TokenResponse> RefreshToken(string refreshToken, string ipAddress)
+        {
             throw new NotImplementedException();
+        }
 
         /// <inheritdoc cref="ITokenService.IsValidUser(string, string)" />
         public async Task<bool> IsValidUser(string username, string password)
@@ -67,10 +69,8 @@ namespace InstaCrafter.Infrastructure.Services
             ApplicationUser user = await GetUserByEmail(username);
 
             if (user == null)
-            {
                 // Username or password was incorrect.
                 return false;
-            }
 
             SignInResult signInResult = await _signInManager.PasswordSignInAsync(user, password, true, false);
 
@@ -78,7 +78,10 @@ namespace InstaCrafter.Infrastructure.Services
         }
 
         /// <inheritdoc cref="ITokenService.GetUserByEmail(string)" />
-        public async Task<ApplicationUser> GetUserByEmail(string email) => await _userManager.FindByEmailAsync(email);
+        public async Task<ApplicationUser> GetUserByEmail(string email)
+        {
+            return await _userManager.FindByEmailAsync(email);
+        }
 
         /// <summary>
         ///     Issue JWT token
@@ -92,8 +95,8 @@ namespace InstaCrafter.Infrastructure.Services
                 throw new ArgumentNullException("_token.Secret");
             byte[] secret = Encoding.ASCII.GetBytes(_token.Secret);
 
-            JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
-            SecurityTokenDescriptor descriptor = new SecurityTokenDescriptor
+            JwtSecurityTokenHandler handler = new();
+            SecurityTokenDescriptor descriptor = new()
             {
                 Issuer = _token.Issuer,
                 Audience = _token.Audience,

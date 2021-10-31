@@ -19,8 +19,8 @@ namespace InstaCrafter.Classes.Models
         public string? ClientCacheKey { get; set; }
         public string? FilterType { get; set; }
 
-        public List<InstagramImage> Images { get; set; } = new List<InstagramImage>();
-        public List<InstagramVideo> Videos { get; set; } = new List<InstagramVideo>();
+        public List<InstagramImage> Images { get; set; } = new();
+        public List<InstagramVideo> Videos { get; set; } = new();
 
         public int Width { get; set; }
         public string? Height { get; set; }

@@ -7,16 +7,16 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AutoMapper" Version="9.0.0" />
-        <PackageReference Include="InstaSharper" Version="2.0.1" />
-        <PackageReference Include="InstaSharper.Abstractions" Version="2.0.1" />
-        <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
-        <PackageReference Include="SixLabors.ImageSharp" Version="1.0.3" />
+        <PackageReference Include="AutoMapper" Version="9.0.0"/>
+        <PackageReference Include="InstaSharper" Version="2.0.1"/>
+        <PackageReference Include="InstaSharper.Abstractions" Version="2.0.1"/>
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0"/>
+        <PackageReference Include="SixLabors.ImageSharp" Version="1.0.3"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\common\InstaCrafter.Classes\InstaCrafter.Classes.csproj" />
-        <ProjectReference Include="..\..\common\InstaCrafter.EventBus\InstaCrafter.EventBus.csproj" />
-        <ProjectReference Include="..\..\common\InstaCrafter.Extensions\InstaCrafter.Extensions.csproj" />
+        <ProjectReference Include="..\..\common\InstaCrafter.Classes\InstaCrafter.Classes.csproj"/>
+        <ProjectReference Include="..\..\common\InstaCrafter.EventBus\InstaCrafter.EventBus.csproj"/>
+        <ProjectReference Include="..\..\common\InstaCrafter.Extensions\InstaCrafter.Extensions.csproj"/>
     </ItemGroup>
 </Project>

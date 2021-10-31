@@ -11,7 +11,6 @@ namespace InstaCrafter.API.Extensions
 {
     public static class AuthenticationServiceExtensions
     {
- 
         public static void ConfigureAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
             Token token = configuration.GetSection("token").Get<Token>();

@@ -8,9 +8,7 @@ namespace InstaCrafter.Infrastructure.Identity.Models
     [Owned]
     public class RefreshToken
     {
-        [Key]
-        [JsonIgnore]
-        public int Id { get; set; }
+        [Key] [JsonIgnore] public int Id { get; set; }
 
         public string? Token { get; set; }
         public DateTime Expiry { get; set; }

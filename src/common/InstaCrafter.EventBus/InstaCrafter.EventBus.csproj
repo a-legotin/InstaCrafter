@@ -6,11 +6,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\InstaCrafter.Classes\InstaCrafter.Classes.csproj" />
+        <ProjectReference Include="..\InstaCrafter.Classes\InstaCrafter.Classes.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="CozyBus.Core" Version="1.0.5" />
+        <PackageReference Include="CozyBus.Core" Version="1.0.5"/>
     </ItemGroup>
 
 </Project>

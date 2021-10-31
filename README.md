@@ -1,4 +1,5 @@
 # InstaCrafter
+
 InstaCrafter .NET Core app for internal techtalk
 
 ### Build status
