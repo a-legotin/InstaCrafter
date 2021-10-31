@@ -45,9 +45,9 @@ build-net-images:
     - docker-compose build
     - echo "Current registry image"
     - echo $CI_REGISTRY_IMAGE
-    - docker tag instacrafter-identity instacrafter-identity:latest
+    - docker tag instacrafter-identity:latest $CI_REGISTRY_IMAGE/instacrafter-identity:latest
     - echo "Pushing docker image to registry"
-    - docker push instacrafter-identity:latest $CI_REGISTRY_IMAGE/instacrafter-identity:latest
+    - docker push $CI_REGISTRY_IMAGE/instacrafter-identity:latest
 
 test-net:
   stage: test-net
@@ -92,9 +92,9 @@ build-app-image:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - cd src/clients/react-app/
     - docker build -t instacrafter-react . -f prod.dockerfile
-    - docker tag instacrafter-react instacrafter-react:latest
+    - docker tag instacrafter-react:latest $CI_REGISTRY_IMAGE/instacrafter-react:latest
     - echo "Pushing docker image to registry"
-    - docker push instacrafter-react:latest $CI_REGISTRY_IMAGE/instacrafter-react:latest
+    - docker push $CI_REGISTRY_IMAGE/instacrafter-react:latest
       
 deploy:
   stage: deploy
