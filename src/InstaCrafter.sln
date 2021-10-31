@@ -6,7 +6,7 @@ ProjectSection(SolutionItems) = preProject
 	..\.gitlab-ci.yml = ..\.gitlab-ci.yml
 	..\README.md = ..\README.md
 	..\.gitignore = ..\.gitignore
-	docker-compose.yml = docker-compose.yml
+	..\docker-compose.yml = ..\docker-compose.yml
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{DB3FC42C-3AB8-4B36-8C01-B16C264F1278}"
@@ -35,9 +35,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.Infrastructure
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.Identity", "services\InstaCrafter.Identity\InstaCrafter.Identity.csproj", "{B9C11749-F914-403E-BA4F-0FF15D44B3E5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy-scripts", "deploy-scripts", "{0A4A43FC-0A71-4A63-B1C9-90B768AF3DD3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{CB731C52-81E2-4F13-AB76-E866668DE163}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{FCAEF769-2535-4AC7-910A-3B5A0D94B0C7}"
 ProjectSection(SolutionItems) = preProject
-	deploy-scripts\instacrafter-namespace.yaml = deploy-scripts\instacrafter-namespace.yaml
+	..\scripts\deploy\instacrafter-namespace.yaml = ..\scripts\deploy\instacrafter-namespace.yaml
 EndProjectSection
 EndProject
 Global
@@ -93,6 +95,7 @@ Global
 		{C4E668D3-BF19-495F-B457-B28276F1D045} = {DB3FC42C-3AB8-4B36-8C01-B16C264F1278}
 		{1C3F5E81-1074-4596-826A-C96E3C6DF11A} = {DB3FC42C-3AB8-4B36-8C01-B16C264F1278}
 		{B9C11749-F914-403E-BA4F-0FF15D44B3E5} = {E7557D15-D189-45A7-A401-4EAC25BA6A49}
-		{0A4A43FC-0A71-4A63-B1C9-90B768AF3DD3} = {EE84CAAE-5493-4F54-83CE-3D92FD0C3961}
+		{CB731C52-81E2-4F13-AB76-E866668DE163} = {EE84CAAE-5493-4F54-83CE-3D92FD0C3961}
+		{FCAEF769-2535-4AC7-910A-3B5A0D94B0C7} = {CB731C52-81E2-4F13-AB76-E866668DE163}
 	EndGlobalSection
 EndGlobal

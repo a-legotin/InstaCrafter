@@ -6,7 +6,7 @@ services:
     build:
       context: .
       network: host
-      dockerfile: services/InstaCrafter.Identity/Dockerfile
+      dockerfile: src/services/InstaCrafter.Identity/Dockerfile
     restart: on-failure
     deploy:
       replicas: 1
