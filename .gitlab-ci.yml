@@ -51,8 +51,10 @@ build-app:
   stage: build-app
   tags:
     - k8s
-  image: node
+  image: node:16-alpine3.11
   script:
+    - node -v
+    - npm -v
     - cd src/clients/react-app/
     - npm --force install -g yarn
     - yarn --non-interactive
@@ -79,8 +81,10 @@ build-app-image:
 
 test-app:
   stage: test-app
-  image: node
+  image: node:16-alpine3.11
   script:
+    - node -v
+    - npm -v
     - cd src/clients/react-app/
     - npm --force install -g yarn
     - yarn --non-interactive
