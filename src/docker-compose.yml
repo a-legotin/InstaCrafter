@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  instacrafter-identity:
+    image: instacrafter-identity
+    build:
+      context: .
+      network: host
+      dockerfile: services/InstaCrafter.Identity/Dockerfile
+    restart: on-failure
+    deploy:
+      replicas: 1
+    networks:
+      - main-network
+    expose:
+      - "80"
+  
+  
+networks:
+  main-network:
+    driver: bridge
