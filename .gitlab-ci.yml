@@ -43,7 +43,9 @@ build-net-images:
     - echo "Building docker .NET images"
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - docker-compose build
-    - docker tag instacrafter-identity instacrafter-identity:latest
+    - echo "Current registry image"
+    - echo $CI_REGISTRY_IMAGE
+    - docker tag instacrafter-identity $CI_REGISTRY_IMAGE/instacrafter-identity:latest
     - echo "Pushing docker image to registry"
     - docker push instacrafter-identity:latest
 
