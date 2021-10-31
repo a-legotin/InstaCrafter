@@ -1,10 +1,12 @@
+image: mcr.microsoft.com/dotnet/sdk:5.0
+
 stages:
   - build-net
   - test-net
   - build-net-images
   - build-app
   - build-app-image
-  - delpoy
+  - deploy
 
 cache:
   paths:
@@ -95,7 +97,8 @@ build-app-image:
     - echo "Pushing docker images to registry"
     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
     - docker push $CI_REGISTRY_IMAGE:latest
-
+      
+      
 deploy:
   stage: deploy
   image: bitnami/kubectl:latest
