@@ -24,9 +24,9 @@ jobs:
           dotnet-version: '5.0.x'
           include-prerelease: true
       - name: Add nuget Cozy
-        run: dotnet nuget add source "https://git.codegarage.ru/api/v4/projects/14/packages/nuget/index.json" --name cozybus --username $USER --password $PASS --store-password-in-clear-text
+        run: dotnet nuget add source "https://git.codegarage.ru/api/v4/projects/2/packages/nuget/index.json" --name cozybus --username $USER --password $PASS --store-password-in-clear-text
       - name: Add nuget Instasharper
-        run: dotnet nuget add source "https://git.codegarage.ru/api/v4/projects/8/packages/nuget/index.json" --name instasharper --username $USER --password $PASS --store-password-in-clear-text
+        run: dotnet nuget add source "https://git.codegarage.ru/api/v4/projects/4/packages/nuget/index.json" --name instasharper --username $USER --password $PASS --store-password-in-clear-text
       - name: Restore
         run: dotnet restore src/InstaCrafter.sln
       - name: Build
