@@ -1,7 +1,5 @@
 import { Component } from "react";
 
-import UserService from "../services/user.service";
-
 type Props = {};
 
 type State = {
@@ -17,29 +15,12 @@ export default class Home extends Component<Props, State> {
     };
   }
 
-  componentDidMount() {
-    UserService.getPublicContent().then(
-      response => {
-        this.setState({
-          content: response.data
-        });
-      },
-      error => {
-        this.setState({
-          content:
-            (error.response && error.response.data) ||
-            error.message ||
-            error.toString()
-        });
-      }
-    );
-  }
 
   render() {
     return (
       <div className="container">
         <header className="jumbotron">
-          <h3>{this.state.content}</h3>
+          <h3>Home</h3>
         </header>
       </div>
     );

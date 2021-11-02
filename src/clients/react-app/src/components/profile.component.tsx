@@ -58,10 +58,6 @@ export default class Profile extends Component<Props, State> {
               {currentUser.email}
             </p>
             <strong>Authorities:</strong>
-            <ul>
-              {currentUser.roles &&
-                currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
-            </ul>
           </div> : null}
       </div>
     );
