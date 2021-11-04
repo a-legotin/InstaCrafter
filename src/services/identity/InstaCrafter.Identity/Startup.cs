@@ -53,39 +53,31 @@ namespace InstaCrafter.Identity
                 options.SigningCredentials = new SigningCredentials(_signingKey, SecurityAlgorithms.HmacSha256);
             });
 
-            var tokenValidationParameters = new TokenValidationParameters
-            {
-                ValidateIssuer = true,
-                ValidIssuer = jwtAppSettingOptions[nameof(JwtIssuerOptions.Issuer)],
-
-                ValidateAudience = true,
-                ValidAudience = jwtAppSettingOptions[nameof(JwtIssuerOptions.Audience)],
-
-                ValidateIssuerSigningKey = true,
-                IssuerSigningKey = _signingKey,
-
-                RequireExpirationTime = false,
-                ValidateLifetime = true,
-                ClockSkew = TimeSpan.Zero
-            };
-
+            var signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("dhgdfhdygh5346t3tfwfsdfsdsf"));  
+            var tokenValidationParameters = new TokenValidationParameters  
+            {  
+                ValidateIssuerSigningKey = true,  
+                IssuerSigningKey = signingKey,  
+                ValidateIssuer = true,  
+                ValidIssuer = jwtAppSettingOptions["Issuer"],  
+                ValidateAudience = true,  
+                ValidAudience = jwtAppSettingOptions["Audience"],  
+                ValidateLifetime = true,  
+                ClockSkew = TimeSpan.Zero,  
+                RequireExpirationTime = true,  
+            };  
+  
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(configureOptions =>
-            {
-                configureOptions.ClaimsIssuer = jwtAppSettingOptions[nameof(JwtIssuerOptions.Issuer)];
-                configureOptions.TokenValidationParameters = tokenValidationParameters;
-                configureOptions.SaveToken = true;
-            });
+            })                .AddJwtBearer("TestKey", x =>  
+                {  
+                    x.RequireHttpsMetadata = false;  
+                    x.TokenValidationParameters = tokenValidationParameters;  
+                });  
 
-            services.AddAuthorization(options =>
-            {
-                options.AddPolicy("ApiUser",
-                    policy => policy.RequireClaim(Constants.Strings.JwtClaimIdentifiers.Rol,
-                        Constants.Strings.JwtClaims.ApiAccess));
-            });
+            services.AddAuthorization();
 
             var builder = services.AddIdentityCore<AppUser>(o =>
             {
@@ -136,7 +128,6 @@ namespace InstaCrafter.Identity
                 });
 
             app.UseAuthentication();
-            app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });

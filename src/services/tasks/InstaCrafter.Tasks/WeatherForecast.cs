@@ -1,6 +1,6 @@
 using System;
 
-namespace InstaCrafter.Identity
+namespace InstaCrafter.Tasks
 {
     public class WeatherForecast
     {

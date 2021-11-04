@@ -35,6 +35,13 @@ class App extends Component<Props, State> {
     }
   }
 
+  logOut() {
+    AuthService.logout();
+    this.setState({
+      currentUser: undefined
+    });
+  }
+
   render() {
     const { currentUser } = this.state;
 
@@ -61,21 +68,26 @@ class App extends Component<Props, State> {
           </div>
 
           {currentUser ? (
-            <div className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link to={"/profile"} className="nav-link">
-                  {currentUser.username}
-                </Link>
-              </li>
-            </div>
+              <div className="navbar-nav ml-auto">
+                <li className="nav-item">
+                  <Link to={"/profile"} className="nav-link">
+                    {currentUser.username}
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <a href="/logout" className="nav-link" onClick={this.logOut}>
+                    Logout
+                  </a>
+                </li>
+              </div>
           ) : (
-            <div className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link to={"/login"} className="nav-link">
-                  Login
-                </Link>
-              </li>
-            </div>
+              <div className="navbar-nav ml-auto">
+                <li className="nav-item">
+                  <Link to={"/login"} className="nav-link">
+                    Login
+                  </Link>
+                </li>
+              </div>
           )}
         </nav>
 

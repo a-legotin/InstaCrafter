@@ -10,11 +10,15 @@ class AuthService {
         password
       })
       .then(response => {
-        if (response.data.accessToken) {
-          localStorage.setItem("user", JSON.stringify(response.data));
+        if (response.data.token) {
+          localStorage.setItem("token", JSON.stringify(response.data.token));
         }
 
-        return response.data;
+        if (response.data.user) {
+          localStorage.setItem("user", JSON.stringify(response.data.user));
+        }
+
+        return response.data.user;
       });
   }
 
@@ -23,6 +27,11 @@ class AuthService {
     if (userStr) return JSON.parse(userStr);
 
     return null;
+  }
+
+  logout() {
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
   }
 }
 
