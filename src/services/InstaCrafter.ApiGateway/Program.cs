@@ -2,7 +2,6 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 
-
 namespace InstaCrafter.ApiGateway
 {
     public class Program
@@ -12,8 +11,9 @@ namespace InstaCrafter.ApiGateway
             BuildWebHost(args).Run();
         }
 
-        public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
+        public static IWebHost BuildWebHost(string[] args)
+        {
+            return WebHost.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((hostingContext, config) =>
                 {
                     config
@@ -24,5 +24,6 @@ namespace InstaCrafter.ApiGateway
                 })
                 .UseStartup<Startup>()
                 .Build();
+        }
     }
 }

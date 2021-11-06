@@ -23,38 +23,37 @@ namespace InstaCrafter.Identity.Auth
 
         public async Task<string> GenerateEncodedToken(string userName, ClaimsIdentity identity)
         {
-            var now = DateTime.UtcNow;  
-  
-            var claims = new Claim[]  
-            {  
-                new Claim(JwtRegisteredClaimNames.Sub, userName),  
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),  
-                new Claim(JwtRegisteredClaimNames.Iat, now.ToUniversalTime().ToString(), ClaimValueTypes.Integer64)  
-            };  
-  
-            var signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("dhgdfhdygh5346t3tfwfsdfsdsf"));  
-            var tokenValidationParameters = new TokenValidationParameters  
-            {  
-                ValidateIssuerSigningKey = true,  
-                IssuerSigningKey = signingKey,  
-                ValidateIssuer = true,  
-                ValidIssuer = _jwtOptions.Issuer,  
-                ValidateAudience = true,  
-                ValidAudience = _jwtOptions.Audience,  
-                ValidateLifetime = true,  
-                ClockSkew = TimeSpan.Zero,  
-                RequireExpirationTime = true,  
-  
-            };  
-  
-            var jwt = new JwtSecurityToken(  
-                issuer: _jwtOptions.Issuer,  
-                audience: _jwtOptions.Audience,  
-                claims: claims,  
-                notBefore: now,  
-                expires: now.Add(TimeSpan.FromHours(2)),  
-                signingCredentials: new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256)  
-            );  
+            var now = DateTime.UtcNow;
+
+            var claims = new[]
+            {
+                new(JwtRegisteredClaimNames.Sub, userName),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(JwtRegisteredClaimNames.Iat, now.ToUniversalTime().ToString(), ClaimValueTypes.Integer64)
+            };
+
+            var signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("dhgdfhdygh5346t3tfwfsdfsdsf"));
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = signingKey,
+                ValidateIssuer = true,
+                ValidIssuer = _jwtOptions.Issuer,
+                ValidateAudience = true,
+                ValidAudience = _jwtOptions.Audience,
+                ValidateLifetime = true,
+                ClockSkew = TimeSpan.Zero,
+                RequireExpirationTime = true
+            };
+
+            var jwt = new JwtSecurityToken(
+                _jwtOptions.Issuer,
+                _jwtOptions.Audience,
+                claims,
+                now,
+                now.Add(TimeSpan.FromHours(2)),
+                new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256)
+            );
 
             var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
 
@@ -72,8 +71,8 @@ namespace InstaCrafter.Identity.Auth
 
         private static long ToUnixEpochDate(DateTime date)
         {
-            return (long) Math.Round((date.ToUniversalTime() -
-                                      new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero))
+            return (long)Math.Round((date.ToUniversalTime() -
+                                     new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero))
                 .TotalSeconds);
         }
 

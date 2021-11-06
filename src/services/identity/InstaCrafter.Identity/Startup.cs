@@ -5,7 +5,6 @@ using System.Text;
 using InstaCrafter.Identity.Auth;
 using InstaCrafter.Identity.Data;
 using InstaCrafter.Identity.Extensions;
-using InstaCrafter.Identity.Helpers;
 using InstaCrafter.Identity.Models;
 using InstaCrafter.Identity.Models.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -26,9 +25,6 @@ namespace InstaCrafter.Identity
 {
     public class Startup
     {
-        private const string SecretKey = "aMivDmHLpUA777sqsfhqGbKRdRj1PVkH";
-        private readonly SymmetricSecurityKey _signingKey = new(Encoding.ASCII.GetBytes(SecretKey));
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -45,37 +41,38 @@ namespace InstaCrafter.Identity
             services.TryAddTransient<IHttpContextAccessor, HttpContextAccessor>();
 
             var jwtAppSettingOptions = Configuration.GetSection(nameof(JwtIssuerOptions));
+            var signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("dhgdfhdygh5346t3tfwfsdfsdsf"));
 
             services.Configure<JwtIssuerOptions>(options =>
             {
                 options.Issuer = jwtAppSettingOptions[nameof(JwtIssuerOptions.Issuer)];
                 options.Audience = jwtAppSettingOptions[nameof(JwtIssuerOptions.Audience)];
-                options.SigningCredentials = new SigningCredentials(_signingKey, SecurityAlgorithms.HmacSha256);
+                options.SigningCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
             });
 
-            var signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("dhgdfhdygh5346t3tfwfsdfsdsf"));  
-            var tokenValidationParameters = new TokenValidationParameters  
-            {  
-                ValidateIssuerSigningKey = true,  
-                IssuerSigningKey = signingKey,  
-                ValidateIssuer = true,  
-                ValidIssuer = jwtAppSettingOptions["Issuer"],  
-                ValidateAudience = true,  
-                ValidAudience = jwtAppSettingOptions["Audience"],  
-                ValidateLifetime = true,  
-                ClockSkew = TimeSpan.Zero,  
-                RequireExpirationTime = true,  
-            };  
-  
-            services.AddAuthentication(options =>
+            var tokenValidationParameters = new TokenValidationParameters
             {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })                .AddJwtBearer("TestKey", x =>  
-                {  
-                    x.RequireHttpsMetadata = false;  
-                    x.TokenValidationParameters = tokenValidationParameters;  
-                });  
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = signingKey,
+                ValidateIssuer = true,
+                ValidIssuer = jwtAppSettingOptions["Issuer"],
+                ValidateAudience = true,
+                ValidAudience = jwtAppSettingOptions["Audience"],
+                ValidateLifetime = true,
+                ClockSkew = TimeSpan.Zero,
+                RequireExpirationTime = true
+            };
+
+            services.AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                })
+                .AddJwtBearer(x =>
+                {
+                    x.RequireHttpsMetadata = false;
+                    x.TokenValidationParameters = tokenValidationParameters;
+                });
 
             services.AddAuthorization();
 
@@ -96,7 +93,7 @@ namespace InstaCrafter.Identity
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo {Title = "InstaCrafter.Identity", Version = "v1"});
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "InstaCrafter.Identity", Version = "v1" });
             });
         }
 
@@ -115,7 +112,7 @@ namespace InstaCrafter.Identity
                     builder.Run(
                         async context =>
                         {
-                            context.Response.StatusCode = (int) HttpStatusCode.InternalServerError;
+                            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                             context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
 
                             var error = context.Features.Get<IExceptionHandlerFeature>();

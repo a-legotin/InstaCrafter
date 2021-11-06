@@ -1,4 +1,3 @@
-
 {
   "Routes": [
     {
@@ -11,7 +10,7 @@
         }
       ],
       "AuthenticationOptions": {
-        "AuthenticationProviderKey": "TestKey",
+        "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       },
       "UpstreamPathTemplate": "/api/WeatherForecast",

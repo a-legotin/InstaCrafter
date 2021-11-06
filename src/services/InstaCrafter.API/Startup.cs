@@ -29,7 +29,7 @@ namespace InstaCrafter.API
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo {Title = "WebApplication.API", Version = "v1"});
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApplication.API", Version = "v1" });
             });
             services.AddHttpContextAccessor();
             services.ConfigureMediatr();
