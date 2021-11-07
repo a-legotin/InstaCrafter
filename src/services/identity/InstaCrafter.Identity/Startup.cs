@@ -2,21 +2,29 @@ using System;
 using System.Net;
 using System.Reflection;
 using System.Text;
-using InstaCrafter.Identity.Auth;
-using InstaCrafter.Identity.Data;
+using System.Threading.Tasks;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using FluentValidation.AspNetCore;
+using InstaCrafter.Identity.Core.DI;
 using InstaCrafter.Identity.Extensions;
-using InstaCrafter.Identity.Models;
-using InstaCrafter.Identity.Models.Entities;
+using InstaCrafter.Identity.Infrastructure.Auth;
+using InstaCrafter.Identity.Infrastructure.Data;
+using InstaCrafter.Identity.Infrastructure.Data.Mapping;
+using InstaCrafter.Identity.Infrastructure.DI;
+using InstaCrafter.Identity.Infrastructure.Identity;
+using InstaCrafter.Identity.Models.Settings;
+using InstaCrafter.Infrastructure.Classes;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -30,19 +38,22 @@ namespace InstaCrafter.Identity
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        public IConfiguration Configuration { get; private set; }
 
+        public ILifetimeScope AutofacContainer { get; private set; }
+        
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseInMemoryDatabase("main-db"));
+            services.AddDbContext<AppIdentityDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default"), b => b.MigrationsAssembly("InstaCrafter.Identity.Infrastructure")));
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default"), b => b.MigrationsAssembly("InstaCrafter.Identity.Infrastructure")));
 
-            services.AddSingleton<IJwtFactory, JwtFactory>();
-            services.TryAddTransient<IHttpContextAccessor, HttpContextAccessor>();
+            var authSettings = Configuration.GetSection(nameof(AuthSettings));
+            services.Configure<AuthSettings>(authSettings);
 
+            
             var jwtAppSettingOptions = Configuration.GetSection(nameof(JwtIssuerOptions));
-            var signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("dhgdfhdygh5346t3tfwfsdfsdsf"));
-
+            var signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtAppSettingOptions[nameof(JwtIssuerOptions.Secret)]));
+            
             services.Configure<JwtIssuerOptions>(options =>
             {
                 options.Issuer = jwtAppSettingOptions[nameof(JwtIssuerOptions.Issuer)];
@@ -52,49 +63,71 @@ namespace InstaCrafter.Identity
 
             var tokenValidationParameters = new TokenValidationParameters
             {
+                ValidateIssuer = true,
+                ValidIssuer = jwtAppSettingOptions[nameof(JwtIssuerOptions.Issuer)],
+
+                ValidateAudience = true,
+                ValidAudience = jwtAppSettingOptions[nameof(JwtIssuerOptions.Audience)],
+
                 ValidateIssuerSigningKey = true,
                 IssuerSigningKey = signingKey,
-                ValidateIssuer = true,
-                ValidIssuer = jwtAppSettingOptions["Issuer"],
-                ValidateAudience = true,
-                ValidAudience = jwtAppSettingOptions["Audience"],
+
+                RequireExpirationTime = false,
                 ValidateLifetime = true,
-                ClockSkew = TimeSpan.Zero,
-                RequireExpirationTime = true
+                ClockSkew = TimeSpan.Zero
             };
 
             services.AddAuthentication(options =>
-                {
-                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                })
-                .AddJwtBearer(x =>
-                {
-                    x.RequireHttpsMetadata = false;
-                    x.TokenValidationParameters = tokenValidationParameters;
-                });
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 
-            services.AddAuthorization();
+            }).AddJwtBearer(configureOptions =>
+            {
+                configureOptions.ClaimsIssuer = jwtAppSettingOptions[nameof(JwtIssuerOptions.Issuer)];
+                configureOptions.TokenValidationParameters = tokenValidationParameters;
+                configureOptions.SaveToken = true;
 
-            var builder = services.AddIdentityCore<AppUser>(o =>
+                configureOptions.Events = new JwtBearerEvents
+                {
+                    OnAuthenticationFailed = context =>
+                    {
+                        if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
+                        {
+                            context.Response.Headers.Add("Token-Expired", "true");
+                        }
+                        return Task.CompletedTask;
+                    }
+                };
+            });
+
+            var identityBuilder = services.AddIdentityCore<AppUser>(o =>
             {
                 o.Password.RequireDigit = false;
                 o.Password.RequireLowercase = false;
                 o.Password.RequireUppercase = false;
                 o.Password.RequireNonAlphanumeric = false;
-                o.Password.RequiredLength = 4;
+                o.Password.RequiredLength = 6;
             });
 
-            builder = new IdentityBuilder(builder.UserType, typeof(IdentityRole), builder.Services);
-            builder.AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+            identityBuilder = new IdentityBuilder(identityBuilder.UserType, typeof(IdentityRole), identityBuilder.Services);
+            identityBuilder.AddEntityFrameworkStores<AppIdentityDbContext>().AddDefaultTokenProviders();
 
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddMvc().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
 
-            services.AddControllers();
+            services.AddAutoMapper(expression => expression.AddProfile(typeof(DataProfile)));
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "InstaCrafter.Identity", Version = "v1" });
             });
+        }
+        
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterModule(new CoreModule());
+            builder.RegisterModule(new InfrastructureModule());
+            builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly()).Where(t => t.Name.EndsWith("Presenter")).SingleInstance();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

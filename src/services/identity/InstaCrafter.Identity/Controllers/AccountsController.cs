@@ -1,43 +1,33 @@
 ﻿using System.Threading.Tasks;
-using AutoMapper;
-using InstaCrafter.Identity.Data;
-using InstaCrafter.Identity.Helpers;
-using InstaCrafter.Identity.Models.Entities;
-using InstaCrafter.Identity.ViewModels;
-using Microsoft.AspNetCore.Identity;
+using InstaCrafter.Identity.Core.Dto.UseCaseRequests;
+using InstaCrafter.Identity.Core.Interfaces.UseCases;
+using InstaCrafter.Identity.Presenters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InstaCrafter.Identity.Controllers
 {
     [Route("api/[controller]")]
-    public class AccountsController : Controller
+    [ApiController]
+    public class AccountsController : ControllerBase
     {
-        private readonly ApplicationDbContext _appDbContext;
-        private readonly IMapper _mapper;
-        private readonly UserManager<AppUser> _userManager;
+        private readonly IRegisterUserUseCase _registerUserUseCase;
+        private readonly RegisterUserPresenter _registerUserPresenter;
 
-        public AccountsController(UserManager<AppUser> userManager, IMapper mapper, ApplicationDbContext appDbContext)
+        public AccountsController(IRegisterUserUseCase registerUserUseCase, RegisterUserPresenter registerUserPresenter)
         {
-            _userManager = userManager;
-            _mapper = mapper;
-            _appDbContext = appDbContext;
+            _registerUserUseCase = registerUserUseCase;
+            _registerUserPresenter = registerUserPresenter;
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] RegistrationViewModel model)
+        public async Task<ActionResult> Post([FromBody] Models.Request.RegisterUserRequest request)
         {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-
-            var userIdentity = _mapper.Map<AppUser>(model);
-
-            var result = await _userManager.CreateAsync(userIdentity, model.Password);
-
-            if (!result.Succeeded) return new BadRequestObjectResult(Errors.AddErrorsToModelState(result, ModelState));
-
-            await _appDbContext.Customers.AddAsync(new Customer { IdentityId = userIdentity.Id });
-            await _appDbContext.SaveChangesAsync();
-
-            return new OkObjectResult("Account created");
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            await _registerUserUseCase.Handle(new RegisterUserRequest(request.FirstName, request.LastName, request.Email, request.UserName, request.Password), _registerUserPresenter);
+            return _registerUserPresenter.ContentResult;
         }
     }
 }

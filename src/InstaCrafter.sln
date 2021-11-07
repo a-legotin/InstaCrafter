@@ -48,6 +48,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.Tasks", "servi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.ApiGateway", "services\InstaCrafter.ApiGateway\InstaCrafter.ApiGateway.csproj", "{2A0243C0-90B2-48EB-A3F8-E7BE5411CE40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.Identity.Core", "services\identity\InstaCrafter.Identity.Core\InstaCrafter.Identity.Core.csproj", "{84576442-4E70-4930-AFF6-D9B05C7169EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCrafter.Identity.Infrastructure", "services\identity\InstaCrafter.Identity.Infrastructure\InstaCrafter.Identity.Infrastructure.csproj", "{7EF44322-96AD-4E93-96BD-858C40F76B2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -94,6 +98,14 @@ Global
 		{2A0243C0-90B2-48EB-A3F8-E7BE5411CE40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A0243C0-90B2-48EB-A3F8-E7BE5411CE40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A0243C0-90B2-48EB-A3F8-E7BE5411CE40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84576442-4E70-4930-AFF6-D9B05C7169EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84576442-4E70-4930-AFF6-D9B05C7169EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84576442-4E70-4930-AFF6-D9B05C7169EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84576442-4E70-4930-AFF6-D9B05C7169EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EF44322-96AD-4E93-96BD-858C40F76B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EF44322-96AD-4E93-96BD-858C40F76B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EF44322-96AD-4E93-96BD-858C40F76B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EF44322-96AD-4E93-96BD-858C40F76B2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{35866F6C-51DB-44AC-B20C-7690DFF46CE9} = {DB3FC42C-3AB8-4B36-8C01-B16C264F1278}
@@ -110,5 +122,7 @@ Global
 		{F39931D5-FD63-447A-9267-1C38F6F4F8CA} = {E7557D15-D189-45A7-A401-4EAC25BA6A49}
 		{7288C794-618E-4B21-9356-5935630A684F} = {F39931D5-FD63-447A-9267-1C38F6F4F8CA}
 		{2A0243C0-90B2-48EB-A3F8-E7BE5411CE40} = {E7557D15-D189-45A7-A401-4EAC25BA6A49}
+		{84576442-4E70-4930-AFF6-D9B05C7169EB} = {AD786C0A-CDE6-4F23-BC6B-38AD4D920BEF}
+		{7EF44322-96AD-4E93-96BD-858C40F76B2F} = {AD786C0A-CDE6-4F23-BC6B-38AD4D920BEF}
 	EndGlobalSection
 EndGlobal

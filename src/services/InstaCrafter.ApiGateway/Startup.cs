@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using InstaCrafter.Infrastructure.Classes;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,15 +27,15 @@ namespace InstaCrafter.ApiGateway
         {
             var audienceConfig = Configuration.GetSection("JwtIssuerOptions");
 
-            var signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("dhgdfhdygh5346t3tfwfsdfsdsf"));
+            var signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(audienceConfig[nameof(JwtIssuerOptions.Secret)]));
             var tokenValidationParameters = new TokenValidationParameters
             {
                 ValidateIssuerSigningKey = true,
                 IssuerSigningKey = signingKey,
                 ValidateIssuer = true,
-                ValidIssuer = audienceConfig["Issuer"],
+                ValidIssuer = audienceConfig[nameof(JwtIssuerOptions.Issuer)],
                 ValidateAudience = true,
-                ValidAudience = audienceConfig["Audience"],
+                ValidAudience = audienceConfig[nameof(JwtIssuerOptions.Audience)],
                 ValidateLifetime = true,
                 ClockSkew = TimeSpan.Zero,
                 RequireExpirationTime = true

@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using InstaCrafter.Infrastructure.Classes;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -54,17 +55,17 @@ namespace InstaCrafter.Tasks
         public static IServiceCollection AddCustomAuthentication(this IServiceCollection services,
             IConfiguration configuration)
         {
-            var audienceConfig = configuration.GetSection("JwtIssuerOptions");
+            var jwtOptions = configuration.GetSection("JwtIssuerOptions");
 
-            var signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("dhgdfhdygh5346t3tfwfsdfsdsf"));
+            var signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtOptions[nameof(JwtIssuerOptions.Issuer)]));
             var tokenValidationParameters = new TokenValidationParameters
             {
                 ValidateIssuerSigningKey = true,
                 IssuerSigningKey = signingKey,
                 ValidateIssuer = true,
-                ValidIssuer = audienceConfig["Issuer"],
+                ValidIssuer = jwtOptions[nameof(JwtIssuerOptions.Issuer)],
                 ValidateAudience = true,
-                ValidAudience = audienceConfig["Audience"],
+                ValidAudience = jwtOptions[nameof(JwtIssuerOptions.Audience)],
                 ValidateLifetime = true,
                 ClockSkew = TimeSpan.Zero,
                 RequireExpirationTime = true
