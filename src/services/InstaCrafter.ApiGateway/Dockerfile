@@ -1,14 +1,13 @@
-﻿FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
+﻿FROM  mcr.microsoft.com/dotnet/aspnet:5.0-bullseye-slim AS base
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0-bullseye-slim AS build
 WORKDIR /src
-COPY ["services/InstaCrafter.ApiGateway/InstaCrafter.ApiGateway.csproj", "InstaCrafter.ApiGateway/"]
+COPY ["src/services/InstaCrafter.ApiGateway/InstaCrafter.ApiGateway.csproj", "services/InstaCrafter.ApiGateway/"]
+
 RUN dotnet restore "services/InstaCrafter.ApiGateway/InstaCrafter.ApiGateway.csproj"
-COPY . .
-WORKDIR "/src/InstaCrafter.ApiGateway"
+COPY src/. .
+WORKDIR "/src/services/InstaCrafter.ApiGateway"
 RUN dotnet build "InstaCrafter.ApiGateway.csproj" -c Release -o /app/build
 
 FROM build AS publish
@@ -17,4 +16,5 @@ RUN dotnet publish "InstaCrafter.ApiGateway.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+ENV ASPNETCORE_URLS=http://+:8080
 ENTRYPOINT ["dotnet", "InstaCrafter.ApiGateway.dll"]

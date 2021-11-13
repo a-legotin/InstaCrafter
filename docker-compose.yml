@@ -1,6 +1,21 @@
 version: '3.4'
 
 services:
+  instacrafter-api-gateway:
+    image: instacrafter-api-gateway
+    build:
+      context: .
+      network: host
+      dockerfile: src/services/InstaCrafter.ApiGateway/Dockerfile
+    restart: on-failure
+    deploy:
+      replicas: 1
+    networks:
+      - main-network
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
   instacrafter-identity:
     image: instacrafter-identity
     build:
@@ -13,7 +28,7 @@ services:
     networks:
       - main-network
     expose:
-      - "80"
+      - "8081"
 
 
 networks:

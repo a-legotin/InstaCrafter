@@ -16,5 +16,5 @@ RUN dotnet publish "InstaCrafter.Identity.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENV ASPNETCORE_URLS=http://+:8080
+ENV ASPNETCORE_URLS=http://+:8081
 ENTRYPOINT ["dotnet", "InstaCrafter.Identity.dll"]

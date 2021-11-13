@@ -6,7 +6,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5002
+          "Port": 8082
         }
       ],
       "AuthenticationOptions": {
@@ -23,8 +23,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5001
+          "Host": "instacrafter-identity",
+          "Port": 8081
         }
       ],
       "UpstreamPathTemplate": "/api/auth/login",
@@ -37,8 +37,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5001
+          "Host": "instacrafter-identity",
+          "Port": 8081
         }
       ],
       "UpstreamPathTemplate": "/api/Accounts",
@@ -48,6 +48,6 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:5000"
+    "BaseUrl": "http://instacrafter-api-gateway:8080"
   }
 }

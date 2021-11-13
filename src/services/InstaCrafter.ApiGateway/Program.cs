@@ -19,7 +19,7 @@ namespace InstaCrafter.ApiGateway
                     config
                         .SetBasePath(hostingContext.HostingEnvironment.ContentRootPath)
                         .AddJsonFile("appsettings.json", true, true)
-                        .AddJsonFile("ocelot.json", false, false)
+                        .AddJsonFile($"ocelot.{hostingContext.HostingEnvironment.EnvironmentName}.json", false, false)
                         .AddEnvironmentVariables();
                 })
                 .UseStartup<Startup>()
