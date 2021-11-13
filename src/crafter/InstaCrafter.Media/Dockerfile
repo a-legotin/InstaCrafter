@@ -1,12 +1,23 @@
-﻿FROM mcr.microsoft.com/dotnet/runtime:5.0 AS base
+﻿FROM  mcr.microsoft.com/dotnet/aspnet:5.0-bullseye-slim AS base
 WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0-bullseye-slim AS build
+
+RUN export PATH="$PATH:/root/.dotnet/tools"
+
+ARG NUGET_USER
+ARG NUGET_PASS
+
+RUN echo $NUGET_USER
+RUN echo $NUGET_PASS
+RUN dotnet nuget add source "https://git.codegarage.ru/api/v4/projects/4/packages/nuget/index.json"  --name instasharper --username $NUGET_USER --password $NUGET_PASS --store-password-in-clear-text  
+
 WORKDIR /src
-COPY ["crafter/InstaCrafter.Media/InstaCrafter.Media.csproj", "InstaCrafter.Media/"]
+COPY ["src/crafter/InstaCrafter.Media/InstaCrafter.Media.csproj", "crafter/InstaCrafter.Media/"]
+
 RUN dotnet restore "crafter/InstaCrafter.Media/InstaCrafter.Media.csproj"
-COPY . .
-WORKDIR "/src/InstaCrafter.Media"
+COPY src/. .
+WORKDIR "/src/crafter/InstaCrafter.Media"
 RUN dotnet build "InstaCrafter.Media.csproj" -c Release -o /app/build
 
 FROM build AS publish

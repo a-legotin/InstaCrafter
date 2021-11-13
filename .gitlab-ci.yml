@@ -25,6 +25,8 @@ build-net:
   script:
     - apt update -y -q && apt install -y -q libc-dev libgdiplus
     - export PATH="$PATH:/root/.dotnet/tools"
+    - export GITLAB_NUGET_USER=gitlab-ci-token
+    - export GITLAB_NUGET_PASS=$CI_JOB_TOKEN
     - dotnet nuget add source "$CI_SERVER_URL/api/v4/projects/$CI_PROJECT_ID/packages/nuget/index.json" --name gitlab --username gitlab-ci-token --password $CI_JOB_TOKEN --store-password-in-clear-text
     - dotnet nuget add source "$CI_SERVER_URL/api/v4/projects/2/packages/nuget/index.json" --name cozybus --username gitlab-ci-token --password $CI_JOB_TOKEN --store-password-in-clear-text
     - dotnet nuget add source "$CI_SERVER_URL/api/v4/projects/4/packages/nuget/index.json" --name instasharper --username gitlab-ci-token --password $CI_JOB_TOKEN --store-password-in-clear-text
@@ -45,9 +47,15 @@ build-net-images:
     - docker-compose build
     - echo "Current registry image"
     - echo $CI_REGISTRY_IMAGE
+    - docker tag instacrafter-api-gateway:latest $CI_REGISTRY_IMAGE/instacrafter-api-gateway:latest
     - docker tag instacrafter-identity:latest $CI_REGISTRY_IMAGE/instacrafter-identity:latest
+    - docker tag instacrafter-tasks:latest $CI_REGISTRY_IMAGE/instacrafter-tasks:latest
+    - docker tag instacrafter-crafter-media:latest $CI_REGISTRY_IMAGE/instacrafter-crafter-media:latest
     - echo "Pushing docker image to registry"
+    - docker push $CI_REGISTRY_IMAGE/instacrafter-api-gateway:latest
     - docker push $CI_REGISTRY_IMAGE/instacrafter-identity:latest
+    - docker push $CI_REGISTRY_IMAGE/instacrafter-tasks:latest
+    - docker push $CI_REGISTRY_IMAGE/instacrafter-crafter-media:latest
 
 test-net:
   stage: test-net

@@ -1,14 +1,13 @@
-﻿FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
+﻿FROM  mcr.microsoft.com/dotnet/aspnet:5.0-bullseye-slim AS base
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0-bullseye-slim AS build
 WORKDIR /src
-COPY ["services/tasks/InstaCrafter.Tasks/InstaCrafter.Tasks.csproj", "InstaCrafter.Tasks/"]
+COPY ["src/services/tasks/InstaCrafter.Tasks/InstaCrafter.Tasks.csproj", "services/tasks/InstaCrafter.Tasks/"]
+
 RUN dotnet restore "services/tasks/InstaCrafter.Tasks/InstaCrafter.Tasks.csproj"
-COPY . .
-WORKDIR "/src/InstaCrafter.Tasks"
+COPY src/. .
+WORKDIR "/src/services/tasks/InstaCrafter.Tasks"
 RUN dotnet build "InstaCrafter.Tasks.csproj" -c Release -o /app/build
 
 FROM build AS publish
@@ -17,4 +16,5 @@ RUN dotnet publish "InstaCrafter.Tasks.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+ENV ASPNETCORE_URLS=http://+:8082
 ENTRYPOINT ["dotnet", "InstaCrafter.Tasks.dll"]

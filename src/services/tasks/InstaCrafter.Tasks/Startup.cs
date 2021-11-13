@@ -57,7 +57,7 @@ namespace InstaCrafter.Tasks
         {
             var jwtOptions = configuration.GetSection("JwtIssuerOptions");
 
-            var signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtOptions[nameof(JwtIssuerOptions.Issuer)]));
+            var signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtOptions[nameof(JwtIssuerOptions.Secret)]));
             var tokenValidationParameters = new TokenValidationParameters
             {
                 ValidateIssuerSigningKey = true,
