@@ -1,0 +1,23 @@
+kind: Deployment
+metadata:
+  name: instacrafter-web-deployment
+  labels:
+    app: instacrafter
+spec:
+  selector:
+    matchLabels:
+      app: instacrafter-web
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: instacrafter-web
+    spec:
+      containers:
+        - name: instacrafter-web
+          image: registry.codegarage.ru/codegarage/instacrafter/instacrafter-react
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+      imagePullSecrets:
+        - name: registry-credentials

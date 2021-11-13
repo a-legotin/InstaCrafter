@@ -36,6 +36,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{FCAEF769-2535-4AC7-910A-3B5A0D94B0C7}"
 ProjectSection(SolutionItems) = preProject
 	..\scripts\deploy\instacrafter-namespace.yaml = ..\scripts\deploy\instacrafter-namespace.yaml
+	..\scripts\deploy\instacrafter-deployment.yaml = ..\scripts\deploy\instacrafter-deployment.yaml
+	..\scripts\deploy\instacrafter-service.yaml = ..\scripts\deploy\instacrafter-service.yaml
+	..\scripts\deploy\instacrafter-ingress.yaml = ..\scripts\deploy\instacrafter-ingress.yaml
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "identity", "identity", "{AD786C0A-CDE6-4F23-BC6B-38AD4D920BEF}"
