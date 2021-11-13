@@ -10,6 +10,7 @@ ARG NUGET_PASS
 
 RUN echo $NUGET_USER
 RUN echo $NUGET_PASS
+RUN dotnet nuget add source "https://git.codegarage.ru/api/v4/projects/2/packages/nuget/index.json"  --name cozybus --username $NUGET_USER --password $NUGET_PASS --store-password-in-clear-text  
 RUN dotnet nuget add source "https://git.codegarage.ru/api/v4/projects/4/packages/nuget/index.json"  --name instasharper --username $NUGET_USER --password $NUGET_PASS --store-password-in-clear-text  
 
 WORKDIR /src
