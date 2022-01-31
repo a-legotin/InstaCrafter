@@ -1,6 +1,11 @@
 using System;
+using System.Reflection;
 using System.Text;
+using Autofac;
+using CozyBus.RabbitMQ.Extensions;
+using InstaCrafter.Classes;
 using InstaCrafter.Infrastructure.Classes;
+using InstaCrafter.Tasks.Core.DI;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,7 +26,8 @@ namespace InstaCrafter.Tasks
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        public ILifetimeScope AutofacContainer { get; private set; }
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -30,9 +36,26 @@ namespace InstaCrafter.Tasks
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "InstaCrafter.Tasks", Version = "v1" });
             });
             services.AddCustomAuthentication(Configuration);
+            
+            var rabbitOptions = new RabbitOptions();
+            Configuration.GetSection(nameof(RabbitOptions)).Bind(rabbitOptions);
+            
+            services.UseRabbitMqMessageBus(builder =>
+            {
+                builder.WithConnection(rabbitOptions.Url)
+                    .WithUsername(rabbitOptions.Username)
+                    .WithPassword(rabbitOptions.Password)
+                    .WithPort(rabbitOptions.Port)
+                    .WithQueueName(rabbitOptions.QueueName);
+            });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterModule(new CoreModule());
+            builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly()).Where(t => t.Name.EndsWith("Presenter")).SingleInstance();
+        }
+        
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

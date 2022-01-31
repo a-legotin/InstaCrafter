@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\common\InstaCrafter.Core\InstaCrafter.Core.csproj" />
+      <ProjectReference Include="..\..\..\common\InstaCrafter.EventBus\InstaCrafter.EventBus.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Autofac" Version="6.3.0" />
+      <PackageReference Include="CozyBus.Core" Version="1.0.6" />
+    </ItemGroup>
+
+</Project>

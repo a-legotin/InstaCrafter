@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using InstaCrafter.Core.Entities;
@@ -19,7 +20,7 @@ namespace InstaCrafter.Identity.Infrastructure.Data.Repositories
 
         public virtual async Task<T> GetById(int id)
         {
-            return await DbContext.Set<T>().FindAsync(id);
+            return (await DbContext.Set<T>().FindAsync(id) ?? throw new ArgumentException($"not found by id {id}"));
         }
 
         public async Task<List<T>> ListAll()

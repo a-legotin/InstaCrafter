@@ -1,7 +1,7 @@
-﻿FROM  mcr.microsoft.com/dotnet/aspnet:5.0-bullseye-slim AS base
+﻿FROM  mcr.microsoft.com/dotnet/aspnet:6.0-bullseye-slim AS base
 WORKDIR /app
 
-FROM mcr.microsoft.com/dotnet/sdk:5.0-bullseye-slim AS build
+FROM mcr.microsoft.com/dotnet/sdk:6.0-bullseye-slim AS build
 WORKDIR /src
 COPY ["src/services/identity/InstaCrafter.Identity/InstaCrafter.Identity.csproj", "services/identity/InstaCrafter.Identity/"]
 

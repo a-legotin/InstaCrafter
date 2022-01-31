@@ -1,8 +1,15 @@
-﻿FROM  mcr.microsoft.com/dotnet/aspnet:5.0-bullseye-slim AS base
+﻿FROM  mcr.microsoft.com/dotnet/aspnet:6.0-bullseye-slim AS base
 WORKDIR /app
 
-FROM mcr.microsoft.com/dotnet/sdk:5.0-bullseye-slim AS build
+FROM mcr.microsoft.com/dotnet/sdk:6.0-bullseye-slim AS build
 WORKDIR /src
+
+ARG NUGET_USER
+ARG NUGET_PASS
+
+RUN dotnet nuget add source "https://git.codegarage.ru/api/v4/projects/2/packages/nuget/index.json"  --name cozybus --username $NUGET_USER --password $NUGET_PASS --store-password-in-clear-text  
+RUN dotnet nuget add source "https://git.codegarage.ru/api/v4/projects/4/packages/nuget/index.json"  --name instasharper --username $NUGET_USER --password $NUGET_PASS --store-password-in-clear-text  
+
 COPY ["src/services/tasks/InstaCrafter.Tasks/InstaCrafter.Tasks.csproj", "services/tasks/InstaCrafter.Tasks/"]
 
 RUN dotnet restore "services/tasks/InstaCrafter.Tasks/InstaCrafter.Tasks.csproj"

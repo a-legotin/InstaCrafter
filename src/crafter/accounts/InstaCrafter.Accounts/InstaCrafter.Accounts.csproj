@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="11.0.0" />
+        <PackageReference Include="CozyBus.Core" Version="1.0.6" />
+        <PackageReference Include="CozyBus.RabbitMQ" Version="1.0.2" />
+        <PackageReference Include="InstaSharper" Version="2.0.1" />
+        <PackageReference Include="InstaSharper.Abstractions" Version="2.0.2" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0" />
+        <PackageReference Include="SixLabors.ImageSharp" Version="1.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\common\InstaCrafter.Classes\InstaCrafter.Classes.csproj" />
+        <ProjectReference Include="..\..\..\common\InstaCrafter.EventBus\InstaCrafter.EventBus.csproj" />
+        <ProjectReference Include="..\..\..\common\InstaCrafter.Extensions\InstaCrafter.Extensions.csproj" />
+    </ItemGroup>
+</Project>

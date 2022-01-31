@@ -35,19 +35,6 @@ services:
       context: .
       network: host
       dockerfile: src/services/tasks/InstaCrafter.Tasks/Dockerfile
-    restart: on-failure
-    deploy:
-      replicas: 1
-    networks:
-      - main-network
-    expose:
-      - "8082"
-  instacrafter-crafter-media:
-    image: instacrafter-crafter-media
-    build:
-      context: .
-      network: host
-      dockerfile: src/crafter/InstaCrafter.Media/Dockerfile
       args:
         - NUGET_USER=${GITLAB_NUGET_USER}
         - NUGET_PASS=${GITLAB_NUGET_PASS}
@@ -56,6 +43,8 @@ services:
       replicas: 1
     networks:
       - main-network
+    expose:
+      - "8082"
 
 
 networks:

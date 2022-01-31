@@ -19,7 +19,7 @@ services:
 
 build-net:
   stage: build-net
-  image: mcr.microsoft.com/dotnet/sdk:5.0-bullseye-slim
+  image: mcr.microsoft.com/dotnet/sdk:6.0-bullseye-slim
   tags:
     - k8s
   script:
@@ -61,7 +61,7 @@ test-net:
   stage: test-net
   tags:
     - k8s
-  image: mcr.microsoft.com/dotnet/sdk:5.0-bullseye-slim
+  image: mcr.microsoft.com/dotnet/sdk:6.0-bullseye-slim
   script:
     - apt update -y -q && apt install -y -q libc-dev libgdiplus
     - export PATH="$PATH:/root/.dotnet/tools"
