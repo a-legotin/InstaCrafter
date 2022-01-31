@@ -50,12 +50,10 @@ build-net-images:
     - docker tag instacrafter-api-gateway:latest $CI_REGISTRY_IMAGE/instacrafter-api-gateway:latest
     - docker tag instacrafter-identity:latest $CI_REGISTRY_IMAGE/instacrafter-identity:latest
     - docker tag instacrafter-tasks:latest $CI_REGISTRY_IMAGE/instacrafter-tasks:latest
-    - docker tag instacrafter-crafter-media:latest $CI_REGISTRY_IMAGE/instacrafter-crafter-media:latest
     - echo "Pushing docker image to registry"
     - docker push $CI_REGISTRY_IMAGE/instacrafter-api-gateway:latest
     - docker push $CI_REGISTRY_IMAGE/instacrafter-identity:latest
     - docker push $CI_REGISTRY_IMAGE/instacrafter-tasks:latest
-    - docker push $CI_REGISTRY_IMAGE/instacrafter-crafter-media:latest
 
 test-net:
   stage: test-net
